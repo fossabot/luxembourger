@@ -25,7 +25,8 @@ export default class CategoryCard extends React.Component {
                     subheader={this.props.categoryItem.date.toString()}
                 />
                 <CardMedia
-                    image='https://material-ui.com/static/images/cards/paella.jpg'
+                    className={"be_CategoryView_img"}
+                    image={this.props.categoryItem.image}
                     title={this.props.categoryItem.imageTitle}
                 />
                 <CardContent>

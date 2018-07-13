@@ -2,7 +2,8 @@ import Category, {
     BANKS,
     BUS_TRAIN,
     CARS,
-    DOCTORS, EMERGENCY,
+    DOCTORS,
+    EMERGENCY,
     HOUSING,
     INSURANCE,
     LEGAL,
@@ -11,15 +12,14 @@ import Category, {
 } from "../data/Category";
 import Housing from '@material-ui/icons/Home';
 import Doctors from '@material-ui/icons/FavoriteBorder';
+import Banks from '@material-ui/icons/FavoriteBorder';
 import Schooling from '@material-ui/icons/ChildCare';
 import Insurance from '@material-ui/icons/VerifiedUser';
 import Cars from '@material-ui/icons/DirectionsCar';
-import Bus  from '@material-ui/icons/DirectionsBus';
+import Bus from '@material-ui/icons/DirectionsBus';
 import Legal from '@material-ui/icons/AccountBalance';
-import Banks from '@material-ui/icons/FavoriteBorder';
 import Playgrounds from '@material-ui/icons/ChildFriendly';
 import Emergency from '@material-ui/icons/LocalHospital';
-import React from "react";
 import {extendObservable} from "mobx";
 import CategoryItem from "../data/CategoryItem";
 
