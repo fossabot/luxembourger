@@ -23,7 +23,7 @@ export const doctorsItems: CategoryItem[] = [
         ++i, 'http://localhost:3000/test2.md'),
 
     new CategoryItem('How medicine works', '', new Date(),
-        '/images/housing/move-in-checklist.jpg',
+        '/images/doctors/how-it-works.jpg',
         "Who are the actors in medical system. How reimbursement works. How to make appointment.",
         'How medicine works',
         ++i, 'http://localhost:3000/test2.md'),
