@@ -17,7 +17,7 @@ export const doctorsItems: CategoryItem[] = [
         ++i, 'http://localhost:3000/test.md'),
 
     new CategoryItem('How to get money back', '', new Date(),
-        '/images/housing/money-back.jpg',
+        '/images/doctors/money-back.jpg',
         "See how you can get reimbursed. Who are the institutions that can do that. What you should do upfront.",
         'Move in checklist',
         ++i, 'http://localhost:3000/test2.md'),
