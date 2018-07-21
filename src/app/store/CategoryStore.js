@@ -26,6 +26,7 @@ import {extendObservable} from "mobx";
 import CategoryItem from "../data/CategoryItem";
 import {housingItems} from "./hardcoded/HousingItems";
 import {doctorsItems} from "./hardcoded/DoctorsItems";
+import {schoolingItems} from "./hardcoded/SchoolingItems";
 
 class CategoryStore {
 
@@ -49,9 +50,9 @@ class CategoryStore {
 
     categories() {
        return [
+           new Category('Schooling', Schooling, SCHOOLING, schoolingItems),
            new Category('Doctors', Doctors, DOCTORS, doctorsItems),
            new Category('Housing', Housing, HOUSING, housingItems),
-           new Category('Schooling', Schooling, SCHOOLING),
            new Category('Insurance', Insurance, INSURANCE),
            new Category('Cars', Cars, CARS),
            new Category('Bus / Train', Bus, BUS_TRAIN),
