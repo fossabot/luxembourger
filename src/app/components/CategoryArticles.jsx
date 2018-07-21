@@ -3,7 +3,7 @@ import {observer} from "mobx-react";
 import {categoryStore} from "../store/CategoryStore";
 import CategoryCard from "./CategoryCard";
 
-class CategoryView extends React.Component {
+class CategoryArticles extends React.Component {
 
 
     render() {
@@ -21,4 +21,4 @@ class CategoryView extends React.Component {
 
 }
 
-export default observer(CategoryView)
+export default observer(CategoryArticles)

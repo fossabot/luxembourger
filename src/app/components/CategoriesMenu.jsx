@@ -6,7 +6,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import {categoryStore} from "../store/CategoryStore";
 import {observer} from "mobx-react";
 
-class Categories extends React.Component {
+class CategoriesMenu extends React.Component {
 
     constructor(props) {
         super(props);
@@ -45,4 +45,4 @@ class Categories extends React.Component {
     }
 }
 
-export default observer(Categories)
+export default observer(CategoriesMenu)
