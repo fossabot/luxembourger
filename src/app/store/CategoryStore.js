@@ -25,6 +25,7 @@ import Emergency from '@material-ui/icons/LocalHospital';
 import {extendObservable} from "mobx";
 import CategoryItem from "../data/CategoryItem";
 import {housingItems} from "./hardcoded/HousingItems";
+import {doctorsItems} from "./hardcoded/DoctorsItems";
 
 class CategoryStore {
 
@@ -48,8 +49,8 @@ class CategoryStore {
 
     categories() {
        return [
+           new Category('Doctors', Doctors, DOCTORS, doctorsItems),
            new Category('Housing', Housing, HOUSING, housingItems),
-           new Category('Doctors', Doctors, DOCTORS),
            new Category('Schooling', Schooling, SCHOOLING),
            new Category('Insurance', Insurance, INSURANCE),
            new Category('Cars', Cars, CARS),
