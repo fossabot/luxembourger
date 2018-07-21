@@ -1,3 +1,5 @@
+// @flow
+
 import Category, {
     BANKS,
     BUS_TRAIN,
@@ -25,16 +27,22 @@ import CategoryItem from "../data/CategoryItem";
 
 class CategoryStore {
 
-    category;
+    category: Category;
+    categoryItem: CategoryItem;
 
     constructor() {
         extendObservable(this, {
-            category: this.categories()[0]
-        });
+            category: this.categories()[0],
+            categoryItem: null
+    });
     }
 
     setCurrentCategory(category) {
         this.category = category;
+    }
+
+    setCurrentCategoryItem(categoryItem: CategoryItem) {
+        this.categoryItem = categoryItem;
     }
 
     categories() {
@@ -55,10 +63,10 @@ class CategoryStore {
     housingItems() {
         return [
             new CategoryItem('How to search online', '', new Date(), 'https://material-ui.com/static/images/cards/paella.jpg', 'This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.', 'this is image title',
-                1),
+                1, 'http://localhost:3000/test.md'),
 
             new CategoryItem('How to search online', '', new Date(), 'https://material-ui.com/static/images/cards/paella.jpg', 'This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.', 'this is image title',
-                2),
+                2, 'http://localhost:3000/test2.md'),
         ]
     }
 }

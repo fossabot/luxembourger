@@ -7,9 +7,10 @@ export default class CategoryItem {
     description;
     imageTitle;
     id;
+    markdownUrl;
 
 
-    constructor(title, icon, date, image, description, imageTitle, id) {
+    constructor(title, icon, date, image, description, imageTitle, id, markdownUrl) {
         this.title = title;
         this.icon = icon;
         this.date = date;
@@ -18,5 +19,6 @@ export default class CategoryItem {
         this.imageTitle = imageTitle;
         this.categoryItem = imageTitle;
         this.id = id;
+        this.markdownUrl = markdownUrl;
     }
 }

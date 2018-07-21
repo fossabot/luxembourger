@@ -2,25 +2,28 @@ import React from "react";
 import Paper from "@material-ui/core/Paper";
 import ReactMarkdown from 'react-markdown';
 import {httpHelper} from "../helper/HttpHelper";
+import {observer} from "mobx-react/index";
+import {categoryStore} from "../store/CategoryStore";
 
-export default class ArticleView extends React.Component {
+class ArticleView extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            input: ''
+            input: 'Please select a category first'
         }
     }
 
-    componentDidMount () {
-        httpHelper.textCall(
-            httpHelper.GETRequest('http://localhost:3000/test.md'),
-            (data ) => {
-                this.setState({input: data});
-            });
-    }
-
     render() {
+
+        if(categoryStore.categoryItem) {
+            httpHelper.textCall(
+                httpHelper.GETRequest(categoryStore.categoryItem.markdownUrl),
+                (data ) => {
+                    this.setState({input: data});
+                });
+        }
+
         return (
             <div className={'be_ArticleView'}>
                 <Paper elevation={1} className={'be_ArticleView-paper'}>
@@ -29,6 +32,6 @@ export default class ArticleView extends React.Component {
             </div>
         );
     }
-
-
 }
+
+export default observer(ArticleView)

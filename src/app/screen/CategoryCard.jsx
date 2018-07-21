@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -6,8 +8,14 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
+import CategoryItem from "../data/CategoryItem";
 
-export default class CategoryCard extends React.Component {
+type Props = {
+    categoryItem: CategoryItem,
+    onSelect: (c: CategoryItem) => {}
+}
+
+export default class CategoryCard extends React.Component<Props> {
 
     render() {
         return (
@@ -27,7 +35,8 @@ export default class CategoryCard extends React.Component {
                     </Typography>
                 </CardContent>
                 <CardActions disableActionSpacing>
-                    <Button variant="outlined" color={"primary"}>
+                    <Button variant="outlined" color={"primary"}
+                    onClick={(e) => this.props.onSelect ? this.props.onSelect(this.props.categoryItem) : ''}>
                         Learn more
                     </Button>
                 </CardActions>

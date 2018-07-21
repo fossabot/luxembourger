@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import './App.css';
-import Categories from "./app/components/CategoriesMenu";
-import CategoryView from "./app/components/CategoryArticles";
-import ArticleView from "./app/components/ArticleView";
-import Logo from "./app/components/Logo";
+import Categories from "./app/screen/CategoriesMenu";
+import CategoryView from "./app/screen/CategoryArticles";
+import ArticleView from "./app/screen/ArticleView";
+import Logo from "./app/screen/Logo";
 
 class App extends Component {
     render() {
