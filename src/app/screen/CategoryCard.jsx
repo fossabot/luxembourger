@@ -22,7 +22,7 @@ export default class CategoryCard extends React.Component<Props> {
             <Card className={'margin-bottom-10px'} >
                 <CardHeader
                     title={this.props.categoryItem.title}
-                    subheader={this.props.categoryItem.date.toString()}
+                    // subheader={this.props.categoryItem.date.toString()}
                 />
                 <CardMedia
                     className={"be_CategoryView_img"}

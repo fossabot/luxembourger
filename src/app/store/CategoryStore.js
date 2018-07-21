@@ -14,7 +14,7 @@ import Category, {
 } from "../data/Category";
 import Housing from '@material-ui/icons/Home';
 import Doctors from '@material-ui/icons/FavoriteBorder';
-import Banks from '@material-ui/icons/FavoriteBorder';
+import Banks from '@material-ui/icons/LocalAtm';
 import Schooling from '@material-ui/icons/ChildCare';
 import Insurance from '@material-ui/icons/VerifiedUser';
 import Cars from '@material-ui/icons/DirectionsCar';
@@ -24,6 +24,7 @@ import Playgrounds from '@material-ui/icons/ChildFriendly';
 import Emergency from '@material-ui/icons/LocalHospital';
 import {extendObservable} from "mobx";
 import CategoryItem from "../data/CategoryItem";
+import {housingItems} from "./hardcoded/HousingItems";
 
 class CategoryStore {
 
@@ -47,7 +48,7 @@ class CategoryStore {
 
     categories() {
        return [
-           new Category('Housing', Housing, HOUSING, this.housingItems()),
+           new Category('Housing', Housing, HOUSING, housingItems),
            new Category('Doctors', Doctors, DOCTORS),
            new Category('Schooling', Schooling, SCHOOLING),
            new Category('Insurance', Insurance, INSURANCE),
@@ -58,16 +59,6 @@ class CategoryStore {
            new Category('Playgrounds', Playgrounds, PLAYGROUNDS),
            new Category('Emergency', Emergency, EMERGENCY),
        ]
-    }
-
-    housingItems() {
-        return [
-            new CategoryItem('How to search online', '', new Date(), 'https://material-ui.com/static/images/cards/paella.jpg', 'This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.', 'this is image title',
-                1, 'http://localhost:3000/test.md'),
-
-            new CategoryItem('How to search online', '', new Date(), 'https://material-ui.com/static/images/cards/paella.jpg', 'This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.', 'this is image title',
-                2, 'http://localhost:3000/test2.md'),
-        ]
     }
 }
 
