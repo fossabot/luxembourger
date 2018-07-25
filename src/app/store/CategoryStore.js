@@ -36,7 +36,7 @@ class CategoryStore {
     constructor() {
         extendObservable(this, {
             category: this.categories()[0],
-            categoryItem: null
+            categoryItem: this.categories()[0].items[0]
     });
     }
 
@@ -48,7 +48,7 @@ class CategoryStore {
         this.categoryItem = categoryItem;
     }
 
-    categories() {
+    categories(): Category[] {
        return [
            new Category('Housing', Housing, HOUSING, housingItems),
            new Category('Doctors', Doctors, DOCTORS, doctorsItems),

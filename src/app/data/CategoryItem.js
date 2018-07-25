@@ -9,7 +9,6 @@ export default class CategoryItem {
     id;
     markdownUrl;
 
-
     constructor(title, icon, date, image, description, imageTitle, id, markdownUrl) {
         this.title = title;
         this.icon = icon;
@@ -18,7 +17,7 @@ export default class CategoryItem {
         this.description = description;
         this.imageTitle = imageTitle;
         this.categoryItem = imageTitle;
-        this.id = id;
+        this.id = title.toLowerCase().split(' ').join('-');
         this.markdownUrl = markdownUrl;
     }
 }

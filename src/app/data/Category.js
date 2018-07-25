@@ -1,6 +1,6 @@
 import React from "react";
 
-export const HOUSING = 'housingItems';
+export const HOUSING = 'housing';
 export const DOCTORS = 'doctors';
 export const SCHOOLING = 'schooling';
 export const INSURANCE = 'insurance';
