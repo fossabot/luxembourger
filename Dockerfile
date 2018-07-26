@@ -1,6 +1,7 @@
 FROM nginx
 
-COPY build /usr/share/nginx/html
-COPY run.sh /run.sh
+COPY nginx.conf /etc/nginx/conf.default
 
-CMD ["bash", "/run.sh"]
+COPY build /usr/share/nginx/html
+
+CMD ["nginx", "-g", "daemon off;"]

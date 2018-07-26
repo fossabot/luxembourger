@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+git pull
+
 rm -r ./build
 
 npm run-script build
