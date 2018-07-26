@@ -4,7 +4,7 @@ import Category, {
     BANKS,
     BUS_TRAIN,
     CARS,
-    DOCTORS,
+    DOCTORS, dummyCategory,
     EMERGENCY,
     HOUSING,
     INSURANCE,
@@ -35,8 +35,8 @@ class CategoryStore {
 
     constructor() {
         extendObservable(this, {
-            category: this.categories()[0],
-            categoryItem: this.categories()[0].items[0]
+            category: dummyCategory,
+            categoryItem: null
     });
     }
 

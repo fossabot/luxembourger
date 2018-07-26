@@ -1,5 +1,7 @@
 import React from "react";
+import dummy from "@material-ui/icons/Delete";
 
+export const DUMMY = 'dummy';
 export const HOUSING = 'housing';
 export const DOCTORS = 'doctors';
 export const SCHOOLING = 'schooling';
@@ -26,3 +28,5 @@ export default class Category {
     }
 
 }
+
+export const dummyCategory = new Category('dummy', dummy, DUMMY);

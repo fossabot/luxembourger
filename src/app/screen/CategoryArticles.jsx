@@ -4,6 +4,7 @@ import {categoryStore} from "../store/CategoryStore";
 import CategoryCard from "./component/CategoryCard";
 import CategoryItem from "../data/CategoryItem";
 import {uriHelper} from "../helper/UriHelper";
+import {DUMMY} from "../data/Category";
 
 class CategoryArticles extends React.Component {
 
@@ -13,6 +14,10 @@ class CategoryArticles extends React.Component {
     }
 
     render() {
+        if(categoryStore.category.id === DUMMY) {
+            return <div />;
+        }
+
         let items = [];
         categoryStore.category.items.forEach(categoryItem => {
             items.push(<CategoryCard key={categoryItem.id}
@@ -21,11 +26,9 @@ class CategoryArticles extends React.Component {
             />)
         });
 
-        return (
-            <div className={'be_CategoryView be_CategoryView_large_screen'}>
-                {items}
-            </div>
-        );
+        return <div className={'be_CategoryView be_CategoryView_large_screen'}>
+            {items}
+        </div>;
     }
 
 }

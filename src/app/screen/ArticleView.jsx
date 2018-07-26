@@ -11,31 +11,30 @@ class ArticleView extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            input: 'Please select a category first'
+            input: ''
         }
     }
 
     render() {
-        let title ='';
-        if(categoryStore.categoryItem) {
-            title = categoryStore.categoryItem.title;
-            httpHelper.textCall(
-                httpHelper.GETRequest(categoryStore.categoryItem.markdownUrl),
-                (data ) => {
-                    this.setState({input: data});
-                });
+        if(!categoryStore.categoryItem) {
+            return <div/>
         }
 
-        return (
-            <div className={'be_ArticleView'}>
-                <Paper elevation={1} className={'be_ArticleView-paper'}>
-                    <Typography variant="headline" component="i">
-                        {title}
-                    </Typography>
-                    <ReactMarkdown source={this.state.input} />
-                </Paper>
-            </div>
-        );
+        let title = categoryStore.categoryItem.title;
+        httpHelper.textCall(
+            httpHelper.GETRequest(categoryStore.categoryItem.markdownUrl),
+            (data ) => {
+                this.setState({input: data});
+            });
+
+        return <div className={'be_ArticleView'}>
+            <Paper elevation={1} className={'be_ArticleView-paper'}>
+                <Typography variant="headline" component="i">
+                    {title}
+                </Typography>
+                <ReactMarkdown source={this.state.input} />
+            </Paper>
+        </div>;
     }
 }
 

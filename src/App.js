@@ -13,9 +13,8 @@ class App extends Component {
                 <Route exact path='/*' component={Logo}/>
                 <Route exact path='/*' component={CategoriesMenu}/>
 
-                <Route exact path='/:category' component={CategoryView}/>
+                <Route exact path='/:category*' component={CategoryView}/>
 
-                <Route exact path='/:category/:item' component={CategoryView} />
                 <Route exact path='/:category/:item' component={ArticleView} />
             </div>
         );
