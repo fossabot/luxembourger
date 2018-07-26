@@ -3,19 +3,24 @@ import {observer} from "mobx-react";
 import {categoryStore} from "../store/CategoryStore";
 import CategoryCard from "./component/CategoryCard";
 import CategoryItem from "../data/CategoryItem";
-import {uriHelper} from "../helper/UriHelper";
+import {navigationHelper} from "../helper/NavigationHelper";
 import {DUMMY} from "../data/Category";
 
-class CategoryArticles extends React.Component {
+class CategoryView extends React.Component {
 
-    onArticleSelect(ci: CategoryItem) {
-        categoryStore.setCurrentCategoryItem(ci);
-        uriHelper.navigateToArticle(this, ci);
+    onArticleSelect(categoryItem: CategoryItem) {
+        navigationHelper.categoryItem(this, categoryItem);
+    }
+
+    componentDidMount() {
+        navigationHelper.restoreFromUri(this,
+            this.props.match.params.categoryId,
+            this.props.match.params.categoryItemId);
     }
 
     render() {
-        if(categoryStore.category.id === DUMMY) {
-            return <div />;
+        if (categoryStore.category.id === DUMMY) {
+            return <div/>;
         }
 
         let items = [];
@@ -33,4 +38,4 @@ class CategoryArticles extends React.Component {
 
 }
 
-export default observer(CategoryArticles)
+export default observer(CategoryView)

@@ -1,21 +1,23 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
 import CategoriesMenu from "./app/screen/CategoriesMenu";
-import CategoryView from "./app/screen/CategoryArticles";
-import ArticleView from "./app/screen/ArticleView";
+import CategoryView from "./app/screen/CategoryView";
+import ArticleView from "./app/screen/CategoryItemView";
 import Logo from "./app/screen/component/Logo";
 import {Route} from "react-router-dom";
 
-class App extends Component {
+class App extends React.Component {
+
     render() {
         return (
             <div>
                 <Route exact path='/*' component={Logo}/>
                 <Route exact path='/*' component={CategoriesMenu}/>
 
-                <Route exact path='/:category*' component={CategoryView}/>
+                <Route exact path='/:categoryId' component={CategoryView}/>
 
-                <Route exact path='/:category/:item' component={ArticleView} />
+                <Route exact path='/:categoryId/:categoryItemId' component={CategoryView} />
+                <Route exact path='/:categoryId/:categoryItemId' component={ArticleView} />
             </div>
         );
     }

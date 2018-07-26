@@ -4,7 +4,8 @@ import Category, {
     BANKS,
     BUS_TRAIN,
     CARS,
-    DOCTORS, dummyCategory,
+    DOCTORS,
+    dummyCategory,
     EMERGENCY,
     HOUSING,
     INSURANCE,
@@ -27,16 +28,32 @@ import CategoryItem from "../data/CategoryItem";
 import {housingItems} from "./hardcoded/HousingItems";
 import {doctorsItems} from "./hardcoded/DoctorsItems";
 import {schoolingItems} from "./hardcoded/SchoolingItems";
+import {httpHelper} from "../helper/HttpHelper";
 
 class CategoryStore {
 
+    categories: Category[] = [
+        new Category('Housing', Housing, HOUSING, housingItems),
+        new Category('Doctors', Doctors, DOCTORS, doctorsItems),
+        new Category('Schooling', Schooling, SCHOOLING, schoolingItems),
+        new Category('Insurance', Insurance, INSURANCE),
+        new Category('Cars', Cars, CARS),
+        new Category('Bus / Train', Bus, BUS_TRAIN),
+        new Category('Legal', Legal, LEGAL),
+        new Category('Banks', Banks, BANKS),
+        new Category('Playgrounds', Playgrounds, PLAYGROUNDS),
+        new Category('Emergency', Emergency, EMERGENCY),
+    ];
+
     category: Category;
     categoryItem: CategoryItem;
+    currentArticle: string;
 
     constructor() {
         extendObservable(this, {
             category: dummyCategory,
-            categoryItem: null
+            categoryItem: null,
+            currentArticle: ''
     });
     }
 
@@ -46,21 +63,32 @@ class CategoryStore {
 
     setCurrentCategoryItem(categoryItem: CategoryItem) {
         this.categoryItem = categoryItem;
+
+        httpHelper.textCall(
+            httpHelper.GETRequest(categoryStore.categoryItem.markdownUrl),
+            (data ) => {
+                this.currentArticle = data;
+            });
     }
 
-    categories(): Category[] {
-       return [
-           new Category('Housing', Housing, HOUSING, housingItems),
-           new Category('Doctors', Doctors, DOCTORS, doctorsItems),
-           new Category('Schooling', Schooling, SCHOOLING, schoolingItems),
-           new Category('Insurance', Insurance, INSURANCE),
-           new Category('Cars', Cars, CARS),
-           new Category('Bus / Train', Bus, BUS_TRAIN),
-           new Category('Legal', Legal, LEGAL),
-           new Category('Banks', Banks, BANKS),
-           new Category('Playgrounds', Playgrounds, PLAYGROUNDS),
-           new Category('Emergency', Emergency, EMERGENCY),
-       ]
+    findCategory(categoryId: string): Category {
+        for (let category of this.categories) {
+            if(category.id === categoryId) {
+                return category;
+            }
+        }
+
+        return null;
+    }
+
+    findCategoryItem(categoryItemId: string): Category {
+        for (let item of this.category.items) {
+            if(item.id === categoryItemId) {
+                return item;
+            }
+        }
+
+        return null;
     }
 }
 

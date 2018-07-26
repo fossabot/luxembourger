@@ -1,12 +1,11 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
 import ReactMarkdown from 'react-markdown';
-import {httpHelper} from "../helper/HttpHelper";
 import {observer} from "mobx-react/index";
 import {categoryStore} from "../store/CategoryStore";
 import Typography from "@material-ui/core/Typography";
 
-class ArticleView extends React.Component {
+class CategoryItemView extends React.Component {
 
     constructor(props) {
         super(props);
@@ -20,22 +19,15 @@ class ArticleView extends React.Component {
             return <div/>
         }
 
-        let title = categoryStore.categoryItem.title;
-        httpHelper.textCall(
-            httpHelper.GETRequest(categoryStore.categoryItem.markdownUrl),
-            (data ) => {
-                this.setState({input: data});
-            });
-
         return <div className={'be_ArticleView'}>
             <Paper elevation={1} className={'be_ArticleView-paper'}>
                 <Typography variant="headline" component="i">
-                    {title}
+                    {categoryStore.categoryItem.title}
                 </Typography>
-                <ReactMarkdown source={this.state.input} />
+                <ReactMarkdown source={categoryStore.currentArticle} />
             </Paper>
         </div>;
     }
 }
 
-export default observer(ArticleView)
+export default observer(CategoryItemView)

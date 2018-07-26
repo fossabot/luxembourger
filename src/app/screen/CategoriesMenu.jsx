@@ -8,7 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import {categoryStore} from "../store/CategoryStore";
 import {observer} from "mobx-react";
 import Category from "../data/Category";
-import {uriHelper} from "../helper/UriHelper";
+import {navigationHelper} from "../helper/NavigationHelper";
 
 class CategoriesMenu extends React.Component {
 
@@ -16,18 +16,15 @@ class CategoriesMenu extends React.Component {
         super(props);
 
         this.state = {
-            menuItems: categoryStore.categories()
+            menuItems: categoryStore.categories
         }
     }
 
     onCategory(category: Category) {
-        categoryStore.setCurrentCategory(category);
-        uriHelper.navigateToCategory(this, category);
+        navigationHelper.category(this, category);
     }
 
     render() {
-
-
         let listItems = [];
 
         this.state.menuItems.forEach((category: Category) => {
