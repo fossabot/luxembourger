@@ -9,6 +9,10 @@ body {
     background: #F2F2F2;
 }
 
+.be_margin-bottom-10px {
+    margin-bottom: 30px;
+}
+
 .be_Logo {
     position: fixed;
     margin-left: 70px;
@@ -83,8 +87,4 @@ body {
 
 .be_CategoryItemView-paper {
     padding: 15px;
-}
-
-.be_margin-bottom-10px {
-    margin-bottom: 30px;
 }
