@@ -3,7 +3,7 @@ import logo from '../../../logo becoming luxembourger.png'
 
 export default class Logo extends React.Component {
     render() {
-        return <div className={'be-Logo'}>
+        return <div className={'be_Logo'}>
             <img src={logo} alt={"Logo of Becoming.lu"} />
         </div>
     }

@@ -31,7 +31,7 @@ class CategoryView extends React.Component {
             />)
         });
 
-        return <div className={'be_CategoryView be_CategoryView_large_screen'}>
+        return <div className={'be_CategoryView'}>
             {items}
         </div>;
     }

@@ -19,8 +19,8 @@ class CategoryItemView extends React.Component {
             return <div/>
         }
 
-        return <div className={'be_ArticleView'}>
-            <Paper elevation={1} className={'be_ArticleView-paper'}>
+        return <div className={'be_CategoryItemView'}>
+            <Paper elevation={1} className={'be_CategoryItemView-paper'}>
                 <Typography variant="headline" component="i">
                     {categoryStore.categoryItem.title}
                 </Typography>

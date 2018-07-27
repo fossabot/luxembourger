@@ -40,7 +40,7 @@ class CategoriesMenu extends React.Component {
             </ListItem>)
         });
 
-        return <div className={'be_categories be_categories_large_screen'}>
+        return <div className={'be_Categories'}>
             <List component="nav">
                 {listItems}
             </List>

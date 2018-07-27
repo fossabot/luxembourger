@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import CategoriesMenu from "./app/screen/CategoriesMenu";
 import CategoryView from "./app/screen/CategoryView";
-import ArticleView from "./app/screen/CategoryItemView";
+import CategoryItemView from "./app/screen/CategoryItemView";
 import Logo from "./app/screen/component/Logo";
 import {Route} from "react-router-dom";
 
@@ -17,7 +17,7 @@ class App extends React.Component {
                 <Route exact path='/:categoryId' component={CategoryView}/>
 
                 <Route exact path='/:categoryId/:categoryItemId' component={CategoryView} />
-                <Route exact path='/:categoryId/:categoryItemId' component={ArticleView} />
+                <Route exact path='/:categoryId/:categoryItemId' component={CategoryItemView} />
             </div>
         );
     }
