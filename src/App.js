@@ -5,12 +5,17 @@ import CategoryView from "./app/screen/CategoryView";
 import CategoryItemView from "./app/screen/CategoryItemView";
 import Logo from "./app/screen/component/Logo";
 import {Route} from "react-router-dom";
+import RouterHandler from "./app/helper/RouterHandler";
 
 class App extends React.Component {
 
     render() {
         return (
             <div>
+                <Route exact path='/' component={RouterHandler}/>
+                <Route exact path='/:categoryId' component={RouterHandler}/>
+                <Route exact path='/:categoryId/:categoryItemId' component={RouterHandler}/>
+
                 <Route exact path='/*' component={Logo}/>
                 <Route exact path='/*' component={CategoriesMenu}/>
 
