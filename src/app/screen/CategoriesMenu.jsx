@@ -29,7 +29,7 @@ class CategoriesMenu extends React.Component {
 
         this.state.menuItems.forEach((category: Category) => {
             let markIfSelected = categoryStore.category.id === category.id ?
-                'be_category_selected' : '';
+                'be_Category-selected' : '';
 
             listItems.push(<ListItem button key={category.id} className={markIfSelected}
                                      onClick={() => this.onCategory(category)}>
