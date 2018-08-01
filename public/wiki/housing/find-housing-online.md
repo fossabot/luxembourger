@@ -11,6 +11,7 @@ The countries and reference cities are:
 * [athome.lu](https://athome.lu)
 * [immpotop.lu](https://immotop.lu)
 * [wortimmo.lu](https://wortimmo.lu)
+* [habiter.lu](https://www.habiter.lu/)
 
 ## Forums
 
