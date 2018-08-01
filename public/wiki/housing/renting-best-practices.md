@@ -1,0 +1,44 @@
+# Renting Best Practices
+
+Here you can find hints and instructions on how rent a place to live, in a easier way. You have to consider that there's no perfect way. 
+Still there might there are some insights in this matter.
+
+## The right house for the right need
+
+* Depending on the size of your household (_single, couple, family, with kids, with more kids_) you should look for a place of a corresponding size
+  * There are rules regarding minial surface for household size
+  * There are rules for sex of children, age and when they should get their own rooms
+* If you have kids, it's essential to see if you have school in the area you are renting for their age
+
+## Public Transportation
+
+Busses and Trains are actively used by people to come to work, especially the ones to Luxembourg (_mostly from France and Belgium_)
+
+* How far is the place from the bus / train station
+* How much transfers you have to make when commuting to worplace
+* The schedule for business day *AND* weekends or holidays, some stations have a very specific schedule
+* The subscription is 50 euro a month for national coverage and 25 for the capital, there are discounts for early subscriptions
+
+## Car
+
+* Check for a parking, even if you do not have a car
+* What exits do you have to what roads, motorways, etc.
+* Is there a public parking nearby
+
+## Visiting
+
+* Try to visit the place in the rush hour, you can get an idea of what's happening there and how much gas you'll have to inhale while living there
+* Be on time, it makes the people be nicer with you if you respect the agreed hour
+* Ask in advance if there's a parking, if coming by car
+* Check with [Mobiliteit.lu](https://mobiliteit.lu) what buses/trains are passing there, if coming by bus/train
+
+## Communications
+
+Surprisingly, the internet and mobile communications aren't the best experience in Luxembourg. Most of the questions you can ask directly to Post, 
+they are the owners of the whole infra, everyone else is just renting from them.
+
+* Check mobile operator coverage while there, just look at the signal and walk around
+  * Check the same while inside the building
+* Ask about what internet providers are there and see what plans do they have for that particular address
+  * It can happen to not have fiber in a fiber-able area, because the building have issues
+* Ask if there are works planned in the area and at your address
