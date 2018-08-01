@@ -8,23 +8,23 @@ export const doctorsItems: CategoryItem[] = [
         '/images/doctors/emergency.jpg',
         "Emergency numbers. See what hospitals are open now. See what pharmacy is open now.",
         'Emergency',
-        ++i, '/wiki/doctors/test2.md'),
+        ++i, '/wiki/doctors/emergency.md'),
 
     new CategoryItem('Find a doctor now', '', new Date(),
         '/images/doctors/find-doctor-now.jpg',
         "Here's how you find doctors, hospitals. See what platforms exists and use them right away.",
         'Find doctor now',
-        ++i, '/wiki/doctors/test.md'),
+        ++i, '/wiki/doctors/find-a-doctor-now.md'),
 
     new CategoryItem('How to get money back', '', new Date(),
         '/images/doctors/money-back.jpg',
         "See how you can get reimbursed. Who are the institutions that can do that. What you should do upfront.",
         'Move in checklist',
-        ++i, '/wiki/doctors/test2.md'),
+        ++i, '/wiki/doctors/how-to-get-money-back.md'),
 
-    new CategoryItem('How medicine works', '', new Date(),
+    new CategoryItem('How healthcare works', '', new Date(),
         '/images/doctors/how-it-works.jpg',
         "Who are the actors in medical system. How reimbursement works. How to make appointment.",
         'How medicine works',
-        ++i, '/wiki/doctors/test2.md'),
+        ++i, '/wiki/doctors/how-healthcare-works.md'),
 ];

@@ -2,6 +2,10 @@
 
 In luxembourg is illegal to advertise doctors, but there are services that can help you to find a doctor of certain speciality
 
+<blockquote>
+In case you need a doctor NOW but it is not an "I need an ambulance" emergency, please see the Emergency article about On Duty Medical Units
+</blockquote>
+
 ## Online
 
 * [CHL :: Centre Hospitalier Luxembourg](https://www.chl.lu/en/annuaire)
