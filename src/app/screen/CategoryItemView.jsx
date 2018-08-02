@@ -3,7 +3,6 @@ import Paper from "@material-ui/core/Paper";
 import ReactMarkdown from 'react-markdown';
 import {observer} from "mobx-react/index";
 import {categoryStore} from "../store/CategoryStore";
-import Typography from "@material-ui/core/Typography";
 
 class CategoryItemView extends React.Component {
 
@@ -21,9 +20,6 @@ class CategoryItemView extends React.Component {
 
         return <div className={'be_CategoryItemView'}>
             <Paper elevation={1} className={'be_CategoryItemView-paper'}>
-                <Typography variant="headline" component="i">
-                    {categoryStore.categoryItem.title}
-                </Typography>
                 <ReactMarkdown source={categoryStore.currentArticle} />
             </Paper>
         </div>;
