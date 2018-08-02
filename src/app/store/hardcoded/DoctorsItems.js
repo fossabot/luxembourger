@@ -8,7 +8,7 @@ export const doctorsItems: CategoryItem[] = [
         '/images/doctors/emergency.jpg',
         "Emergency numbers. See what hospitals are open now. See what pharmacy is open now.",
         'Emergency',
-        ++i, '/wiki/doctors/emergency.md'),
+        ++i, '/wiki/doctors/emergency-numbers.md'),
 
     new CategoryItem('Find a doctor now', '', new Date(),
         '/images/doctors/find-doctor-now.jpg',
