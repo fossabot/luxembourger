@@ -18,6 +18,12 @@ For the cases when is urgent but you can get there with your resources
 ### Clinics and Hospitals on duty 
 
 [Hospitals :: SOS.LUXWEB.LU](http://sos.luxweb.lu/en/duty-hospital)
-[Sante.lu :: Hospitals on duty](http://sante.public.lu/fr/urgences-gardes/services-garde/hopitaux-garde/index.html) (_french_)
+
+[Hospitals on duty :: Sante.lu](http://sante.public.lu/fr/urgences-gardes/services-garde/hopitaux-garde/index.html) (_french_)
   * they have as well lists of hospitals on duty for the whole year in PDF downloadable format
-[Sante.lu :: Services on duty](http://sante.public.lu/fr/urgences-gardes/services-garde/index.html) (_french_)
+
+### More services on duty
+
+[Services on duty :: Sante.lu](http://sante.public.lu/fr/urgences-gardes/services-garde/index.html) (_french_)
+
+[Veterinar, Small pets :: LAK.lu](https://www.lak.lu/fr/lak/emergency-contacts) (_french_)
