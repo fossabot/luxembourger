@@ -10,7 +10,7 @@ Now here are the details
 
 * [CNS Reimbursed Services](https://cns.public.lu/en/assure/vie-privee/sante-prevention.html)
 
-## Usual scenario to get reimbursed
+## Usual scenario to get reimbursed
 
 1. Call for appointment
 1. Prepare your ID (_passeport, residence card, etc._) and [european healt card](http://ec.europa.eu/social/main.jsp?catId=559)

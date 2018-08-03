@@ -9,13 +9,17 @@ The countries and reference cities are:
 ## Websites for finding rentals
 
 * [athome.lu](https://athome.lu)
+
 * [immpotop.lu](https://immotop.lu)
+
 * [wortimmo.lu](https://wortimmo.lu)
+
 * [habiter.lu](https://www.habiter.lu/)
 
 ## Forums
 
 * [justarrived.lu](https://www.justarrived.lu/en/housing-of-luxembourg/)
+
 * [lestfrontaliers.lu](https://www.lesfrontaliers.lu/dernieres-annonces) (_french_)
 
 ## Communities
@@ -23,4 +27,5 @@ The countries and reference cities are:
 You can find articles on different topics, but as well rental announces, quite often without agency fees.
 
 * [Expats de Lux](https://www.facebook.com/groups/29436036988/) (_facebook_)
+
 * [Luxembourg Expats](https://www.facebook.com/groups/luxembourgexpats/) (_facebook_)
