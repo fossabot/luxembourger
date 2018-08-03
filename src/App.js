@@ -16,7 +16,7 @@ class App extends React.Component {
                 <Route exact path='/:categoryId' component={RouterHandler}/>
                 <Route exact path='/:categoryId/:categoryItemId' component={RouterHandler}/>
 
-                <Route exact path='/*' component={Logo}/>
+                <Route exact path='/*' component={Logo} />
                 <Route exact path='/*' component={CategoriesMenu}/>
 
                 <Route exact path='/:categoryId' component={CategoryView}/>
