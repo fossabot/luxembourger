@@ -1,34 +1,34 @@
 @media only screen and (max-width: 600px) {
     .be_theme-image-left-right {
-        background: none;
+        background: none!important;
     }
 
     .be_theme-image-center {
-        background: none;
+        background: none!important;
     }
 
     .be_theme-sun {
-        background: none;
+        background: none!important;
     }
 
     .be_theme-balloon {
-        background: none;
+        background: none!important;
     }
 
     .be_theme-cloud-big {
-        background: none;
+        background: none!important;
     }
 
     .be_theme-cloud-big-2 {
-        background: none;
+        background: none!important;
     }
 
     .be_theme-cloud-medium {
-        background: none;
+        background: none!important;
     }
 
     .be_theme-cloud-small {
-        background: none;
+        background: none!important;
     }
 }
 

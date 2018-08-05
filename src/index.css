@@ -30,7 +30,7 @@ body {
     .be_CategoryView {
         margin: 0!important;
 
-        width: 100%!important;
+        width: calc(100% - 10px)!important;
         border: none!important;
 
         height: 105%!important;
