@@ -1,0 +1,112 @@
+.be_theme-image-left-right {
+    width: 100%;
+    height: 164px;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    overflow-x: visible;
+    background: url("/images/assets/image-right-left.png") repeat-x;
+    display: block;
+    padding: 0;
+}
+
+.be_theme-image-center {
+    width: 100%;
+    height: 353px;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    overflow-x: visible;
+    background: url("/images/assets/image-center.png") no-repeat center;
+    display: block;
+    padding: 0;
+}
+
+.be_theme-sun {
+    position: fixed;
+    bottom: 380px;
+    left: 40%;
+    background: url("/images/assets/sun.png") no-repeat center;
+
+    width: 55px;
+    height: 56px;
+
+    display: block;
+    padding: 0;
+
+    -webkit-animation:spin 12s linear infinite;
+    -moz-animation:spin 12s linear infinite;
+    animation:spin 12s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.be_theme-balloon {
+    position: fixed;
+    bottom: 290px;
+    left: 58%;
+    background: url("/images/assets/balloon.png") no-repeat center;
+
+    width: 48px;
+    height: 82px;
+
+    display: block;
+    padding: 0;
+}
+
+.be_theme-cloud-big {
+    position: fixed;
+    bottom: 402px;
+    left: 56%;
+    background: url("/images/assets/cloud-big.png") no-repeat center;
+
+    width: 162px;
+    height: 166px;
+
+    display: block;
+    padding: 0;
+}
+
+.be_theme-cloud-big-2 {
+    position: fixed;
+    bottom: 452px;
+    left: 43%;
+    background: url("/images/assets/cloud-big.png") no-repeat center;
+
+    width: 162px;
+    height: 166px;
+
+    display: block;
+    padding: 0;
+}
+
+.be_theme-cloud-medium {
+    position: fixed;
+    bottom: 224px;
+    left: 27%;
+    background: url("/images/assets/cloud-medium.png") no-repeat center;
+
+    width: 162px;
+    height: 166px;
+
+    display: block;
+    padding: 0;
+}
+
+.be_theme-cloud-small {
+    position: fixed;
+    bottom: 248px;
+    left: 66%;
+    background: url("/images/assets/cloud-small.png") no-repeat center;
+
+    width: 162px;
+    height: 166px;
+
+    display: block;
+    padding: 0;
+}
