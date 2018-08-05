@@ -1,3 +1,37 @@
+@media only screen and (max-width: 600px) {
+    .be_theme-image-left-right {
+        background: none;
+    }
+
+    .be_theme-image-center {
+        background: none;
+    }
+
+    .be_theme-sun {
+        background: none;
+    }
+
+    .be_theme-balloon {
+        background: none;
+    }
+
+    .be_theme-cloud-big {
+        background: none;
+    }
+
+    .be_theme-cloud-big-2 {
+        background: none;
+    }
+
+    .be_theme-cloud-medium {
+        background: none;
+    }
+
+    .be_theme-cloud-small {
+        background: none;
+    }
+}
+
 .be_theme-image-left-right {
     width: 100%;
     height: 164px;
