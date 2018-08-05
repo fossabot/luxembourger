@@ -17,7 +17,7 @@ export const housingItems: CategoryItem[] = [
         ++i, '/wiki/housing/renting-best-practices.md'),
 
     new CategoryItem('Move-in checklist', '', new Date(),
-        '/images/housing/move-in-checklist.jpg',
+        '/images/housing/move-in-checklist.png',
         "Once you move in there are few things to consider, like subscriptions, insurance and so on.",
         'Move in checklist',
         ++i, '/wiki/housing/move-in-checklist.md'),
