@@ -5,13 +5,13 @@ let i = 0;
 
 export const doctorsItems: CategoryItem[] = [
     new CategoryItem('Emergency - Call 112', '', new Date(),
-        '/images/doctors/emergency.jpg',
+        '/images/doctors/emergency-call.png',
         "Emergency numbers. See what hospitals are open now. See what pharmacy is open now.",
         'Emergency',
         ++i, '/wiki/doctors/emergency-numbers.md'),
 
     new CategoryItem('Find a doctor now', '', new Date(),
-        '/images/doctors/find-doctor-now.jpg',
+        '/images/doctors/find-doctor.png',
         "Here's how you find doctors, hospitals. See what platforms exists and use them right away.",
         'Find doctor now',
         ++i, '/wiki/doctors/find-a-doctor-now.md'),
