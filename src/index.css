@@ -20,6 +20,7 @@ body {
         border: none!important;
 
         height: calc(100% - 100px) !important;
+        max-height: none!important;
 
         box-shadow: none!important;
         border-radius: 0!important;
