@@ -91,6 +91,8 @@
 
     display: block;
     padding: 0;
+
+    animation: motion-balloon 17s infinite ease-in-out;
 }
 
 .be_theme-cloud-big {
@@ -104,6 +106,12 @@
 
     display: block;
     padding: 0;
+
+    /*-webkit-animation:cloudMove 17s linear infinite;*/
+    /*-moz-animation:cloudMove 17s linear infinite;*/
+    /*animation:cloudMove 17s linear infinite;*/
+
+    animation: motion-cloud-big 19s infinite;
 }
 
 .be_theme-cloud-big-2 {
@@ -117,6 +125,12 @@
 
     display: block;
     padding: 0;
+
+    /*-webkit-animation:cloudMove 30s linear infinite;*/
+    /*-moz-animation:cloudMove 30s linear infinite;*/
+    /*animation:cloudMove 30s linear infinite;*/
+
+    animation: motion-cloud-big-2 12s infinite;
 }
 
 .be_theme-cloud-medium {
@@ -130,6 +144,12 @@
 
     display: block;
     padding: 0;
+
+    /*-webkit-animation:cloudMove 27s linear infinite;*/
+    /*-moz-animation:cloudMove 27s linear infinite;*/
+    /*animation:cloudMove 27s linear infinite;*/
+
+    animation: motion-cloud-medium 23s infinite;
 }
 
 .be_theme-cloud-small {
@@ -143,4 +163,83 @@
 
     display: block;
     padding: 0;
+
+    animation: motion-cloud-small 17s infinite;
+
+    /*-webkit-animation:cloudMove 20s linear infinite;*/
+    /*-moz-animation:cloudMove 20s linear infinite;*/
+    /*animation:cloudMove 20s linear infinite;*/
+
+}
+
+@keyframes motion-cloud-small {
+    0% {
+        left: 66%;
+        opacity: 0;
+    }
+    50% {
+        left: 67%;
+        opacity: 1;
+    }
+    100% {
+        left: 68%;
+        opacity: 0;
+    }
+}
+
+@keyframes motion-cloud-medium {
+    0% {
+        left: 27%;
+        opacity: 0;
+    }
+    50% {
+        left: 29%;
+        opacity: 1;
+    }
+    100% {
+        left: 31%;
+        opacity: 0;
+    }
+}
+
+@keyframes motion-cloud-big-2 {
+    0% {
+        left: 40%;
+        opacity: 0;
+    }
+    50% {
+        left: 42%;
+        opacity: 1;
+    }
+    100% {
+        left: 44%;
+        opacity: 0;
+    }
+}
+
+@keyframes motion-cloud-big {
+    0% {
+        left: 56%;
+        opacity: 0;
+    }
+    50% {
+        left: 58%;
+        opacity: 1;
+    }
+    100% {
+        left: 60%;
+        opacity: 0;
+    }
+}
+
+@keyframes motion-balloon {
+    0% {
+        bottom: 280px;
+    }
+    50% {
+        bottom: 295px;
+    }
+    100% {
+        bottom: 280px;
+    }
 }
