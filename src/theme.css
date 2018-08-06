@@ -92,7 +92,7 @@
     display: block;
     padding: 0;
 
-    animation: motion-balloon 17s infinite ease-in-out;
+    animation: motion-balloon 10s infinite ease-in-out;
 }
 
 .be_theme-cloud-big {
@@ -236,8 +236,11 @@
     0% {
         bottom: 280px;
     }
-    50% {
-        bottom: 295px;
+    30% {
+        bottom: 298px;
+    }
+    70% {
+        bottom: 290px;
     }
     100% {
         bottom: 280px;
