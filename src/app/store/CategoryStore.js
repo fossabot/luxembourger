@@ -36,13 +36,13 @@ class CategoryStore {
         new Category('Housing', Housing, HOUSING, housingItems),
         new Category('Doctors', Doctors, DOCTORS, doctorsItems),
         new Category('Schooling', Schooling, SCHOOLING, schoolingItems),
-        new Category('Insurance', Insurance, INSURANCE),
-        new Category('Cars', Cars, CARS),
-        new Category('Bus / Train', Bus, BUS_TRAIN),
-        new Category('Legal', Legal, LEGAL),
-        new Category('Banks', Banks, BANKS),
-        new Category('Playgrounds', Playgrounds, PLAYGROUNDS),
-        new Category('Emergency', Emergency, EMERGENCY),
+        // new Category('Insurance', Insurance, INSURANCE),
+        // new Category('Cars', Cars, CARS),
+        // new Category('Bus / Train', Bus, BUS_TRAIN),
+        // new Category('Legal', Legal, LEGAL),
+        // new Category('Banks', Banks, BANKS),
+        // new Category('Playgrounds', Playgrounds, PLAYGROUNDS),
+        // new Category('Emergency', Emergency, EMERGENCY),
     ];
 
     category: Category;
