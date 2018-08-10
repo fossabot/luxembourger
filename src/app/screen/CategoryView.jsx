@@ -5,8 +5,12 @@ import CategoryCard from "./component/CategoryCard";
 import CategoryItem from "../data/CategoryItem";
 import {navigationHelper} from "../helper/NavigationHelper";
 import {DUMMY} from "../data/Category";
+import Category from "../data/Category";
+import * as ReactDOM from "react-dom";
 
 class CategoryView extends React.Component {
+
+    category: Category = null;
 
     onArticleSelect(categoryItem: CategoryItem) {
         navigationHelper.categoryItem(this, categoryItem);
@@ -18,7 +22,18 @@ class CategoryView extends React.Component {
             this.props.match.params.categoryItemId);
     }
 
+    scrollTopIfNeeded() {
+        if(this.category !== categoryStore.category && ReactDOM.findDOMNode(this)) {
+            ReactDOM.findDOMNode(this).scrollTop = 0;
+        }
+
+        this.category = categoryStore.category;
+    }
+
     render() {
+
+        setTimeout(() => this.scrollTopIfNeeded(), 10);
+
         if (categoryStore.category.id === DUMMY) {
             return <div/>;
         }

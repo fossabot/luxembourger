@@ -3,6 +3,7 @@ import Paper from "@material-ui/core/Paper";
 import ReactMarkdown from 'react-markdown';
 import {observer} from "mobx-react/index";
 import {categoryStore} from "../store/CategoryStore";
+import * as ReactDOM from "react-dom";
 
 class CategoryItemView extends React.Component {
 
@@ -13,10 +14,18 @@ class CategoryItemView extends React.Component {
         }
     }
 
+    scrollTop() {
+        if(ReactDOM.findDOMNode(this)) {
+            ReactDOM.findDOMNode(this).scrollTop = 0;
+        }
+    }
+
     render() {
         if(!categoryStore.categoryItem) {
             return <div/>
         }
+
+        setTimeout(() => this.scrollTop(), 10);
 
         return <div className={'be_CategoryItemView'}>
             <Paper elevation={1} className={'be_CategoryItemView-paper'}>
