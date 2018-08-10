@@ -8,9 +8,11 @@ In Luxembourg you normally you pay for service, then you get money back.
 
 * [CNS Reimbursed Services](https://cns.public.lu/en/assure/vie-privee/sante-prevention.html)
 
-## Usual scenario to get reimbursed
+## Usual scenario 
 
-1. Call for appointment
+Here's what usually happens when you pay a visit to a doctor and here's how to get money back
+
+1. Call the doctor and schedule an appointment
 1. Prepare your ID (_passport, residence card, etc._) and [european healt card](http://ec.europa.eu/social/main.jsp?catId=559)
 1. Go to the doctor
 1. Get a invoice for the services
