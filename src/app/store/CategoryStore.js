@@ -59,6 +59,7 @@ class CategoryStore {
 
     setCurrentCategory(category) {
         this.category = category;
+        this.categoryItem = null;
     }
 
     setCurrentCategoryItem(categoryItem: CategoryItem) {

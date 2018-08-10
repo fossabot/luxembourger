@@ -3,26 +3,29 @@
 import React from "react";
 import CategoryItem from "../data/CategoryItem";
 import {categoryStore} from "../store/CategoryStore";
-import Category from "../data/Category";
+import Category, {dummyCategory} from "../data/Category";
 
 class NavigationHelper {
     //FIXME find a good way to handle navigation in REACT
+
+    gotoRoot(component: React.Component) {
+        categoryStore.setCurrentCategory(dummyCategory);
+        component.props.history.push('/');
+    }
 
     restoreFromUri(component: React.Component, categoryId: string = null, categoryItemId: string = null) {
 
         console.log('Restoring url, categoryId: ', categoryId, ', categoryItemId: ', categoryItemId);
 
         if(!categoryId) {
-            component.props.history.push('/');
+            this.gotoRoot(component);
             return;
         }
-
-        // categoryId = categoryId.split("/")[0];
 
         let category = categoryStore.findCategory(categoryId);
 
         if(!category) {
-            component.props.history.push('/');
+            this.gotoRoot(component);
             return;
         }
 

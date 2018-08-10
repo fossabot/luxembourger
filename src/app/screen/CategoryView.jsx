@@ -38,10 +38,12 @@ class CategoryView extends React.Component {
             return <div/>;
         }
 
+        let currentCategoryItemId = categoryStore.categoryItem ? categoryStore.categoryItem.id : "";
+
         let items = [];
         categoryStore.category.items.forEach(categoryItem => {
             items.push(<CategoryCard key={categoryItem.id}
-                                     selected={categoryStore.categoryItem.id === categoryItem.id}
+                                     selected={currentCategoryItemId === categoryItem.id}
                                      categoryItem={categoryItem}
                                      onSelect={(ci: CategoryItem) => this.onArticleSelect(ci)}
             />)
