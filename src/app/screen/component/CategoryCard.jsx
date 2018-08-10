@@ -19,7 +19,8 @@ export default class CategoryCard extends React.Component<Props> {
 
     render() {
         return (
-            <Card className={'be_margin-bottom-10px'} >
+            <Card className={'be_margin-bottom-30px hand-cursor'}
+                  onClick={(e) => this.props.onSelect ? this.props.onSelect(this.props.categoryItem) : ''}>
                 <CardHeader
                     title={this.props.categoryItem.title}
                     // subheader={this.props.categoryItem.date.toString()}
@@ -35,8 +36,7 @@ export default class CategoryCard extends React.Component<Props> {
                     </Typography>
                 </CardContent>
                 <CardActions disableActionSpacing>
-                    <Button variant="outlined" color={"primary"}
-                    onClick={(e) => this.props.onSelect ? this.props.onSelect(this.props.categoryItem) : ''}>
+                    <Button variant="outlined" color={"primary"} >
                         Learn more
                     </Button>
                 </CardActions>

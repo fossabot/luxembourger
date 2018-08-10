@@ -9,6 +9,10 @@ body {
     background: #B6DFF5;
 }
 
+.hand-cursor {
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 600px) {
 
     body {
@@ -68,7 +72,7 @@ body {
 
 /******************************************/
 
-.be_margin-bottom-10px {
+.be_margin-bottom-30px {
     margin-bottom: 30px;
 }
 
