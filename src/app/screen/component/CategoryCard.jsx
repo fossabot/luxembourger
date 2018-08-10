@@ -12,17 +12,21 @@ import CategoryItem from "../../data/CategoryItem";
 
 type Props = {
     categoryItem: CategoryItem,
+    selected: boolean,
     onSelect: (c: CategoryItem) => {}
 }
 
 export default class CategoryCard extends React.Component<Props> {
 
     render() {
+        let icon = this.props.selected ? "👍 " : "";
+
         return (
             <Card className={'be_margin-bottom-30px hand-cursor'}
                   onClick={(e) => this.props.onSelect ? this.props.onSelect(this.props.categoryItem) : ''}>
+
                 <CardHeader
-                    title={this.props.categoryItem.title}
+                    title={icon + this.props.categoryItem.title}
                     // subheader={this.props.categoryItem.date.toString()}
                 />
                 <CardMedia
