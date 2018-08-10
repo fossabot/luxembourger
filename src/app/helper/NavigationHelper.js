@@ -17,6 +17,8 @@ class NavigationHelper {
             return;
         }
 
+        // categoryId = categoryId.split("/")[0];
+
         let category = categoryStore.findCategory(categoryId);
 
         if(!category) {

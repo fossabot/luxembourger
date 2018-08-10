@@ -12,16 +12,12 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Route exact path='/' component={RouterHandler}/>
-                <Route exact path='/:categoryId' component={RouterHandler}/>
-                <Route exact path='/:categoryId/:categoryItemId' component={RouterHandler}/>
+                <Route exact path='/:categoryId?/:categoryItemId?' component={RouterHandler}/>
 
-                <Route exact path='/*' component={Logo} />
-                <Route exact path='/*' component={CategoriesMenu}/>
+                <Route component={Logo} />
+                <Route component={CategoriesMenu}/>
 
-                <Route exact path='/:categoryId' component={CategoryView}/>
-
-                <Route exact path='/:categoryId/:categoryItemId' component={CategoryView} />
+                <Route exact path='/:categoryId/:categoryItemId?' component={CategoryView} />
                 <Route exact path='/:categoryId/:categoryItemId' component={CategoryItemView} />
             </div>
         );

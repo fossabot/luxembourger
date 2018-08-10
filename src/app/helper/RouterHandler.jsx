@@ -12,8 +12,6 @@ export default class RouterHandler extends React.Component {
         this.unlisten = this.props.history.listen((location) => {
             // location is an object like window.location
 
-            console.log(location.pathname);
-
             if(location.pathname === '' || location.pathname === '/') {
                 return;
             }
