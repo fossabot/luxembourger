@@ -1,4 +1,8 @@
 @media only screen and (max-width: 600px) {
+    .be_plane {
+        background: none!important;
+    }
+
     .be_theme-image-left-right {
         background: none!important;
     }
@@ -28,6 +32,26 @@
     }
 
     .be_theme-cloud-small {
+        background: none!important;
+    }
+
+    .be_univers {
+        background: none!important;
+    }
+
+    .be_star-small {
+        background: none!important;
+    }
+
+    .be_star-small-top-corner {
+        background: none!important;
+    }
+
+    .be_star-small-bottom-corner {
+        background: none!important;
+    }
+
+    .be_star-big {
         background: none!important;
     }
 }

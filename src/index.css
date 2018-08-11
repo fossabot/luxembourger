@@ -1,5 +1,5 @@
 :root {
-    --margin-top-large-screen: 120px;
+    --margin-top-large-screen: 210px;
 }
 
 body {
@@ -78,12 +78,13 @@ body {
 
 .be_Logo {
     position: fixed;
-    margin-left: 70px;
-    margin-top: 10px;
+    margin-left: 0;
+    margin-top: 0;
 }
 
 .be_Logo img {
-    width: 100px;
+    width: 210px;
+    height: 210px;
 }
 
 /******************************************/
