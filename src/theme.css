@@ -172,6 +172,58 @@
     background: url("/images/assets/univers.png") repeat-x;
 }
 
+.be_star-small {
+    position: fixed;
+
+    top: 100px;
+    right: 100px;
+
+    width: 8px;
+    height: 8px;
+
+    background: url("/images/assets/star-small.png") no-repeat center;
+    animation: motion-star-small 11s infinite ease-out;
+}
+
+.be_star-small-top-corner {
+    position: fixed;
+
+    top: 20px;
+    right: 200px;
+
+    width: 8px;
+    height: 8px;
+
+    background: url("/images/assets/star-small.png") no-repeat center;
+    animation: motion-star-small 15s infinite ease-in-out;
+}
+
+.be_star-small-bottom-corner {
+    position: fixed;
+
+    top: 165px;
+    right: 28px;
+
+    width: 8px;
+    height: 8px;
+
+    background: url("/images/assets/star-small.png") no-repeat center;
+    animation: motion-star-small 8s infinite ease-in;
+}
+
+.be_star-big {
+    position: fixed;
+
+    top: 50px;
+    right: 105px;
+
+    width: 8px;
+    height: 8px;
+
+    background: url("/images/assets/star-big.png") no-repeat center;
+    animation: motion-star-small 20s infinite ease;
+}
+
 @keyframes motion-cloud-small {
     0% {
         left: 66%;
@@ -260,5 +312,21 @@
     100% {
         top: 100px;
         right: -100px;
+    }
+}
+
+
+@keyframes motion-star-small {
+    0% {
+        background-size: 100%;
+        opacity: 0.05;
+    }
+    50% {
+        background-size: 130%;
+        opacity: 1;
+    }
+    100% {
+        background-size: 100%;
+        opacity: 0.05;
     }
 }
