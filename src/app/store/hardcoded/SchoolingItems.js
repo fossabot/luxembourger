@@ -5,7 +5,7 @@ let i = 0;
 
 export const schoolingItems: CategoryItem[] = [
     new CategoryItem('How schools work', '', new Date(),
-        '/images/schooling/how-it-works.jpg',
+        '/images/schooling/how-it-works.png',
         'How schooling system works in Luxembourg. Where to register kids. What are the opening hours. What are the costs.',
         'How schools work',
         ++i, '/wiki/schooling/how-schooling-works.md'),
