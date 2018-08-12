@@ -4,6 +4,12 @@ import CategoryItem from "../../data/CategoryItem";
 let i = 0;
 
 export const housingItems: CategoryItem[] = [
+    new CategoryItem('Test new content', '', new Date(),
+        '',
+        'Here the websites you can use to find housing for rent and buy. There are multiple resources, still most have same offers.',
+        'Find housing online',
+        ++i, '/wiki/text.txt'),
+
     new CategoryItem('Find housing online', '', new Date(),
         '/images/housing/find-housing-online.png',
         'Here the websites you can use to find housing for rent and buy. There are multiple resources, still most have same offers.',

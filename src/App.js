@@ -6,6 +6,7 @@ import CategoryItemView from "./app/screen/CategoryItemView";
 import Logo from "./app/screen/component/Logo";
 import {Route} from "react-router-dom";
 import RouterHandler from "./app/helper/RouterHandler";
+import CategoryItemView2 from "./app/screen/CategoryItemView2";
 
 class App extends React.Component {
 
@@ -18,7 +19,7 @@ class App extends React.Component {
                 <Route component={CategoriesMenu}/>
 
                 <Route exact path='/:categoryId/:categoryItemId?' component={CategoryView} />
-                <Route exact path='/:categoryId/:categoryItemId' component={CategoryItemView} />
+                <Route exact path='/:categoryId/:categoryItemId' component={CategoryItemView2} />
             </div>
         );
     }

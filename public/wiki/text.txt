@@ -1,5 +1,5 @@
 video, http://ceva.com/video.mp4
-images, https://img.com/1.jpg, https://img.com/1.jpg, https://img.com/1.jpg, https://img.com/1.jpg, https://img.com/1.jpg
+images, /images/housing/find-housing-online.png, /images/housing/rent-house-best-preactices.png, /images/housing/move-in-checklist.png
 
 text, Text 1
 
