@@ -78,13 +78,13 @@ body {
 
 .be_Logo {
     position: fixed;
-    margin-left: 0;
-    margin-top: 0;
+    margin-left: 15px;
+    margin-top: 15px;
 }
 
 .be_Logo img {
-    width: 210px;
-    height: 210px;
+    width: 195px;
+    height: 174px;
 }
 
 /******************************************/
