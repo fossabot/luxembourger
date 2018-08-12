@@ -158,6 +158,8 @@ body {
     font-stretch: semi-condensed;
     letter-spacing: 0.3px;
     font-size: medium;
+
+    background-color: #FAFAFA!important;
 }
 
 .be_CategoryItemView-paper {

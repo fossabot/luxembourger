@@ -6,6 +6,9 @@ import {categoryStore} from "../store/CategoryStore";
 import * as ReactDOM from "react-dom";
 import {textHelper} from "../helper/TextHelper";
 import Line from "../data/Line";
+import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
+import Avatar from "@material-ui/core/Avatar";
 
 class CategoryItemView2 extends React.Component {
 
@@ -37,24 +40,45 @@ class CategoryItemView2 extends React.Component {
             let child;
 
             switch (line.type) {
-                case 'video':
-                    child = <div>{line.content}</div>;
+                case 'youtube':
+                    child = <iframe width="670" height="350" src={line.content} frameBorder="0"
+                                allow="autoplay; encrypted-media" allowFullScreen></iframe>;
                     break;
                 case 'images':
-                    child = <div>{line.content}</div>;
+                    let imgs = [];
+                    line.content.split(",").forEach(url => {
+                        imgs.push(<img style={{width: '100%'}} src={url} title={url}></img>);
+                    });
+
+                    child = <div>{imgs}</div>;
                     break;
                 case 'card':
                     if(line.icon) {
-                        child = <div>{line.icon}, {line.content}</div>;
+                        child = <Card>
+                            <CardHeader
+                                avatar={
+                                    <Avatar aria-label={line.icon}>
+                                        {line.icon.substr(0, 1).toUpperCase()}
+                                    </Avatar>
+                                }
+                                title={line.content}
+                                subheader='---'
+                            />
+                        </Card>;
                     } else {
-                        child = <div>{line.content}</div>;
+                        child = <Card>
+                            <CardHeader
+                                title={line.content}
+                                subheader='---'
+                            />
+                        </Card>;
                     }
                     break;
                 case 'text':
-                    child = <div>{line.content}</div>;
+                    child = <div style={{color: '#5f6368'}}>{line.content}</div>;
                     break;
                 default:
-                    child = <span>..</span>;
+                    child = <br/>;
             }
 
             children.push(child)

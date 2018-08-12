@@ -1,4 +1,4 @@
-video, http://ceva.com/video.mp4
+youtube, https://www.youtube.com/embed/7Qjb_-PlyPM
 images, /images/housing/find-housing-online.png, /images/housing/rent-house-best-preactices.png, /images/housing/move-in-checklist.png
 
 text, Text 1
