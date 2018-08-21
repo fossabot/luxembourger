@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import {observer} from "mobx-react/index";
 import {categoryStore} from "../store/CategoryStore";
 import * as ReactDOM from "react-dom";
+import BasicMarkup from "./component/BasicMarkup";
 
 class CategoryItemView extends React.Component {
 
@@ -27,9 +28,17 @@ class CategoryItemView extends React.Component {
 
         setTimeout(() => this.scrollTop(), 10);
 
+        let markupView;
+
+        if(categoryStore.categoryItem.markdownUrl.toLowerCase().endsWith(".md")) {
+            markupView = <ReactMarkdown source={categoryStore.currentArticle} />
+        } else {
+            markupView = <BasicMarkup source={categoryStore.currentArticle} />
+        }
+
         return <div className={'be_CategoryItemView'}>
             <Paper elevation={1} className={'be_CategoryItemView-paper'}>
-                <ReactMarkdown source={categoryStore.currentArticle} />
+                {markupView}
             </Paper>
         </div>;
     }

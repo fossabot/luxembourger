@@ -21,6 +21,16 @@ export default class CategoryCard extends React.Component<Props> {
     render() {
         let icon = this.props.selected ? "👍 " : "";
 
+        let image = "";
+
+        if(this.props.categoryItem.image) {
+            image = <CardMedia
+                className={"be_CategoryView-image"}
+                image={this.props.categoryItem.image}
+                title={this.props.categoryItem.imageTitle}
+            />
+        }
+
         return (
             <Card className={'be_margin-bottom-30px hand-cursor'}
                   onClick={(e) => this.props.onSelect ? this.props.onSelect(this.props.categoryItem) : ''}>
@@ -29,11 +39,9 @@ export default class CategoryCard extends React.Component<Props> {
                     title={icon + this.props.categoryItem.title}
                     // subheader={this.props.categoryItem.date.toString()}
                 />
-                <CardMedia
-                    className={"be_CategoryView-image"}
-                    image={this.props.categoryItem.image}
-                    title={this.props.categoryItem.imageTitle}
-                />
+
+                {image}
+
                 <CardContent>
                     <Typography component="p">
                         {this.props.categoryItem.description}

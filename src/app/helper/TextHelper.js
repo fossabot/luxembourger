@@ -1,13 +1,14 @@
 // @flow
 
 import * as React from "react";
-import Line from "../data/Line";
+import BMComponent from "../bm/BMComponent";
+import {BMObjectFactory} from "../bm/BMObjectFactory";
 
 class TextHelper {
 
-    textToLines(text: string): React.Component[] {
-        let result: Line[] = [];
-        text.split("\n").forEach(value => result.push(new Line(value)));
+    textToBMComponents(text: string): React.Component[] {
+        let result: BMComponent[] = [];
+        text.split("\n-\n\n").forEach(value => result.push(BMObjectFactory.of(value)));
 
         return result;
     }

@@ -12,6 +12,7 @@ export const LEGAL = 'legal';
 export const BANKS = 'banks';
 export const PLAYGROUNDS = 'playgrounds';
 export const EMERGENCY = 'emergency';
+export const EXPERIMENTAL = 'experimental';
 
 export default class Category {
 
