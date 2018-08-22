@@ -1,22 +1,34 @@
-import BMYoutube from "./BMYoutube";
-import BMComponent from "./BMComponent";
-import BMImage from "./BMImage";
-import BMCard from "./BMCard";
+import BMYoutube from "./objects/BMYoutube";
+import BMComponent from "./objects/BMComponent";
+import BMImage from "./objects/BMImage";
+import BMCard from "./objects/BMCard";
+import * as React from "react";
+import BMLink from "./objects/BMLink";
 
-export class BMObjectFactory {
+class BMObjectFactory {
 
-    static components: {k: string, v: Class} = {
+    textToBMComponents(text: string): React.Component[] {
+        let result: BMComponent[] = [];
+        text.split("\n-\n\n").forEach(value => result.push(this.of(value)));
+
+        return result;
+    }
+
+    components: {k: string, v: Class} = {
         "youtube": BMYoutube,
         "image": BMImage,
-        "text": BMComponent,
         "card": BMCard,
+        "text": BMComponent,
+        "title-big": BMComponent,
+        "title-small": BMComponent,
+        "link": BMLink,
     };
 
-    static of(textDescription: string): BMComponent {
+    of(textDescription: string): BMComponent {
         let newLinePos = textDescription.indexOf("\n");
         let type = textDescription.substr(0, newLinePos);
 
-        let component = BMObjectFactory.components[type];
+        let component = this.components[type];
 
         if(component) {
             return new component(textDescription);
@@ -25,3 +37,5 @@ export class BMObjectFactory {
         return new BMComponent(textDescription);
     }
 }
+
+export const bmObjectFactory: BMObjectFactory = new BMObjectFactory();

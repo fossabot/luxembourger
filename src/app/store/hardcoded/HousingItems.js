@@ -8,7 +8,7 @@ export const housingItems: CategoryItem[] = [
         '/images/housing/find-housing-online.png',
         'Here the websites you can use to find housing for rent and buy. There are multiple resources, still most have same offers.',
         'Find housing online',
-        ++i, '/wiki/housing/find-housing-online.md'),
+        ++i, '/wiki/housing/find-housing-online.bm'),
 
     new CategoryItem('Renting best practices', '', new Date(),
         '/images/housing/rent-house-best-preactices.png',
