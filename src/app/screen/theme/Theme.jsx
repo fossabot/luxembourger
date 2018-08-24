@@ -2,6 +2,8 @@
 
 import * as React from "react";
 import './Theme.css';
+import './Theme-animations.css';
+import './Theme-mobile.css';
 
 export default class Theme extends React.Component {
 
