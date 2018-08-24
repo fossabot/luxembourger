@@ -10,21 +10,22 @@ export default class Theme extends React.Component {
     render() {
         return (
             <div>
-                <div className="be_plane"/>
 
                 <div className="be_theme-image-left-right"/>
                 <div className="be_theme-image-center"/>
 
-                <div className="be_theme-sun"/>
+                <a className="be_theme-balloon"  target='_blank' href='http://balloon.lu/' title='Click to open Aerostatique Association website'/>
 
-                <div className="be_theme-balloon"/>
+                <a className="be_theme-sun" target='_blank' href='https://www.meteolux.lu/' title='Click to open MeteoLux website'/>
 
-                <div className="be_theme-cloud-big"/>
-                <div className="be_theme-cloud-big-2"/>
-                <div className="be_theme-cloud-medium"/>
-                <div className="be_theme-cloud-small"/>
+                <a className="be_theme-cloud-big" target='_blank' href='https://www.meteolux.lu/' title='Click to open MeteoLux website'/>
+                <a className="be_theme-cloud-big-2" target='_blank' href='https://www.meteolux.lu/' title='Click to open MeteoLux website'/>
+                <a className="be_theme-cloud-medium" target='_blank' href='https://www.meteolux.lu/' title='Click to open MeteoLux website'/>
+                <a className="be_theme-cloud-small" target='_blank' href='https://www.meteolux.lu/' title='Click to open MeteoLux website'/>
 
-                <div className="be_univers"/>
+                <a className="be_plane" target='_blank' href='https://www.luxair.lu/fr' title='Click to open LuxAir website'/>
+
+                <a className="be_univers" target='_blank' href='https://spaceresources.public.lu/en.html' title='Click to open Space Resources website'/>
 
                 <div className="be_star-small"/>
                 <div className="be_star-small-top-corner"/>
