@@ -16,8 +16,12 @@ class CategoryItemView extends React.Component {
     }
 
     scrollTop() {
-        if(ReactDOM.findDOMNode(this)) {
-            ReactDOM.findDOMNode(this).scrollTop = 0;
+        try {
+            if(ReactDOM.findDOMNode(this)) {
+                ReactDOM.findDOMNode(this).scrollTop = 0;
+            }
+        } catch (e) {
+        //    ignore error
         }
     }
 
