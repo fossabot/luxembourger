@@ -10,12 +10,12 @@ export const schoolingItems: CategoryItem[] = [
         'How schools work',
         ++i, '/wiki/schooling/how-schooling-works.md'),
 
-    // new CategoryItem('Foyer Scholaire (after school)', '', new Date(),
-    //     '/images/schooling/foyer-scholaire.jpg',
-    //     'What is Foyer Scholaire. How to get the contract. How to pay less. Ho to find a place.',
-    //     'Foyer Scholaire (after school)',
-    //     ++i, '/wiki/schooling/test.md'),
-    //
+    new CategoryItem('Foyer Scolaire', '', new Date(),
+        '/images/schooling/foyer-scholaire.jpg',
+        'What is Foyer Scolaire. How to get the contract. How to pricing works. Ho to find a place.',
+        'Foyer Scholaire (after school)',
+        ++i, '/wiki/schooling/foyer-scolaire.bm'),
+
     // new CategoryItem('What languages are taught', '', new Date(),
     //     '/images/schooling/school-languages.jpg',
     //     "Depending on the age of tuition your kids will learn in multiple languages. Here's how it works and why this is amazing.",
