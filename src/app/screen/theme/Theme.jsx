@@ -14,7 +14,7 @@ export default class Theme extends React.Component {
                 <div className="be_theme-image-left-right"/>
                 <div className="be_theme-image-center"/>
 
-                <a className="be_theme-balloon"  target='_blank' href='http://balloon.lu/' title='Click to open Aerostatique Association website'/>
+                <a className="be_theme-balloon"  target='_blank' href='http://www.balloon.lu/' title='Click to open Aerostatique Association website'/>
 
                 <a className="be_theme-sun" target='_blank' href='https://www.meteolux.lu/' title='Click to open MeteoLux website'/>
 
