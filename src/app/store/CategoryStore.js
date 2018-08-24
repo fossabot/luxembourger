@@ -6,7 +6,9 @@ import Category, {
     CARS,
     DOCTORS,
     dummyCategory,
-    EMERGENCY, EXPERIMENTAL,
+    EMERGENCY,
+    EXPERIMENTAL,
+    SOURCE_CODE,
     HOUSING,
     INSURANCE,
     LEGAL,
@@ -24,6 +26,7 @@ import Legal from '@material-ui/icons/AccountBalance';
 import Playgrounds from '@material-ui/icons/ChildFriendly';
 import Emergency from '@material-ui/icons/LocalHospital';
 import Star from '@material-ui/icons/Star';
+import Code from '@material-ui/icons/Code';
 import {extendObservable} from "mobx";
 import CategoryItem from "../data/CategoryItem";
 import {housingItems} from "./hardcoded/HousingItems";
@@ -45,7 +48,8 @@ class CategoryStore {
         // new Category('Banks', Banks, BANKS),
         // new Category('Playgrounds', Playgrounds, PLAYGROUNDS),
         // new Category('Emergency', Emergency, EMERGENCY),
-        new Category('Experimental', Star, EXPERIMENTAL, experimentalItems),
+        // new Category('Experimental', Star, EXPERIMENTAL, experimentalItems),
+        new Category('Source Code', Code, SOURCE_CODE),
     ];
 
     category: Category;

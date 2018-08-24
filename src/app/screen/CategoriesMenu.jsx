@@ -7,8 +7,9 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import {categoryStore} from "../store/CategoryStore";
 import {observer} from "mobx-react";
-import Category from "../data/Category";
+import Category, {SOURCE_CODE} from "../data/Category";
 import {navigationHelper} from "../helper/NavigationHelper";
+import Divider from '@material-ui/core/Divider';
 
 class CategoriesMenu extends React.Component {
 
@@ -21,6 +22,11 @@ class CategoriesMenu extends React.Component {
     }
 
     onCategory(category: Category) {
+        if(category.id === SOURCE_CODE) {
+            window.open("https://bitbucket.org/rodislav/becoming", "_blank");
+            return;
+        }
+
         navigationHelper.category(this, category);
     }
 
@@ -31,13 +37,17 @@ class CategoriesMenu extends React.Component {
             let markIfSelected = categoryStore.category.id === category.id ?
                 'be_Category-selected' : '';
 
+            if(category.id === SOURCE_CODE) {
+                listItems.push(<Divider />)
+            }
+
             listItems.push(<ListItem button key={category.id} className={markIfSelected}
                                      onClick={() => this.onCategory(category)}>
                 <ListItemIcon>
                     {category.icon}
                 </ListItemIcon>
                 <ListItemText primary={category.name}/>
-            </ListItem>)
+            </ListItem>);
         });
 
         return <div className={'be_Categories'}>

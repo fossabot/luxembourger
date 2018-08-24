@@ -13,6 +13,7 @@ export const BANKS = 'banks';
 export const PLAYGROUNDS = 'playgrounds';
 export const EMERGENCY = 'emergency';
 export const EXPERIMENTAL = 'experimental';
+export const SOURCE_CODE = 'source_code';
 
 export default class Category {
 
