@@ -14,8 +14,12 @@ export default class BasicMarkup extends React.Component {
     }
 
     scrollTop() {
-        if(ReactDOM.findDOMNode(this)) {
-            ReactDOM.findDOMNode(this).scrollTop = 0;
+        try {
+            if(ReactDOM.findDOMNode(this)) {
+                ReactDOM.findDOMNode(this).scrollTop = 0;
+            }
+        } catch (e) {
+        //    ignore this error
         }
     }
 

@@ -13,63 +13,6 @@ body {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 600px) {
-
-    body {
-        background: white!important;
-    }
-
-    .be_Categories {
-        width: 100%!important;
-        border: none!important;
-
-        height: calc(100% - 100px) !important;
-        max-height: none!important;
-
-        box-shadow: none!important;
-        border-radius: 0!important;
-
-        z-index: 1;
-    }
-
-    .be_CategoryView {
-        margin: 0!important;
-
-        width: calc(100% - 10px)!important;
-        border: none!important;
-
-        height: 100%!important;
-        max-height: none!important;
-
-        padding: 5px 5px 0 5px!important;
-
-        background: #F2F2F2!important;
-
-        z-index: 2;
-    }
-
-    .be_CategoryItemView * {
-        border: none!important;
-        box-shadow: none!important;
-    }
-
-    .be_CategoryItemView {
-        margin: 0!important;
-
-        width: 100%!important;
-        height: 100%!important;
-        max-height: none!important;
-
-        z-index: 3;
-
-        background-color: white;
-    }
-
-    .be_CategoryItemView-paper {
-        padding: 5px!important;
-    }
-}
-
 /******************************************/
 
 .be_margin-bottom-30px {
