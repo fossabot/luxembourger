@@ -83,12 +83,15 @@ export class BMComponentFactory {
     }
 
     link(bmComponent: BMLink) {
-        return <div>
-                <a key={"bm-" + bmComponent.type + "-" + (this.i++)}
-                   href={bmComponent.url} title={bmComponent.title}
-                   target={"_blank"}>{bmComponent.title}
-                   </a>
-            </div>
+        return <a key={"bm-" + bmComponent.type + "-" + (this.i++)}
+                  className={"bm_link"}
+                  href={bmComponent.url}
+                  title={bmComponent.title}
+                  target={"_blank"}>
+            <img src={bmComponent.imageUrl} />
+
+            <span>{bmComponent.title}</span>
+        </a>
     }
 
     card(bmComponent: BMCard) {
