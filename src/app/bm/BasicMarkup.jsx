@@ -1,8 +1,8 @@
 import React from "react";
 import * as ReactDOM from "react-dom";
-import BMComponent from "../../bm/objects/BMComponent";
-import {bmComponentFactory} from "../../bm/BMComponentFactory";
-import {bmObjectFactory} from "../../bm/BMObjectFactory";
+import BMComponent from "./objects/BMComponent";
+import {bmComponentFactory} from "./BMComponentFactory";
+import {bmObjectFactory} from "./BMObjectFactory";
 
 export default class BasicMarkup extends React.Component {
 

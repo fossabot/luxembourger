@@ -4,6 +4,7 @@ import BMImage from "./objects/BMImage";
 import BMCard from "./objects/BMCard";
 import * as React from "react";
 import BMLink from "./objects/BMLink";
+import BMList from "./objects/BMList";
 
 class BMObjectFactory {
 
@@ -22,6 +23,7 @@ class BMObjectFactory {
         "title-big": BMComponent,
         "title-small": BMComponent,
         "link": BMLink,
+        "list": BMList,
     };
 
     of(textDescription: string): BMComponent {

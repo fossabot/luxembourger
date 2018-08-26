@@ -46,12 +46,12 @@
         max-height: none!important;
 
         z-index: 3;
-
+        border-radius: unset!important;
         background-color: white;
     }
 
     .be_CategoryItemView-paper {
-        padding: 5px!important;
+        padding: 10px 25px 15px 25px!important;
     }
 }
 

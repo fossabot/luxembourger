@@ -9,6 +9,7 @@ import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import Avatar from "@material-ui/core/Avatar";
 import BMLink from "./objects/BMLink";
+import BMList from "./objects/BMList";
 
 export class BMComponentFactory {
 
@@ -40,6 +41,9 @@ export class BMComponentFactory {
             case 'card':
                 htmlComponent = bmComponentFactory.card(bmComponent);
                 break;
+            case 'list':
+                htmlComponent = bmComponentFactory.list(bmComponent);
+                break;
             default:
                 htmlComponent = <br/>;
         }
@@ -61,19 +65,21 @@ export class BMComponentFactory {
     }
 
     text(bmComponent: BMComponent) {
-        return <div key={"bm-" + bmComponent.type + "-" + (this.i++)}
-                    style={{color: '#5f6368'}}>{bmComponent.content}</div>
+        return <div key={"bm-" + bmComponent.type + "-" + (this.i++)} className={"bm_text"}>
+            {bmComponent.content}
+            </div>
     }
 
     titleBig(bmComponent: BMComponent) {
-        return <h1 key={"bm-" + bmComponent.type + "-" + (this.i++)}>
+        return <div key={"bm-" + bmComponent.type + "-" + (this.i++)} className={"bm_titleBig"}>
             {bmComponent.content}
-            </h1>
+            </div>
     }
 
     titleSmall(bmComponent: BMComponent) {
-        return <h3 key={"bm-" + bmComponent.type + "-" + (this.i++)}
-                   style={{color: '#5f6368'}}>{bmComponent.content}</h3>
+        return <div key={"bm-" + bmComponent.type + "-" + (this.i++)} className={"bm_titleSmall"}>
+            {bmComponent.content}
+            </div>
     }
 
     link(bmComponent: BMLink) {
@@ -107,6 +113,30 @@ export class BMComponentFactory {
                 subheader={bmComponent.subTitle}
             />
         </Card>;
+    }
+
+    list(bmComponent: BMList) {
+        let colorIndex: number = 0;
+        let colors: string[] = ["red", "blue", "green", "yellow"];
+
+        let lis = [];
+
+        bmComponent.items.forEach(value => {
+            let subItems = [];
+            value.items.forEach(subItem => {
+                subItems.push(<div className={"list-subItem"}>{subItem}</div>)
+            });
+
+            lis.push(<li><span className={"dot " + colors[colorIndex++]} />{value.text}{subItems}</li>)
+
+            if(colorIndex >= colors.length) {
+                colorIndex = 0
+            }
+        });
+
+        return <ul className={"bm_list"}>
+            {lis}
+        </ul>;
     }
 }
 
