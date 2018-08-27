@@ -139,6 +139,8 @@ body {
     font-weight: normal;
     font-size: 16px;
     color: #3F3F3F;
+
+    margin-bottom: 10px;
 }
 
 .bm_list {
@@ -150,17 +152,19 @@ body {
     color: #3F3F3F;
 }
 
-.bm_list li div {
-    font-style: italic;
-    margin-top: 3px;
-}
-
 .bm_list li {
     margin-bottom: 9px;
 }
 
+.bm_list .list-subItem:first-child{
+    margin-top: 5px;
+}
+
 .bm_list .list-subItem{
     margin-left: 25px;
+    color: #757575;
+    font-style: italic;
+    margin-top: 5px;
 }
 
 .bm_list li div:last-child {

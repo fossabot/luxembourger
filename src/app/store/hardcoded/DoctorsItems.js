@@ -14,17 +14,17 @@ export const doctorsItems: CategoryItem[] = [
         '/images/doctors/find-doctor.png',
         "Here's how you find doctors, hospitals. See what platforms exists and use them right away.",
         'Find doctor now',
-        ++i, '/wiki/doctors/find-a-doctor-now.md'),
+        ++i, '/wiki/doctors/find-a-doctor-now.bm'),
 
     new CategoryItem('How healthcare works', '', new Date(),
         '/images/doctors/how-it-works.png',
         "Who are the actors in medical system. How reimbursement works. How to make appointment.",
         'How medicine works',
-        ++i, '/wiki/doctors/how-healthcare-works.md'),
+        ++i, '/wiki/doctors/how-healthcare-works.bm'),
 
     new CategoryItem('How to get money back', '', new Date(),
         '/images/doctors/get-money-back.png',
         "See how you can get reimbursed. Who are the institutions that can do that. What you should do upfront.",
         'Move in checklist',
-        ++i, '/wiki/doctors/how-to-get-money-back.md'),
+        ++i, '/wiki/doctors/how-to-get-money-back.bm'),
 ];

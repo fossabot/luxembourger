@@ -14,11 +14,11 @@ export const housingItems: CategoryItem[] = [
         '/images/housing/rent-house-best-preactices.png',
         "When you are looking for a place to live, there are couple of things you should consider. Here's our list.",
         'Renting best practices',
-        ++i, '/wiki/housing/renting-best-practices.md'),
+        ++i, '/wiki/housing/renting-best-practices.bm'),
 
     new CategoryItem('Move-in checklist', '', new Date(),
         '/images/housing/move-in-checklist.png',
         "Once you move in there are few things to consider, like subscriptions, insurance and so on.",
         'Move in checklist',
-        ++i, '/wiki/housing/move-in-checklist.md'),
+        ++i, '/wiki/housing/move-in-checklist.bm'),
 ];
