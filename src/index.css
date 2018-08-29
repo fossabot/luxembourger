@@ -201,8 +201,7 @@ body {
 }
 
 .bm_link {
-    display: block;
-    vertical-align: middle;
+    display: flex;
     color: #0D72B9;
 }
 
@@ -211,5 +210,5 @@ body {
 }
 
 .bm_link span {
-    display: ruby-text-container;
+    align-self: center;
 }
