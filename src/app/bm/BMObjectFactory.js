@@ -6,6 +6,7 @@ import * as React from "react";
 import BMLink from "./objects/BMLink";
 import BMList from "./objects/BMList";
 import BMShortNumber from "./objects/BMShortNumber";
+import BMInfo from "./objects/BMInfo";
 
 class BMObjectFactory {
 
@@ -26,6 +27,7 @@ class BMObjectFactory {
         "link": BMLink,
         "list": BMList,
         "short-number": BMShortNumber,
+        "info": BMInfo,
     };
 
     of(textDescription: string): BMComponent {

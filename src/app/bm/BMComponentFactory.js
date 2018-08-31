@@ -11,6 +11,7 @@ import Avatar from "@material-ui/core/Avatar";
 import BMLink from "./objects/BMLink";
 import BMList from "./objects/BMList";
 import BMShortNumber from "./objects/BMShortNumber";
+import BMInfo from "./objects/BMInfo";
 
 export class BMComponentFactory {
 
@@ -28,6 +29,7 @@ export class BMComponentFactory {
             case 'short-number': return this.shortNumber(bmComponent);
             case 'card': return this.card(bmComponent);
             case 'list': return this.list(bmComponent);
+            case 'info': return this.info(bmComponent);
             default: this.text(bmComponent);
         }
     }
@@ -129,6 +131,26 @@ export class BMComponentFactory {
         });
 
         return <ul className={"bm_list"}>
+            {lis}
+        </ul>;
+    }
+
+    info(bmComponent: BMInfo) {
+        let colorIndex: number = 0;
+        let colors: string[] = ["red", "blue", "green", "yellow"];
+
+        let lis = [];
+
+        bmComponent.items.forEach(value => {
+
+            lis.push(<li><span className={"i-con " + colors[colorIndex++]} />{value}</li>);
+
+            if(colorIndex >= colors.length) {
+                colorIndex = 0
+            }
+        });
+
+        return <ul className={"bm_info"}>
             {lis}
         </ul>;
     }
