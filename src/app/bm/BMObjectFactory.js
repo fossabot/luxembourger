@@ -5,6 +5,7 @@ import BMCard from "./objects/BMCard";
 import * as React from "react";
 import BMLink from "./objects/BMLink";
 import BMList from "./objects/BMList";
+import BMShortNumber from "./objects/BMShortNumber";
 
 class BMObjectFactory {
 
@@ -24,6 +25,7 @@ class BMObjectFactory {
         "title-small": BMComponent,
         "link": BMLink,
         "list": BMList,
+        "short-number": BMShortNumber,
     };
 
     of(textDescription: string): BMComponent {
@@ -36,7 +38,9 @@ class BMObjectFactory {
             return new component(textDescription);
         }
 
-        return new BMComponent(textDescription);
+        let bmComponent = new BMComponent(textDescription);
+        bmComponent.type = "text";
+        return bmComponent;
     }
 }
 

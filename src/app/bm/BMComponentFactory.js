@@ -10,6 +10,7 @@ import CardHeader from "@material-ui/core/CardHeader";
 import Avatar from "@material-ui/core/Avatar";
 import BMLink from "./objects/BMLink";
 import BMList from "./objects/BMList";
+import BMShortNumber from "./objects/BMShortNumber";
 
 export class BMComponentFactory {
 
@@ -17,38 +18,18 @@ export class BMComponentFactory {
 
     create(bmComponent: BMComponent) {
 
-        let htmlComponent;
-
         switch (bmComponent.type) {
-            case 'youtube':
-                htmlComponent = bmComponentFactory.youtube(bmComponent);
-                break;
-            case 'image':
-                htmlComponent = bmComponentFactory.image(bmComponent);
-                break;
-            case 'text':
-                htmlComponent = bmComponentFactory.text(bmComponent);
-                break;
-            case 'title-big':
-                htmlComponent = bmComponentFactory.titleBig(bmComponent);
-                break;
-            case 'title-small':
-                htmlComponent = bmComponentFactory.titleSmall(bmComponent);
-                break;
-            case 'link':
-                htmlComponent = bmComponentFactory.link(bmComponent);
-                break;
-            case 'card':
-                htmlComponent = bmComponentFactory.card(bmComponent);
-                break;
-            case 'list':
-                htmlComponent = bmComponentFactory.list(bmComponent);
-                break;
-            default:
-                htmlComponent = <br/>;
+            case 'youtube': return this.youtube(bmComponent);
+            case 'image': return this.image(bmComponent);
+            case 'text': return this.text(bmComponent);
+            case 'title-big':return this.titleBig(bmComponent);
+            case 'title-small': return this.titleSmall(bmComponent);
+            case 'link': return this.link(bmComponent);
+            case 'short-number': return this.shortNumber(bmComponent);
+            case 'card': return this.card(bmComponent);
+            case 'list': return this.list(bmComponent);
+            default: this.text(bmComponent);
         }
-
-        return htmlComponent;
     }
 
     youtube(bmComponent: BMYoutube) {
@@ -92,6 +73,16 @@ export class BMComponentFactory {
 
             <span>{bmComponent.title}</span>
         </a>
+    }
+
+    shortNumber(bmComponent: BMShortNumber) {
+        return <div key={"bm-" + bmComponent.type + "-" + (this.i++)}
+                  className={"bm_short-number"}
+                  title={bmComponent.content}>
+
+            <span className={"number"}>{bmComponent.number}</span>
+            <span className={"label"}>{bmComponent.label}</span>
+        </div>
     }
 
     card(bmComponent: BMCard) {

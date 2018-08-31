@@ -38,7 +38,7 @@ class CategoriesMenu extends React.Component {
                 'be_Category-selected' : '';
 
             if(category.id === SOURCE_CODE) {
-                listItems.push(<Divider />)
+                listItems.push(<Divider key="divider" />)
             }
 
             listItems.push(<ListItem button key={category.id} className={markIfSelected}
