@@ -7,7 +7,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import {categoryStore} from "../store/CategoryStore";
 import {observer} from "mobx-react";
-import Category, {SOURCE_CODE} from "../data/Category";
+import Category, {DIVIDER, FEEDBACK, SOURCE_CODE} from "../data/Category";
 import {navigationHelper} from "../helper/NavigationHelper";
 import Divider from '@material-ui/core/Divider';
 
@@ -27,6 +27,11 @@ class Menu extends React.Component {
             return;
         }
 
+        if(category.id === FEEDBACK) {
+            window.open("https://docs.google.com/forms/d/e/1FAIpQLSdPjxqhzYpI4eqwGIQNK8mV4CarZx1fjCgLbrxcZIpgs2w5Ig/viewform", "_blank");
+            return;
+        }
+
         navigationHelper.category(this, category);
     }
 
@@ -37,8 +42,9 @@ class Menu extends React.Component {
             let markIfSelected = categoryStore.category.id === category.id ?
                 'be_Category-selected' : '';
 
-            if(category.id === SOURCE_CODE) {
-                listItems.push(<Divider key="divider" />)
+            if(category.id === DIVIDER) {
+                listItems.push(<Divider key="divider" />);
+                return;
             }
 
             listItems.push(<ListItem button key={category.id} className={markIfSelected}

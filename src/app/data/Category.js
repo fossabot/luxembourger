@@ -14,6 +14,8 @@ export const PLAYGROUNDS = 'playgrounds';
 export const EMERGENCY = 'emergency';
 export const EXPERIMENTAL = 'experimental';
 export const SOURCE_CODE = 'source_code';
+export const FEEDBACK = 'feedback';
+export const DIVIDER = 'divider';
 
 export default class Category {
 

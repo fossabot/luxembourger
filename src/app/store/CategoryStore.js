@@ -13,7 +13,7 @@ import Category, {
     INSURANCE,
     LEGAL,
     PLAYGROUNDS,
-    SCHOOLING
+    SCHOOLING, FEEDBACK, DIVIDER
 } from "../data/Category";
 import Housing from '@material-ui/icons/Home';
 import Doctors from '@material-ui/icons/FavoriteBorder';
@@ -27,6 +27,7 @@ import Playgrounds from '@material-ui/icons/ChildFriendly';
 import Emergency from '@material-ui/icons/LocalHospital';
 import Star from '@material-ui/icons/Star';
 import Code from '@material-ui/icons/Code';
+import Feedback from '@material-ui/icons/Feedback';
 import {extendObservable} from "mobx";
 import CategoryItem from "../data/CategoryItem";
 import {housingItems} from "./hardcoded/HousingItems";
@@ -50,6 +51,8 @@ class CategoryStore {
         // new Category('Playgrounds', Playgrounds, PLAYGROUNDS),
         // new Category('Emergency', Emergency, EMERGENCY),
         // new Category('Experimental', Star, EXPERIMENTAL, experimentalItems),
+        new Category('', '', DIVIDER),
+        new Category('Talk to us', Feedback, FEEDBACK),
         new Category('Source Code', Code, SOURCE_CODE),
     ];
 
