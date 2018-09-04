@@ -2,10 +2,10 @@ import React from 'react';
 import Menu from "./app/components/Menu";
 import CategoryMenu from "./app/components/CategoryMenu";
 import Post from "./app/components/Post";
-import Logo from "./app/components/Logo";
+import Logo from "./app/components/logo/Logo";
 import {Route} from "react-router-dom";
 import RouterHandler from "./app/helper/RouterHandler";
-import Theme from "./app/components/theme/Theme";
+import Theme from "./app/components/theme/day/Theme";
 
 class App extends React.Component {
 
