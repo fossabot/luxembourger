@@ -16,12 +16,12 @@ export const schoolingItems: CategoryItem[] = [
         'Foyer Scholaire (after school)',
         ++i, '/wiki/schooling/foyer-scolaire.bm'),
 
-    // new CategoryItem('What languages are taught', '', new Date(),
-    //     '/images/schooling/school-languages.jpg',
-    //     "Depending on the age of tuition your kids will learn in multiple languages. Here's how it works and why this is amazing.",
-    //     'What languages are taught',
-    //     ++i, '/wiki/schooling/test2.md'),
-    //
+    new CategoryItem('What languages are taught', '', new Date(),
+        '/images/schooling/school-languages.jpg',
+        "Depending on the age of tuition your kids will learn in multiple languages. Here's how it works and why this is amazing.",
+        'What languages are taught',
+        ++i, '/wiki/schooling/what-languages-are-taught.bm'),
+
     // new CategoryItem('European schools', '', new Date(),
     //     '/images/schooling/european-school.jpg',
     //     "Here's the list of european schools. Differences and similarities with national curriculum. How to get in for free.",
