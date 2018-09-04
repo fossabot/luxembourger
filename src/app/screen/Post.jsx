@@ -6,7 +6,7 @@ import {categoryStore} from "../store/CategoryStore";
 import * as ReactDOM from "react-dom";
 import BasicMarkup from "../bm/BasicMarkup";
 
-class CategoryItemView extends React.Component {
+class Post extends React.Component {
 
     constructor(props) {
         super(props);
@@ -48,4 +48,4 @@ class CategoryItemView extends React.Component {
     }
 }
 
-export default observer(CategoryItemView)
+export default observer(Post)

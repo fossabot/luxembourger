@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import './index-mobile.css';
-import './bm.css';
+import './css/index.css';
+import './css/index-mobile.css';
+import './css/bm.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter} from "react-router-dom";

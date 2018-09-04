@@ -8,7 +8,7 @@ import {DUMMY} from "../data/Category";
 import Category from "../data/Category";
 import * as ReactDOM from "react-dom";
 
-class CategoryView extends React.Component {
+class CategoryMenu extends React.Component {
 
     category: Category = null;
 
@@ -56,4 +56,4 @@ class CategoryView extends React.Component {
 
 }
 
-export default observer(CategoryView)
+export default observer(CategoryMenu)

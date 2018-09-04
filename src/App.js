@@ -1,7 +1,7 @@
 import React from 'react';
-import CategoriesMenu from "./app/screen/CategoriesMenu";
-import CategoryView from "./app/screen/CategoryView";
-import CategoryItemView from "./app/screen/CategoryItemView";
+import Menu from "./app/screen/Menu";
+import CategoryMenu from "./app/screen/CategoryMenu";
+import Post from "./app/screen/Post";
 import Logo from "./app/screen/component/Logo";
 import {Route} from "react-router-dom";
 import RouterHandler from "./app/helper/RouterHandler";
@@ -16,10 +16,10 @@ class App extends React.Component {
 
                 <Route component={Theme} />
                 <Route component={Logo} />
-                <Route component={CategoriesMenu}/>
+                <Route component={Menu}/>
 
-                <Route exact path='/:categoryId/:categoryItemId?' component={CategoryView} />
-                <Route exact path='/:categoryId/:categoryItemId' component={CategoryItemView} />
+                <Route exact path='/:categoryId/:categoryItemId?' component={CategoryMenu} />
+                <Route exact path='/:categoryId/:categoryItemId' component={Post} />
             </div>
         );
     }

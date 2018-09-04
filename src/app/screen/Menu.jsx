@@ -11,7 +11,7 @@ import Category, {SOURCE_CODE} from "../data/Category";
 import {navigationHelper} from "../helper/NavigationHelper";
 import Divider from '@material-ui/core/Divider';
 
-class CategoriesMenu extends React.Component {
+class Menu extends React.Component {
 
     constructor(props) {
         super(props);
@@ -59,4 +59,4 @@ class CategoriesMenu extends React.Component {
     }
 }
 
-export default observer(CategoriesMenu)
+export default observer(Menu)
