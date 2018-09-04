@@ -36,6 +36,7 @@ import {schoolingItems} from "./hardcoded/SchoolingItems";
 import {httpHelper} from "../helper/HttpHelper";
 import {experimentalItems} from "./hardcoded/ExperimentalItems";
 import {insuranceItems} from "./hardcoded/InsuranceItems";
+import CategoryLink from "../data/CategoryLink";
 
 class CategoryStore {
 
@@ -52,8 +53,8 @@ class CategoryStore {
         // new Category('Emergency', Emergency, EMERGENCY),
         // new Category('Experimental', Star, EXPERIMENTAL, experimentalItems),
         new Category('', '', DIVIDER),
-        new Category('Talk to us', Feedback, FEEDBACK),
-        new Category('Source Code', Code, SOURCE_CODE),
+        new CategoryLink('Talk to us', Feedback, FEEDBACK, "https://docs.google.com/forms/d/e/1FAIpQLSdPjxqhzYpI4eqwGIQNK8mV4CarZx1fjCgLbrxcZIpgs2w5Ig/viewform"),
+        new CategoryLink('Source Code', Code, SOURCE_CODE, "https://bitbucket.org/rodislav/becoming"),
     ];
 
     category: Category;

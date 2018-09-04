@@ -10,6 +10,7 @@ import {observer} from "mobx-react";
 import Category, {DIVIDER, FEEDBACK, SOURCE_CODE} from "../data/Category";
 import {navigationHelper} from "../helper/NavigationHelper";
 import Divider from '@material-ui/core/Divider';
+import CategoryLink from "../data/CategoryLink";
 
 class Menu extends React.Component {
 
@@ -22,13 +23,8 @@ class Menu extends React.Component {
     }
 
     onCategory(category: Category) {
-        if(category.id === SOURCE_CODE) {
-            window.open("https://bitbucket.org/rodislav/becoming", "_blank");
-            return;
-        }
-
-        if(category.id === FEEDBACK) {
-            window.open("https://docs.google.com/forms/d/e/1FAIpQLSdPjxqhzYpI4eqwGIQNK8mV4CarZx1fjCgLbrxcZIpgs2w5Ig/viewform", "_blank");
+        if(category instanceof CategoryLink) {
+            window.open(category.link, "_blank");
             return;
         }
 
