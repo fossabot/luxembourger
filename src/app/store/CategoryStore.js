@@ -34,6 +34,7 @@ import {doctorsItems} from "./hardcoded/DoctorsItems";
 import {schoolingItems} from "./hardcoded/SchoolingItems";
 import {httpHelper} from "../helper/HttpHelper";
 import {experimentalItems} from "./hardcoded/ExperimentalItems";
+import {insuranceItems} from "./hardcoded/InsuranceItems";
 
 class CategoryStore {
 
@@ -41,7 +42,7 @@ class CategoryStore {
         new Category('Housing', Housing, HOUSING, housingItems),
         new Category('Doctors', Doctors, DOCTORS, doctorsItems),
         new Category('Schooling', Schooling, SCHOOLING, schoolingItems),
-        // new Category('Insurance', Insurance, INSURANCE),
+        new Category('Insurance', Insurance, INSURANCE, insuranceItems),
         // new Category('Cars', Cars, CARS),
         // new Category('Bus / Train', Bus, BUS_TRAIN),
         // new Category('Legal', Legal, LEGAL),

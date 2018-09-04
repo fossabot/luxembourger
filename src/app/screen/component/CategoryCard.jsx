@@ -23,7 +23,7 @@ export default class CategoryCard extends React.Component<Props> {
 
         let image = "";
 
-        if(this.props.categoryItem.image) {
+        if(this.props.categoryItem.image && this.props.categoryItem.image.replace(" ", "") !== "") {
             image = <CardMedia
                 className={"be_CategoryView-image"}
                 image={this.props.categoryItem.image}
