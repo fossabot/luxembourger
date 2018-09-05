@@ -23,7 +23,7 @@ class CategoryMenu extends React.Component {
     }
 
     scrollTopIfNeeded() {
-        if(this.category.id !== categoryStore.category.id && ReactDOM.findDOMNode(this)) {
+        if(this.category && this.category.id !== categoryStore.category.id && ReactDOM.findDOMNode(this)) {
             ReactDOM.findDOMNode(this).scrollTop = 0;
         }
 
