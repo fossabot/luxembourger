@@ -2,6 +2,8 @@
   "name": "becoming",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://becoming.lu",
+  "author": "Rodislav MOLDOVAN",
   "scripts": {
     "start": "PORT=3002 react-scripts start",
     "build": "react-scripts build",
