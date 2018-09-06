@@ -1,14 +1,14 @@
 import React from "react";
 import {observer} from "mobx-react";
 import {categoryStore} from "../store/CategoryStore";
-import CategoryCard from "./component/CategoryCard";
+import CategoryCard from "./CategoryCard";
 import CategoryItem from "../data/CategoryItem";
 import {navigationHelper} from "../helper/NavigationHelper";
 import {DUMMY} from "../data/Category";
 import Category from "../data/Category";
 import * as ReactDOM from "react-dom";
 
-class CategoryView extends React.Component {
+class CategoryMenu extends React.Component {
 
     category: Category = null;
 
@@ -23,7 +23,7 @@ class CategoryView extends React.Component {
     }
 
     scrollTopIfNeeded() {
-        if(this.category !== categoryStore.category && ReactDOM.findDOMNode(this)) {
+        if(this.category && this.category.id !== categoryStore.category.id && ReactDOM.findDOMNode(this)) {
             ReactDOM.findDOMNode(this).scrollTop = 0;
         }
 
@@ -56,4 +56,4 @@ class CategoryView extends React.Component {
 
 }
 
-export default observer(CategoryView)
+export default observer(CategoryMenu)

@@ -13,7 +13,7 @@ import Category, {
     INSURANCE,
     LEGAL,
     PLAYGROUNDS,
-    SCHOOLING
+    SCHOOLING, FEEDBACK, DIVIDER
 } from "../data/Category";
 import Housing from '@material-ui/icons/Home';
 import Doctors from '@material-ui/icons/FavoriteBorder';
@@ -27,6 +27,7 @@ import Playgrounds from '@material-ui/icons/ChildFriendly';
 import Emergency from '@material-ui/icons/LocalHospital';
 import Star from '@material-ui/icons/Star';
 import Code from '@material-ui/icons/Code';
+import Feedback from '@material-ui/icons/Feedback';
 import {extendObservable} from "mobx";
 import CategoryItem from "../data/CategoryItem";
 import {housingItems} from "./hardcoded/HousingItems";
@@ -34,6 +35,8 @@ import {doctorsItems} from "./hardcoded/DoctorsItems";
 import {schoolingItems} from "./hardcoded/SchoolingItems";
 import {httpHelper} from "../helper/HttpHelper";
 import {experimentalItems} from "./hardcoded/ExperimentalItems";
+import {insuranceItems} from "./hardcoded/InsuranceItems";
+import CategoryLink from "../data/CategoryLink";
 
 class CategoryStore {
 
@@ -41,7 +44,7 @@ class CategoryStore {
         new Category('Housing', Housing, HOUSING, housingItems),
         new Category('Doctors', Doctors, DOCTORS, doctorsItems),
         new Category('Schooling', Schooling, SCHOOLING, schoolingItems),
-        // new Category('Insurance', Insurance, INSURANCE),
+        new Category('Insurance', Insurance, INSURANCE, insuranceItems),
         // new Category('Cars', Cars, CARS),
         // new Category('Bus / Train', Bus, BUS_TRAIN),
         // new Category('Legal', Legal, LEGAL),
@@ -49,7 +52,9 @@ class CategoryStore {
         // new Category('Playgrounds', Playgrounds, PLAYGROUNDS),
         // new Category('Emergency', Emergency, EMERGENCY),
         // new Category('Experimental', Star, EXPERIMENTAL, experimentalItems),
-        new Category('Source Code', Code, SOURCE_CODE),
+        new Category('', '', DIVIDER),
+        new CategoryLink('Talk to us', Feedback, FEEDBACK, "https://docs.google.com/forms/d/e/1FAIpQLSdPjxqhzYpI4eqwGIQNK8mV4CarZx1fjCgLbrxcZIpgs2w5Ig/viewform"),
+        new CategoryLink('Source Code', Code, SOURCE_CODE, "https://bitbucket.org/rodislav/becoming"),
     ];
 
     category: Category;

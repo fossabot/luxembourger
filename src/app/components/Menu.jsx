@@ -7,11 +7,12 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import {categoryStore} from "../store/CategoryStore";
 import {observer} from "mobx-react";
-import Category, {SOURCE_CODE} from "../data/Category";
+import Category, {DIVIDER, FEEDBACK, SOURCE_CODE} from "../data/Category";
 import {navigationHelper} from "../helper/NavigationHelper";
 import Divider from '@material-ui/core/Divider';
+import CategoryLink from "../data/CategoryLink";
 
-class CategoriesMenu extends React.Component {
+class Menu extends React.Component {
 
     constructor(props) {
         super(props);
@@ -22,8 +23,8 @@ class CategoriesMenu extends React.Component {
     }
 
     onCategory(category: Category) {
-        if(category.id === SOURCE_CODE) {
-            window.open("https://bitbucket.org/rodislav/becoming", "_blank");
+        if(category instanceof CategoryLink) {
+            window.open(category.link, "_blank");
             return;
         }
 
@@ -37,8 +38,9 @@ class CategoriesMenu extends React.Component {
             let markIfSelected = categoryStore.category.id === category.id ?
                 'be_Category-selected' : '';
 
-            if(category.id === SOURCE_CODE) {
-                listItems.push(<Divider key="divider" />)
+            if(category.id === DIVIDER) {
+                listItems.push(<Divider key="divider" />);
+                return;
             }
 
             listItems.push(<ListItem button key={category.id} className={markIfSelected}
@@ -59,4 +61,4 @@ class CategoriesMenu extends React.Component {
     }
 }
 
-export default observer(CategoriesMenu)
+export default observer(Menu)

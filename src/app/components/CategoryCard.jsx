@@ -8,7 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
-import CategoryItem from "../../data/CategoryItem";
+import CategoryItem from "../data/CategoryItem";
 
 type Props = {
     categoryItem: CategoryItem,
@@ -23,7 +23,7 @@ export default class CategoryCard extends React.Component<Props> {
 
         let image = "";
 
-        if(this.props.categoryItem.image) {
+        if(this.props.categoryItem.image && this.props.categoryItem.image.replace(" ", "") !== "") {
             image = <CardMedia
                 className={"be_CategoryView-image"}
                 image={this.props.categoryItem.image}
