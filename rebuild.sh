@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
-git pull
-
 rm -r ./build
+
+git pull
 
 npm run-script build
 
-docker build -t rodislav/becoming:0.0.1-SNAPSHOT .
-
-docker rm -f becoming
-
-docker run -d -p80:80 --name becoming rodislav/becoming:0.0.1-SNAPSHOT
+docker-compose build
+docker-compose up -d
