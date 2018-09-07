@@ -7,20 +7,12 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import {categoryStore} from "../store/CategoryStore";
 import {observer} from "mobx-react";
-import Category, {DIVIDER, FEEDBACK, SOURCE_CODE} from "../data/Category";
+import Category, {DIVIDER} from "../data/Category";
 import {navigationHelper} from "../helper/NavigationHelper";
 import Divider from '@material-ui/core/Divider';
 import CategoryLink from "../data/CategoryLink";
 
 class Menu extends React.Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            menuItems: categoryStore.categories
-        }
-    }
 
     onCategory(category: Category) {
         if(category instanceof CategoryLink) {
@@ -34,7 +26,7 @@ class Menu extends React.Component {
     render() {
         let listItems = [];
 
-        this.state.menuItems.forEach((category: Category) => {
+        categoryStore.categories.forEach((category: Category) => {
             let markIfSelected = categoryStore.category.id === category.id ?
                 'be_Category-selected' : '';
 
