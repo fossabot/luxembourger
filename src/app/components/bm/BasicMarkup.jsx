@@ -1,7 +1,6 @@
 import React from "react";
 import * as ReactDOM from "react-dom";
 import BMComponent from "./objects/BMComponent";
-import {bmComponentFactory} from "./BMComponentFactory";
 import {bmObjectFactory} from "./BMObjectFactory";
 
 export default class BasicMarkup extends React.Component {
@@ -15,16 +14,16 @@ export default class BasicMarkup extends React.Component {
 
     scrollTop() {
         try {
-            if(ReactDOM.findDOMNode(this)) {
+            if (ReactDOM.findDOMNode(this)) {
                 ReactDOM.findDOMNode(this).scrollTop = 0;
             }
         } catch (e) {
-        //    ignore this error
+            //    ignore this error
         }
     }
 
     render() {
-        if(!this.props.source) {
+        if (!this.props.source) {
             return <div/>
         }
 
@@ -33,9 +32,7 @@ export default class BasicMarkup extends React.Component {
         let bmComponents = bmObjectFactory.textToBMComponents(this.props.source);
         let children = [];
 
-        bmComponents.forEach((bmComponent: BMComponent) =>
-            children.push(bmComponentFactory.create(bmComponent))
-        );
+        bmComponents.forEach((bmComponent: BMComponent) => children.push(bmComponent.render()));
 
         return <div style={{width: "100%"}}>
             {children}
