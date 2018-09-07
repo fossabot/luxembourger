@@ -3,6 +3,7 @@ rm -r ./build
 
 git pull
 
+npm install
 npm run-script build
 
 docker-compose build
