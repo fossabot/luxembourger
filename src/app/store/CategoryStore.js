@@ -10,11 +10,13 @@ import Category, {
     EXPERIMENTAL,
     SOURCE_CODE,
     HOUSING,
+    QUICK_SUMMARY,
     INSURANCE,
     LEGAL,
     PLAYGROUNDS,
     SCHOOLING, FEEDBACK, DIVIDER
 } from "../data/Category";
+import QuickSummary from '@material-ui/icons/Category';
 import Housing from '@material-ui/icons/Home';
 import Doctors from '@material-ui/icons/FavoriteBorder';
 import Banks from '@material-ui/icons/LocalAtm';
@@ -37,10 +39,12 @@ import {httpHelper} from "../helper/HttpHelper";
 import {experimentalItems} from "./hardcoded/ExperimentalItems";
 import {insuranceItems} from "./hardcoded/InsuranceItems";
 import CategoryLink from "../data/CategoryLink";
+import {summaryItems} from "./hardcoded/QuickSummaryItems";
 
 class CategoryStore {
 
     categories: Category[] = [
+        new Category('Quick Summary', QuickSummary, QUICK_SUMMARY, summaryItems),
         new Category('Housing', Housing, HOUSING, housingItems),
         new Category('Doctors', Doctors, DOCTORS, doctorsItems),
         new Category('Schooling', Schooling, SCHOOLING, schoolingItems),

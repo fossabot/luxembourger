@@ -3,6 +3,7 @@ import dummy from "@material-ui/icons/Delete";
 
 export const DUMMY = 'dummy';
 export const HOUSING = 'housing';
+export const QUICK_SUMMARY = 'quick_summary';
 export const DOCTORS = 'doctors';
 export const SCHOOLING = 'schooling';
 export const INSURANCE = 'insurance';

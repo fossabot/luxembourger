@@ -7,6 +7,9 @@ import BMLink from "./objects/BMLink";
 import BMList from "./objects/BMList";
 import BMShortNumber from "./objects/BMShortNumber";
 import BMInfo from "./objects/BMInfo";
+import BMFacebook from "./objects/BMFacebook";
+import BMTitleBig from "./objects/BMTitleBig";
+import BMTitleSmall from "./objects/BMTitleSmall";
 
 class BMObjectFactory {
 
@@ -22,11 +25,12 @@ class BMObjectFactory {
         "image": BMImage,
         "card": BMCard,
         "text": BMComponent,
-        "title-big": BMComponent,
-        "title-small": BMComponent,
+        "title-big": BMTitleBig,
+        "title-small": BMTitleSmall,
         "link": BMLink,
-        "list": BMList,
         "short-number": BMShortNumber,
+        "list": BMList,
+        "facebook": BMFacebook,
         "info": BMInfo,
     };
 
