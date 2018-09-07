@@ -12,6 +12,7 @@ import BMLink from "./objects/BMLink";
 import BMList from "./objects/BMList";
 import BMShortNumber from "./objects/BMShortNumber";
 import BMInfo from "./objects/BMInfo";
+import BMFacebook from "./objects/BMFacebook";
 
 export class BMComponentFactory {
 
@@ -30,6 +31,7 @@ export class BMComponentFactory {
             case 'card': return this.card(bmComponent);
             case 'list': return this.list(bmComponent);
             case 'info': return this.info(bmComponent);
+            case 'facebook': return this.facebook(bmComponent);
             default: this.text(bmComponent);
         }
     }
@@ -153,6 +155,19 @@ export class BMComponentFactory {
         return <ul className={"bm_info"}>
             {lis}
         </ul>;
+    }
+
+    facebook(bmComponent: BMFacebook) {
+        return <div>
+            <div id="fb-root"></div>
+            <div className="fb-page" data-href={bmComponent.dataHref} data-tabs="timeline"
+                 data-width="500"
+                 data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
+                 data-show-facepile="true">
+                <blockquote cite={bmComponent.dataHref} className="fb-xfbml-parse-ignore"><a
+                    href={bmComponent.dataHref}>{bmComponent.title}</a></blockquote>
+            </div>
+        </div>;
     }
 }
 

@@ -7,6 +7,7 @@ import BMLink from "./objects/BMLink";
 import BMList from "./objects/BMList";
 import BMShortNumber from "./objects/BMShortNumber";
 import BMInfo from "./objects/BMInfo";
+import BMFacebook from "./objects/BMFacebook";
 
 class BMObjectFactory {
 
@@ -28,6 +29,7 @@ class BMObjectFactory {
         "list": BMList,
         "short-number": BMShortNumber,
         "info": BMInfo,
+        "facebook": BMFacebook,
     };
 
     of(textDescription: string): BMComponent {

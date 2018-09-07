@@ -10,5 +10,11 @@ export const summaryItems: CategoryItem[] = [
         'Useful Apps',
         ++i, '/wiki/summary/apps.bm'),
 
+    new CategoryItem('Expat Notes', '', new Date(),
+        '',
+        'Powered by Expat Notes on Luxembourg. Small cards with various facts about Luxembourg.',
+        'Useful Apps',
+        ++i, '/wiki/summary/expat-notes.bm'),
+
 
 ];
