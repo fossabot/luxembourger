@@ -1,20 +1,26 @@
 // @flow
 
+import {categoryStore} from "../store/CategoryStore";
+
 type error = (response: Response) => {};
 
 class HttpHelper {
 
     timeout: number = 100;
 
-    GETRequest(...url: string): Request {
+    getText(successCallback: (data: string) => {}, ...url: string[]) {
+        this.textCall(this.GETRequest(url), successCallback);
+    }
+
+    GETRequest(...url: string[]): Request {
         return this.defaultParams(url.join("/"), "get");
     }
 
-    POSTRequest(body, ...url: string): Request {
+    POSTRequest(body, ...url: string[]): Request {
         return this.defaultParams(url.join("/"), "post", body);
     }
 
-    DELETERequest(...url: string): Request {
+    DELETERequest(...url: string[]): Request {
         return this.defaultParams(url.join("/"), "delete");
     }
 
@@ -24,17 +30,17 @@ class HttpHelper {
         h.append("Content-Type", "application/json");
 
         // RequestInit
-        let i = { method: method,
+        let request = { method: method,
             headers: h,
             mode: 'cors',
             cache: 'default',
         };
 
         if(body) {
-            i.body = JSON.stringify(body);
+            request.body = JSON.stringify(body);
         }
 
-        return new Request(url, i);
+        return new Request(url, request);
     };
 
     defaultErrorCallback: error = (response: Response) => {
@@ -64,7 +70,7 @@ class HttpHelper {
         }, this.timeout)
     }
 
-    textCall(request, successCallback, errorCallback) {
+    textCall(request: Request, successCallback, errorCallback) {
 
         errorCallback = !errorCallback ? this.defaultErrorCallback : errorCallback;
 

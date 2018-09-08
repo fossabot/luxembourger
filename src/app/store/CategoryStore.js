@@ -72,7 +72,7 @@ class CategoryStore {
     });
     }
 
-    setCurrentCategory(category) {
+    setCurrentCategory(category: Category) {
         this.category = category;
         this.categoryItem = null;
     }
@@ -80,11 +80,7 @@ class CategoryStore {
     setCurrentCategoryItem(categoryItem: CategoryItem) {
         this.categoryItem = categoryItem;
 
-        httpHelper.textCall(
-            httpHelper.GETRequest(categoryStore.categoryItem.markdownUrl),
-            (data ) => {
-                this.currentArticle = data;
-            });
+        httpHelper.getText(data => this.currentArticle = data, categoryItem.markdownUrl);
     }
 
     findCategory(categoryId: string): Category {
