@@ -37,13 +37,13 @@ export default class BMApp extends BMComponent {
                 <a href={this.android}
                    title="Get from PlayStore"
                    target={"_blank"}>
-                    <img src="/images/assets/logo/googleplay-fr.png"/>
+                    <img src="/images/assets/logo/google-play.png"/>
                 </a>
                 <a className={"be_margin-left-10px"}
                    href={this.ios}
                    title="Get from AppStore"
                    target={"_blank"}>
-                    <img src="/images/assets/logo/appstore-fr.png"/>
+                    <img src="/images/assets/logo/app-store.png"/>
                 </a>
 
             </div>
