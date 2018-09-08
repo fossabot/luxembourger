@@ -10,6 +10,7 @@ import BMInfo from "./objects/BMInfo";
 import BMFacebook from "./objects/BMFacebook";
 import BMTitleBig from "./objects/BMTitleBig";
 import BMTitleSmall from "./objects/BMTitleSmall";
+import BMApp from "./objects/BMApp";
 
 class BMObjectFactory {
 
@@ -32,6 +33,7 @@ class BMObjectFactory {
         "list": BMList,
         "facebook": BMFacebook,
         "info": BMInfo,
+        "app": BMApp,
     };
 
     of(textDescription: string): BMComponent {
