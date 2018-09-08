@@ -49,7 +49,7 @@ class CategoryMenu extends React.Component {
             />)
         });
 
-        return <div className={'be_CategoryView'}>
+        return <div className={'be_CategoryMenu'}>
             {items}
         </div>;
     }

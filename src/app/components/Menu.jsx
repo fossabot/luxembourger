@@ -14,6 +14,10 @@ import CategoryLink from "../data/CategoryLink";
 
 class Menu extends React.Component {
 
+    componentDidMount() {
+        categoryStore.loadMenu();
+    }
+
     onCategory(category: Category) {
         if(category instanceof CategoryLink) {
             window.open(category.link, "_blank");
@@ -44,7 +48,7 @@ class Menu extends React.Component {
             </ListItem>);
         });
 
-        return <div className={'be_Categories'}>
+        return <div className={'be_Menu'}>
             <List component="nav">
                 {listItems}
             </List>

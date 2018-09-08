@@ -1,35 +1,14 @@
 // @flow
 
 import Category, {
-    BANKS,
-    BUS_TRAIN,
-    CARS,
     DOCTORS,
     dummyCategory,
-    EMERGENCY,
-    EXPERIMENTAL,
     SOURCE_CODE,
     HOUSING,
     QUICK_SUMMARY,
     INSURANCE,
-    LEGAL,
-    PLAYGROUNDS,
     SCHOOLING, FEEDBACK, DIVIDER
 } from "../data/Category";
-import QuickSummary from '@material-ui/icons/Category';
-import Housing from '@material-ui/icons/Home';
-import Doctors from '@material-ui/icons/FavoriteBorder';
-import Banks from '@material-ui/icons/LocalAtm';
-import Schooling from '@material-ui/icons/ChildCare';
-import Insurance from '@material-ui/icons/VerifiedUser';
-import Cars from '@material-ui/icons/DirectionsCar';
-import Bus from '@material-ui/icons/DirectionsBus';
-import Legal from '@material-ui/icons/AccountBalance';
-import Playgrounds from '@material-ui/icons/ChildFriendly';
-import Emergency from '@material-ui/icons/LocalHospital';
-import Star from '@material-ui/icons/Star';
-import Code from '@material-ui/icons/Code';
-import Feedback from '@material-ui/icons/Feedback';
 import {extendObservable} from "mobx";
 import CategoryItem from "../data/CategoryItem";
 import {housingItems} from "./hardcoded/HousingItems";
@@ -42,24 +21,7 @@ import {summaryItems} from "./hardcoded/QuickSummaryItems";
 
 class CategoryStore {
 
-    categories: Category[] = [
-        new Category('Quick Summary', QuickSummary, QUICK_SUMMARY, summaryItems),
-        new Category('Housing', Housing, HOUSING, housingItems),
-        new Category('Doctors', Doctors, DOCTORS, doctorsItems),
-        new Category('Schooling', Schooling, SCHOOLING, schoolingItems),
-        new Category('Insurance', Insurance, INSURANCE, insuranceItems),
-        // new Category('Cars', Cars, CARS),
-        // new Category('Bus / Train', Bus, BUS_TRAIN),
-        // new Category('Legal', Legal, LEGAL),
-        // new Category('Banks', Banks, BANKS),
-        // new Category('Playgrounds', Playgrounds, PLAYGROUNDS),
-        // new Category('Emergency', Emergency, EMERGENCY),
-        // new Category('Experimental', Star, EXPERIMENTAL, experimentalItems),
-        new Category('', '', DIVIDER),
-        new CategoryLink('Talk to us', Feedback, FEEDBACK, "https://docs.google.com/forms/d/e/1FAIpQLSdPjxqhzYpI4eqwGIQNK8mV4CarZx1fjCgLbrxcZIpgs2w5Ig/viewform"),
-        new CategoryLink('Source Code', Code, SOURCE_CODE, "https://bitbucket.org/rodislav/becoming"),
-    ];
-
+    categories: Category[];
     category: Category;
     categoryItem: CategoryItem;
     currentArticle: string;
@@ -68,8 +30,29 @@ class CategoryStore {
         extendObservable(this, {
             category: dummyCategory,
             categoryItem: null,
-            currentArticle: ''
-    });
+            currentArticle: '',
+            categories: []
+        });
+    }
+
+    loadMenu() {
+        this.categories = [
+            new Category('Quick Summary', QUICK_SUMMARY, summaryItems),
+            new Category('Housing', HOUSING, housingItems),
+            new Category('Doctors', DOCTORS, doctorsItems),
+            new Category('Schooling', SCHOOLING, schoolingItems),
+            new Category('Insurance', INSURANCE, insuranceItems),
+            // new Category('Cars', CARS),
+            // new Category('Bus / Train', BUS_TRAIN),
+            // new Category('Legal', LEGAL),
+            // new Category('Banks', BANKS),
+            // new Category('Playgrounds', PLAYGROUNDS),
+            // new Category('Emergency', EMERGENCY),
+            // new Category('Experimental', EXPERIMENTAL, experimentalItems),
+            new Category('', DIVIDER),
+            new CategoryLink('Talk to us', FEEDBACK, "https://docs.google.com/forms/d/e/1FAIpQLSdPjxqhzYpI4eqwGIQNK8mV4CarZx1fjCgLbrxcZIpgs2w5Ig/viewform"),
+            new CategoryLink('Source Code', SOURCE_CODE, "https://bitbucket.org/rodislav/becoming"),
+        ];
     }
 
     setCurrentCategory(category: Category) {

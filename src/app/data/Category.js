@@ -1,5 +1,5 @@
 import React from "react";
-import dummy from "@material-ui/icons/Delete";
+import {categoryIconsHelper} from "../helper/CategoryIconsHelper";
 
 export const DUMMY = 'dummy';
 export const HOUSING = 'housing';
@@ -13,7 +13,6 @@ export const LEGAL = 'legal';
 export const BANKS = 'banks';
 export const PLAYGROUNDS = 'playgrounds';
 export const EMERGENCY = 'emergency';
-export const EXPERIMENTAL = 'experimental';
 export const SOURCE_CODE = 'source-code';
 export const FEEDBACK = 'feedback';
 export const DIVIDER = 'divider';
@@ -25,13 +24,13 @@ export default class Category {
     id;
     items;
 
-    constructor(name, icon, id, items) {
+    constructor(name, id, items) {
         this.name = name;
-        this.icon = React.createElement(icon);
+        this.icon = React.createElement(categoryIconsHelper.get(id));
         this.id = id;
         this.items = items ? items : [];
     }
 
 }
 
-export const dummyCategory = new Category('dummy', dummy, DUMMY);
+export const dummyCategory = new Category('dummy', DUMMY);

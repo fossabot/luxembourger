@@ -19,10 +19,11 @@ export default class BMLink extends BMComponent {
     render(): * {
         return <a key={this.key}
                   className={"bm_link"}
+                  rel="noopener noreferrer"
                   href={this.url}
                   title={this.title}
                   target={"_blank"}>
-            <img src={this.imageUrl}/>
+            <img src={this.imageUrl} alt={this.title} title={this.title}/>
 
             <span>{this.title}</span>
         </a>

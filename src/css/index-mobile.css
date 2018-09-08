@@ -4,7 +4,7 @@
         background: white!important;
     }
 
-    .be_Categories {
+    .be_Menu {
         width: 100%!important;
         border: none!important;
 
@@ -17,7 +17,7 @@
         z-index: 1;
     }
 
-    .be_CategoryView {
+    .be_CategoryMenu {
         margin: 0!important;
 
         width: calc(100% - 10px)!important;

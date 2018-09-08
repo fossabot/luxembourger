@@ -1,7 +1,5 @@
 // @flow
 
-import {categoryStore} from "../store/CategoryStore";
-
 type error = (response: Response) => {};
 
 class HttpHelper {

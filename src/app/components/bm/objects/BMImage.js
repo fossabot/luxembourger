@@ -15,6 +15,6 @@ export default class BMImage extends BMComponent {
     }
 
     render() {
-        return <img key={this.key} style={{width: '100%'}} src={this.url} title={this.title}/>
+        return <img key={this.key} style={{width: '100%'}} src={this.url} alt={this.title} title={this.title}/>
     }
 }

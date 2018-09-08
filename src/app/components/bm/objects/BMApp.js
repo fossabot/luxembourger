@@ -1,7 +1,4 @@
 import BMComponent from "./BMComponent";
-import Card from "@material-ui/core/Card/Card";
-import CardHeader from "@material-ui/core/CardHeader/CardHeader";
-import Avatar from "@material-ui/core/Avatar/Avatar";
 import React from "react";
 
 export default class BMApp extends BMComponent {
@@ -27,7 +24,7 @@ export default class BMApp extends BMComponent {
         return <div key={this.key}>
             <div className={"bm_app"}
                  title={this.title}>
-                <img src={this.imageUrl}/>
+                <img alt={this.title} title={this.title} src={this.imageUrl}/>
                 <span>{this.title}</span>
             </div>
             <div className={"bm_app-subtitle"}>
@@ -37,13 +34,13 @@ export default class BMApp extends BMComponent {
                 <a href={this.android}
                    title="Get from PlayStore"
                    target={"_blank"}>
-                    <img src="/images/assets/logo/google-play.png"/>
+                    <img alt="PlayStore button" title="PlayStore button" src="/images/assets/logo/google-play.png"/>
                 </a>
                 <a className={"be_margin-left-10px"}
                    href={this.ios}
                    title="Get from AppStore"
                    target={"_blank"}>
-                    <img src="/images/assets/logo/app-store.png"/>
+                    <img alt="AppStore button"  title="AppStore button" src="/images/assets/logo/app-store.png"/>
                 </a>
 
             </div>

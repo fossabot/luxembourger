@@ -49,12 +49,12 @@ body {
 
 /******************************************/
 
-.be_Categories {
+.be_Menu {
     width: 230px;
     background-color: white;
     border: 1px;
 
-    max-height: 80%;
+    max-height: calc(100% - 215px);
     overflow-y: auto;
     overflow-x: hidden;
 
@@ -83,7 +83,7 @@ body {
 
 /******************************************/
 
-.be_CategoryView {
+.be_CategoryMenu {
     position: fixed;
     margin-left: 250px;
     margin-top: 20px;
@@ -98,7 +98,7 @@ body {
     padding-right: 5px;
 }
 
-.be_CategoryView-image {
+.be_CategoryMenu-image {
     width: 370px;
     height: 200px;
 }

@@ -6,7 +6,7 @@ export default class Logo extends React.Component {
     render() {
         return <div className={'be_Logo'}
                     onClick={() => navigationHelper.gotoRoot(this)}>
-            <img src={logo} title={"Logo of Becoming.lu, App Version: " + process.env.REACT_APP_VERSION} />
+            <img src={logo} title={"Logo of Becoming.lu, App Version: " + process.env.REACT_APP_VERSION} alt={"Logo of Becoming.lu, App Version: " + process.env.REACT_APP_VERSION} />
         </div>
     }
 };
