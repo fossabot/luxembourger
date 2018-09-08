@@ -5,7 +5,7 @@ export const schoolingItems: CategoryItem[] = [
     new CategoryItem('Public Schools',
         'How schooling system works in Luxembourg. Where to register kids. What are the opening hours. What are the costs.',
         '/images/schooling/how-it-works.png',
-        '/wiki/schooling/how-schooling-works.bm'),
+        '/wiki/schooling/public-schools.bm'),
 
     new CategoryItem('Foyer Scolaire',
         'Child care. What is Foyer Scolaire / Maison Relais. How to pricing works.',
