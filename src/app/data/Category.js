@@ -22,13 +22,15 @@ export default class Category {
     name;
     icon;
     id;
+    url;
     items;
 
-    constructor(name, id, items) {
+    constructor(name, id, url) {
         this.name = name;
+        this.url = url;
         this.icon = React.createElement(categoryIconsHelper.get(id));
         this.id = id;
-        this.items = items ? items : [];
+        this.items = [];
     }
 
 }

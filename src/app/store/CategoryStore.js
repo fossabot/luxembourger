@@ -18,6 +18,9 @@ import {httpHelper} from "../helper/HttpHelper";
 import {insuranceItems} from "./hardcoded/InsuranceItems";
 import CategoryLink from "../data/CategoryLink";
 import {summaryItems} from "./hardcoded/QuickSummaryItems";
+import {bmObjectFactory} from "../components/bm/BMObjectFactory";
+import BMCategory from "../components/bm/objects/BMCategory";
+import BMCategoryItem from "../components/bm/objects/BMCategoryItem";
 
 class CategoryStore {
 
@@ -36,28 +39,37 @@ class CategoryStore {
     }
 
     loadMenu() {
-        this.categories = [
-            new Category('Quick Summary', QUICK_SUMMARY, summaryItems),
-            new Category('Housing', HOUSING, housingItems),
-            new Category('Doctors', DOCTORS, doctorsItems),
-            new Category('Schooling', SCHOOLING, schoolingItems),
-            new Category('Insurance', INSURANCE, insuranceItems),
-            // new Category('Cars', CARS),
-            // new Category('Bus / Train', BUS_TRAIN),
-            // new Category('Legal', LEGAL),
-            // new Category('Banks', BANKS),
-            // new Category('Playgrounds', PLAYGROUNDS),
-            // new Category('Emergency', EMERGENCY),
-            // new Category('Experimental', EXPERIMENTAL, experimentalItems),
-            new Category('', DIVIDER),
-            new CategoryLink('Talk to us', FEEDBACK, "https://docs.google.com/forms/d/e/1FAIpQLSdPjxqhzYpI4eqwGIQNK8mV4CarZx1fjCgLbrxcZIpgs2w5Ig/viewform"),
-            new CategoryLink('Source Code', SOURCE_CODE, "https://bitbucket.org/rodislav/becoming"),
-        ];
+        let tmp = [];
+
+        httpHelper.getText(data => {
+            bmObjectFactory.textToBMComponents(data).forEach((value: BMCategory) => {
+                    if(value.type === "category-link") {
+                        tmp.push(new CategoryLink(value.title, value.id, value.url))
+                    } else {
+                        tmp.push(new Category(value.title, value.id, value.url))
+                    }
+                });
+
+            this.categories = tmp;
+        }, "/content/menu.bm");
     }
 
     setCurrentCategory(category: Category) {
         this.category = category;
         this.categoryItem = null;
+
+        if(category.items.length === 0) {
+            let tmp = [];
+
+            httpHelper.getText(data => {
+                bmObjectFactory.textToBMComponents(data).forEach((value: BMCategoryItem) => {
+                    tmp.push(new CategoryItem(value.title, value.description, value.image, value.url))
+                });
+
+                category.items = tmp;
+                this.category = category;
+            }, category.url);
+        }
     }
 
     setCurrentCategoryItem(categoryItem: CategoryItem) {
@@ -68,7 +80,7 @@ class CategoryStore {
 
     findCategory(categoryId: string): Category {
         for (let category of this.categories) {
-            if(category.id === categoryId) {
+            if (category.id === categoryId) {
                 return category;
             }
         }
@@ -78,7 +90,7 @@ class CategoryStore {
 
     findCategoryItem(categoryItemId: string): Category {
         for (let item of this.category.items) {
-            if(item.id === categoryItemId) {
+            if (item.id === categoryItemId) {
                 return item;
             }
         }

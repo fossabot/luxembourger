@@ -30,6 +30,10 @@ class Menu extends React.Component {
     render() {
         let listItems = [];
 
+        if(!categoryStore.categories || categoryStore.categories.length === 0) {
+            return <span />
+        }
+
         categoryStore.categories.forEach((category: Category) => {
             let markIfSelected = categoryStore.category.id === category.id ?
                 'be_Category-selected' : '';
