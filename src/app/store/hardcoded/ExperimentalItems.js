@@ -1,12 +1,9 @@
 // @flow
 import CategoryItem from "../../data/CategoryItem";
 
-let i = 0;
-
 export const experimentalItems: CategoryItem[] = [
-    new CategoryItem('Experimental things', '', new Date(),
-        '',
+    new CategoryItem('Experimental things',
         'Here we test experimental formats and articles.',
-        'Experimental things',
-        ++i, '/wiki/test.bm'),
+        '',
+        '/wiki/test.bm'),
 ];

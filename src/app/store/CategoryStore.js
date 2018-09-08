@@ -36,7 +36,6 @@ import {housingItems} from "./hardcoded/HousingItems";
 import {doctorsItems} from "./hardcoded/DoctorsItems";
 import {schoolingItems} from "./hardcoded/SchoolingItems";
 import {httpHelper} from "../helper/HttpHelper";
-import {experimentalItems} from "./hardcoded/ExperimentalItems";
 import {insuranceItems} from "./hardcoded/InsuranceItems";
 import CategoryLink from "../data/CategoryLink";
 import {summaryItems} from "./hardcoded/QuickSummaryItems";

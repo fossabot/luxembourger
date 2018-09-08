@@ -1,24 +1,19 @@
 // @flow
 import CategoryItem from "../../data/CategoryItem";
 
-let i = 0;
-
 export const housingItems: CategoryItem[] = [
-    new CategoryItem('Find housing online', '', new Date(),
-        '/images/housing/find-housing-online.png',
+    new CategoryItem('Find housing online',
         'Here the websites you can use to find housing for rent and buy. There are multiple resources, still most have same offers.',
-        'Find housing online',
-        ++i, '/wiki/housing/find-housing-online.bm'),
+        '/images/housing/find-housing-online.png',
+        '/wiki/housing/find-housing-online.bm'),
 
-    new CategoryItem('Renting best practices', '', new Date(),
-        '/images/housing/rent-house-best-preactices.png',
+    new CategoryItem('Renting best practices',
         "When you are looking for a place to live, there are couple of things you should consider. Here's our list.",
-        'Renting best practices',
-        ++i, '/wiki/housing/renting-best-practices.bm'),
+        '/images/housing/rent-house-best-preactices.png',
+        '/wiki/housing/renting-best-practices.bm'),
 
-    new CategoryItem('Move-in checklist', '', new Date(),
-        '/images/housing/move-in-checklist.png',
+    new CategoryItem('Move-in checklist',
         "Once you move in there are few things to consider, like subscriptions, insurance and so on.",
-        'Move in checklist',
-        ++i, '/wiki/housing/move-in-checklist.bm'),
+        '/images/housing/move-in-checklist.png',
+        '/wiki/housing/move-in-checklist.bm'),
 ];

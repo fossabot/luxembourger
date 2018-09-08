@@ -3,7 +3,7 @@ import dummy from "@material-ui/icons/Delete";
 
 export const DUMMY = 'dummy';
 export const HOUSING = 'housing';
-export const QUICK_SUMMARY = 'quick_summary';
+export const QUICK_SUMMARY = 'quick-summary';
 export const DOCTORS = 'doctors';
 export const SCHOOLING = 'schooling';
 export const INSURANCE = 'insurance';
@@ -14,7 +14,7 @@ export const BANKS = 'banks';
 export const PLAYGROUNDS = 'playgrounds';
 export const EMERGENCY = 'emergency';
 export const EXPERIMENTAL = 'experimental';
-export const SOURCE_CODE = 'source_code';
+export const SOURCE_CODE = 'source-code';
 export const FEEDBACK = 'feedback';
 export const DIVIDER = 'divider';
 

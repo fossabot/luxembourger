@@ -28,7 +28,7 @@ export default class BMFacebook extends BMComponent {
 
         return <iframe key={this.key}
             src={src}
-            width="400" height="500" style={{border:"none", overflow:"hidden"}}
+            width="400" height="500" style={{border:"none", overflow:"hidden", "margin-top": "15px"}}
             scrolling="no" frameBorder="0"
             allowTransparency="true" allow="encrypted-media"/>;
     }
