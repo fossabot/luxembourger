@@ -2,7 +2,6 @@ import React from "react";
 import {categoryIconsHelper} from "../helper/CategoryIconsHelper";
 import CategoryItem from "./CategoryItem";
 
-export const DUMMY = 'dummy';
 export const DIVIDER = 'divider';
 
 export default class Category {
@@ -22,5 +21,3 @@ export default class Category {
     }
 
 }
-
-export const dummyCategory = new Category('dummy', DUMMY);

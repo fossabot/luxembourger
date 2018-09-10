@@ -35,7 +35,9 @@ class Menu extends React.Component {
         }
 
         categoryStore.categories.forEach((category: Category) => {
-            let markIfSelected = categoryStore.category.id === category.id ?
+            let id = categoryStore.category ? categoryStore.category.id : "";
+
+            let markIfSelected = id === category.id ?
                 'be_Category-selected' : '';
 
             if(category.id === DIVIDER) {

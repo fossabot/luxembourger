@@ -3,13 +3,12 @@
 import React from "react";
 import CategoryItem from "../data/CategoryItem";
 import {categoryStore} from "../store/CategoryStore";
-import Category, {dummyCategory} from "../data/Category";
+import Category from "../data/Category";
 
 class NavigationHelper {
     //FIXME find a good way to handle navigation in REACT
 
     gotoRoot(component: React.Component) {
-        categoryStore.setCurrentCategory(dummyCategory);
         component.props.history.push('/');
     }
 
@@ -32,14 +31,14 @@ class NavigationHelper {
         categoryStore.setCurrentCategory(category);
 
         if(categoryItemId) {
-            let categoryItem = categoryStore.findCategoryItem(categoryItemId);
-
-            if(categoryItem) {
-                categoryStore.setCurrentCategoryItem(categoryItem);
-                this.setTitle(categoryItem.title);
-            } else {
-                this.category(component, category);
-            }
+            categoryStore.findCategoryItem(categoryItemId).subscribe((categoryItem: CategoryItem) => {
+                if(categoryItem) {
+                    categoryStore.setCurrentCategoryItem(categoryItem);
+                    this.setTitle(categoryItem.title);
+                } else {
+                    this.category(component, category);
+                }
+            });
         }
     }
 

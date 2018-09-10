@@ -1,13 +1,16 @@
 // @flow
 
+import {Observable} from "rxjs";
+import {Subscriber} from "rxjs";
+
 type error = (response: Response) => {};
 
 class HttpHelper {
 
     timeout: number = 100;
 
-    getText(successCallback: (data: string) => {}, ...url: string[]) {
-        this.textCall(this.GETRequest(url), successCallback);
+    getText(...url: string[]): Observable {
+        return this.textCall(this.GETRequest(url));
     }
 
     GETRequest(...url: string[]): Request {
@@ -68,27 +71,25 @@ class HttpHelper {
         }, this.timeout)
     }
 
-    textCall(request: Request, successCallback, errorCallback) {
-
-        errorCallback = !errorCallback ? this.defaultErrorCallback : errorCallback;
-
-        setTimeout(() => {
+    textCall(request: Request): Observable {
+        return Observable.create((observer: Subscriber) => {
             fetch(request)
                 .then((response) => {
                     response.text().then((data) => {
                         if (response.ok) {
-                            successCallback(data)
+                            observer.next(data);
+                            observer.complete();
                         } else {
                             console.error(data, response.status, request.url);
-                            errorCallback(response)
+                            observer.error(data)
                         }
                     })
                 })
                 .catch((e) => {
                     console.error(e.message, request.url);
-                    errorCallback(e)
+                    observer.error(e)
                 });
-        }, this.timeout)
+        });
     }
 
 }
