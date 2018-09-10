@@ -1,23 +1,10 @@
 // @flow
 
-import Category, {
-    DOCTORS,
-    dummyCategory,
-    SOURCE_CODE,
-    HOUSING,
-    QUICK_SUMMARY,
-    INSURANCE,
-    SCHOOLING, FEEDBACK, DIVIDER
-} from "../data/Category";
+import Category, {dummyCategory} from "../data/Category";
 import {extendObservable} from "mobx";
 import CategoryItem from "../data/CategoryItem";
-import {housingItems} from "./hardcoded/HousingItems";
-import {doctorsItems} from "./hardcoded/DoctorsItems";
-import {schoolingItems} from "./hardcoded/SchoolingItems";
 import {httpHelper} from "../helper/HttpHelper";
-import {insuranceItems} from "./hardcoded/InsuranceItems";
 import CategoryLink from "../data/CategoryLink";
-import {summaryItems} from "./hardcoded/QuickSummaryItems";
 import {bmObjectFactory} from "../components/bm/BMObjectFactory";
 import BMCategory from "../components/bm/objects/BMCategory";
 import BMCategoryItem from "../components/bm/objects/BMCategoryItem";
@@ -27,6 +14,7 @@ class CategoryStore {
     categories: Category[];
     category: Category;
     categoryItem: CategoryItem;
+    categoryItems: CategoryItem[];
     currentArticle: string;
 
     constructor() {
@@ -34,7 +22,8 @@ class CategoryStore {
             category: dummyCategory,
             categoryItem: null,
             currentArticle: '',
-            categories: []
+            categories: [],
+            categoryItems: []
         });
     }
 
@@ -58,7 +47,7 @@ class CategoryStore {
         this.category = category;
         this.categoryItem = null;
 
-        if(category.items.length === 0) {
+        if(category.items.length < 1) {
             let tmp = [];
 
             httpHelper.getText(data => {
@@ -67,8 +56,12 @@ class CategoryStore {
                 });
 
                 category.items = tmp;
-                this.category = category;
+                this.categoryItems = tmp;
             }, category.url);
+        } else {
+            if(this.category === category) {
+                this.categoryItems = category.items;
+            }
         }
     }
 

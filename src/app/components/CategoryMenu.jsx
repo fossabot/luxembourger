@@ -41,7 +41,7 @@ class CategoryMenu extends React.Component {
         let currentCategoryItemId = categoryStore.categoryItem ? categoryStore.categoryItem.id : "";
 
         let items = [];
-        categoryStore.category.items.forEach(categoryItem => {
+        categoryStore.categoryItems.forEach(categoryItem => {
             items.push(<CategoryCard key={categoryItem.id}
                                      selected={currentCategoryItemId === categoryItem.id}
                                      categoryItem={categoryItem}
