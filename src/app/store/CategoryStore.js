@@ -52,6 +52,7 @@ class CategoryStore {
 
                 category.items = tmp;
                 this.categoryItems = tmp;
+                observer.next();
                 observer.complete();
             });
         });
@@ -113,7 +114,7 @@ class CategoryStore {
     }
 
     _doLookUpCategoryItem(categoryItemId: string): Category {
-        for (let item of this.category.items) {
+        for (let item of this.categoryItems) {
             if (item.id === categoryItemId) {
                 return item;
             }
