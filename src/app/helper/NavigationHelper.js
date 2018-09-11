@@ -21,25 +21,25 @@ class NavigationHelper {
             return;
         }
 
-        let category = categoryStore.findCategory(categoryId);
+        categoryStore.findCategory(categoryId).subscribe((category: Category) => {
+            if(!category) {
+                this.gotoRoot(component);
+                return;
+            }
 
-        if(!category) {
-            this.gotoRoot(component);
-            return;
-        }
+            categoryStore.setCurrentCategory(category);
 
-        categoryStore.setCurrentCategory(category);
-
-        if(categoryItemId) {
-            categoryStore.findCategoryItem(categoryItemId).subscribe((categoryItem: CategoryItem) => {
-                if(categoryItem) {
-                    categoryStore.setCurrentCategoryItem(categoryItem);
-                    this.setTitle(categoryItem.title);
-                } else {
-                    this.category(component, category);
-                }
-            });
-        }
+            if(categoryItemId) {
+                categoryStore.findCategoryItem(categoryItemId).subscribe((categoryItem: CategoryItem) => {
+                    if(categoryItem) {
+                        categoryStore.setCurrentCategoryItem(categoryItem);
+                        this.setTitle(categoryItem.title);
+                    } else {
+                        this.category(component, category);
+                    }
+                });
+            }
+        });
     }
 
     category(component: React.Component, category: Category) {

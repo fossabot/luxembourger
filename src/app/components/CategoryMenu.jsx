@@ -4,7 +4,7 @@ import {categoryStore} from "../store/CategoryStore";
 import CategoryCard from "./CategoryCard";
 import CategoryItem from "../data/CategoryItem";
 import {navigationHelper} from "../helper/NavigationHelper";
-import Category, {DUMMY} from "../data/Category";
+import Category from "../data/Category";
 import * as ReactDOM from "react-dom";
 
 class CategoryMenu extends React.Component {

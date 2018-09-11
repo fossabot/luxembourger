@@ -2,7 +2,6 @@ import BMYoutube from "./objects/BMYoutube";
 import BMComponent from "./objects/BMComponent";
 import BMImage from "./objects/BMImage";
 import BMCard from "./objects/BMCard";
-import * as React from "react";
 import BMLink from "./objects/BMLink";
 import BMList from "./objects/BMList";
 import BMShortNumber from "./objects/BMShortNumber";

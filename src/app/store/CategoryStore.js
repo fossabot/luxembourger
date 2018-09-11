@@ -28,28 +28,12 @@ class CategoryStore {
         });
     }
 
-    loadMenu() {
-        let tmp = [];
-
-        httpHelper.getText("/content/menu.bm").subscribe(data => {
-            bmObjectFactory.textToBMComponents(data).forEach((value: BMCategory) => {
-                if(value.type === "category-link") {
-                    tmp.push(new CategoryLink(value.title, value.id, value.url))
-                } else {
-                    tmp.push(new Category(value.title, value.id, value.url))
-                }
-            });
-
-            this.categories = tmp;
-        });
-    }
-
     setCurrentCategory(category: Category) {
         this.category = category;
         this.categoryItem = null;
 
         if(category.items.length < 1) {
-            this.loadItems(category).subscribe();
+            this.loadCategoryItems(category).subscribe();
         } else {
             if(this.category === category) {
                 this.categoryItems = category.items;
@@ -57,7 +41,7 @@ class CategoryStore {
         }
     }
 
-    loadItems(category: Category) {
+    loadCategoryItems(category: Category) {
         return Observable.create((observer: Subscriber) => {
             httpHelper.getText(category.url).subscribe(data => {
                 let tmp = [];
@@ -79,34 +63,69 @@ class CategoryStore {
         httpHelper.getText(categoryItem.markdownUrl).subscribe(data => this.currentArticle = data);
     }
 
-    findCategory(categoryId: string): Category {
-        for (let category of this.categories) {
-            if (category.id === categoryId) {
-                return category;
+    findCategory(categoryId: string): Observable<Category> {
+        return Observable.create((observer: Subscriber) => {
+            if(this.categories.length < 1) {
+                this._loadCategories().subscribe(() => {
+                    observer.next(this._doLookUpCategory(categoryId));
+                    observer.complete();
+                })
+            } else {
+                observer.next(this._doLookUpCategory(categoryId));
+                observer.complete();
+            }
+        });
+    }
+
+    _loadCategories(): Observable {
+        return Observable.create((observer: Subscriber) => {
+            let tmp = [];
+
+            httpHelper.getText("/content/menu.bm").subscribe(data => {
+                bmObjectFactory.textToBMComponents(data).forEach((value: BMCategory) => {
+                    if(value.type === "category-link") {
+                        tmp.push(new CategoryLink(value.title, value.id, value.url))
+                    } else {
+                        tmp.push(new Category(value.title, value.id, value.url))
+                    }
+                });
+
+                this.categories = tmp;
+
+                observer.next(tmp);
+                observer.complete();
+            });
+        });
+    }
+
+    findCategoryItem(categoryItemId: string): Observable<CategoryItem> {
+        return Observable.create((observer: Subscriber) => {
+            if(this.category.items.length < 1) {
+                this.loadCategoryItems(this.category).subscribe(() => {
+                    observer.next(this._doLookUpCategoryItem(categoryItemId));
+                    observer.complete();
+                })
+            } else {
+                observer.next(this._doLookUpCategoryItem(categoryItemId));
+                observer.complete();
+            }
+        })
+    }
+
+    _doLookUpCategoryItem(categoryItemId: string): Category {
+        for (let item of this.category.items) {
+            if (item.id === categoryItemId) {
+                return item;
             }
         }
 
         return null;
     }
 
-    findCategoryItem(categoryItemId: string): Observable<CategoryItem> {
-        return Observable.create((observer: Subscriber) => {
-            if(this.category.items.length < 1) {
-                this.loadItems(this.category).subscribe(() => {
-                    observer.next(this.doLookUp(categoryItemId));
-                    observer.complete();
-                })
-            } else {
-                observer.next(this.doLookUp(categoryItemId));
-                observer.complete();
-            }
-        })
-    }
-
-    doLookUp(categoryItemId: string): Category {
-        for (let item of this.category.items) {
-            if (item.id === categoryItemId) {
-                return item;
+    _doLookUpCategory(categoryId: string): Category {
+        for (let category of this.categories) {
+            if (category.id === categoryId) {
+                return category;
             }
         }
 

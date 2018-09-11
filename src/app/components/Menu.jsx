@@ -15,7 +15,7 @@ import CategoryLink from "../data/CategoryLink";
 class Menu extends React.Component {
 
     componentDidMount() {
-        categoryStore.loadMenu();
+        categoryStore._loadCategories();
     }
 
     onCategory(category: Category) {

@@ -13,7 +13,7 @@ import Playgrounds from '@material-ui/icons/ChildFriendly';
 import Emergency from '@material-ui/icons/LocalHospital';
 import Code from '@material-ui/icons/Code';
 import Feedback from '@material-ui/icons/Feedback';
-import dummy from '@material-ui/icons/OfflineBolt';
+import divider from '@material-ui/icons/OfflineBolt';
 
 class CategoryIconsHelper {
 
@@ -31,8 +31,7 @@ class CategoryIconsHelper {
         "emergency": Emergency,
         "feedback": Feedback,
         "source-code": Code,
-        "dummy": dummy,
-        "divider": dummy,
+        "divider": divider,
     };
 
     get(category: string) {
