@@ -4,8 +4,9 @@ import * as React from "react";
 import './Theme.css';
 import './Theme-animations.css';
 import './Theme-mobile.css';
+import EmptyProps from "../../../helper/TypeHelper";
 
-export default class Theme extends React.Component {
+export default class Theme extends React.Component<EmptyProps> {
 
     render() {
         return (

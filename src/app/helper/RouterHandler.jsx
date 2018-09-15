@@ -2,35 +2,50 @@
 
 import * as React from "react";
 import {navigationHelper} from "./NavigationHelper";
+import EmptyProps from "./TypeHelper";
+import {categoryStore} from "../store/CategoryStore";
 
-export default class RouterHandler extends React.Component {
+//FIXME find a good way to handle navigation in REACT
+export default class RouterHandler extends React.Component<EmptyProps> {
 
-    unlisten = null;
-    //FIXME find a good way to handle navigation in REACT
+    unListen: () => {};
+
     componentDidMount() {
-        // Listen for changes to the current location.
-        this.unlisten = this.props.history.listen((location) => {
-            // location is an object like window.location
 
-            if(location.pathname === '' || location.pathname === '/') {
-                return;
-            }
+        this.unListen = this.props.history.listen(this.checkUri);
+        this.checkUri()
+    }
 
-            const pathParts: string[] = location.pathname.split("/");
+    checkUri(location: any) {
+        let categoryId: string;
+        let categoryItemId: string;
 
-            if(pathParts.length < 2) {
-                return;
-            }
+        if(!location) {
+            categoryStore._loadCategories().subscribe();
+            return;
+        }
 
-            navigationHelper.restoreFromUri(this,
-                pathParts[1],
-                pathParts[2]);
-        })
+        if(location.pathname === '' || location.pathname === '/') {
+            return;
+        }
+
+        // "/quick-summary/article-id" = ["", "quick-summary", "article-id"]
+        const pathParts: string[] = location.pathname.split("/");
+
+        if(pathParts.length < 2) {
+            return;
+        }
+
+        categoryId = pathParts[1];
+        categoryItemId = pathParts.length > 2 ? pathParts[2] : "";
+
+        navigationHelper.restoreFromUri(this, categoryId, categoryItemId);
     }
 
     componentWillUnmount() {
-        if(this.unlisten) {
-            this.unlisten()
+        console.info("Stopping router handler");
+        if(this.unListen) {
+            this.unListen()
         }
     }
 

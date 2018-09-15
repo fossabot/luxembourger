@@ -4,19 +4,20 @@ import React from "react";
 import CategoryItem from "../data/CategoryItem";
 import {categoryStore} from "../store/CategoryStore";
 import Category from "../data/Category";
+import EmptyProps from "./TypeHelper";
 
 class NavigationHelper {
     //FIXME find a good way to handle navigation in REACT
 
-    gotoRoot(component: React.Component) {
+    gotoRoot(component: React.Component<EmptyProps>) {
         component.props.history.push('/');
     }
 
-    restoreFromUri(component: React.Component, categoryId: string = null, categoryItemId: string = null) {
+    restoreFromUri(component: React.Component<EmptyProps>, categoryId: string, categoryItemId: string) {
 
-        console.log('Restoring url, categoryId: ', categoryId, ', categoryItemId: ', categoryItemId);
+        console.info('Restoring url, categoryId: ', categoryId, ', categoryItemId: ', categoryItemId);
 
-        if(!categoryId) {
+        if(!categoryId || categoryId === "") {
             this.gotoRoot(component);
             return;
         }
@@ -42,14 +43,14 @@ class NavigationHelper {
         });
     }
 
-    category(component: React.Component, category: Category) {
+    category(component: React.Component<EmptyProps>, category: Category) {
         component.props.history.push('/' + category.id);
         categoryStore.setCurrentCategory(category);
 
         this.setTitle(category.name);
     }
 
-    categoryItem(component: React.Component, categoryItem: CategoryItem) {
+    categoryItem(component: React.Component<EmptyProps>, categoryItem: CategoryItem) {
         component.props.history.push('/' + categoryStore.category.id + "/" + categoryItem.id);
         categoryStore.setCurrentCategoryItem(categoryItem);
 

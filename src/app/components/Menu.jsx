@@ -11,12 +11,9 @@ import Category, {DIVIDER} from "../data/Category";
 import {navigationHelper} from "../helper/NavigationHelper";
 import Divider from '@material-ui/core/Divider';
 import CategoryLink from "../data/CategoryLink";
+import EmptyProps from "../helper/TypeHelper";
 
-class Menu extends React.Component {
-
-    componentDidMount() {
-        categoryStore._loadCategories();
-    }
+class Menu extends React.Component<EmptyProps> {
 
     onCategory(category: Category) {
         if(category instanceof CategoryLink) {

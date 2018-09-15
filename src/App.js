@@ -12,7 +12,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Route exact path='/:categoryId?/:categoryItemId?' component={RouterHandler}/>
+                <Route path='/:categoryId?/:categoryItemId?' component={RouterHandler}/>
 
                 <Route component={Theme} />
                 <Route component={Logo} />
