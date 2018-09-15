@@ -15,7 +15,7 @@ import CategoryLink from "../data/CategoryLink";
 class Menu extends React.Component {
 
     componentDidMount() {
-        categoryStore.loadMenu();
+        categoryStore._loadCategories();
     }
 
     onCategory(category: Category) {
@@ -30,8 +30,14 @@ class Menu extends React.Component {
     render() {
         let listItems = [];
 
+        if(!categoryStore.categories || categoryStore.categories.length === 0) {
+            return <span />
+        }
+
         categoryStore.categories.forEach((category: Category) => {
-            let markIfSelected = categoryStore.category.id === category.id ?
+            let id = categoryStore.category ? categoryStore.category.id : "";
+
+            let markIfSelected = id === category.id ?
                 'be_Category-selected' : '';
 
             if(category.id === DIVIDER) {

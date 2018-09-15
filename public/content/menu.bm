@@ -1,39 +1,45 @@
 category
 Quick Summary
-QUICK_SUMMARY
+quick-summary
+/content/QuickSummaryItems.bm
 -
 
 category
 Housing
-HOUSING
+housing
+/content/HousingItems.bm
 -
 
 category
 Doctors
-DOCTORS
+doctors
+/content/DoctorsItems.bm
 -
 
 category
 Schooling
-SCHOOLING
+schooling
+/content/SchoolingItems.bm
 -
 
 category
 Insurance
-INSURANCE
+insurance
+/content/InsuranceItems.bm
 -
 
 category
-DIVIDER
+divider
+divider
 -
 
 category-link
 Talk to us
-FEEDBACK
+feedback
 https://docs.google.com/forms/d/e/1FAIpQLSdPjxqhzYpI4eqwGIQNK8mV4CarZx1fjCgLbrxcZIpgs2w5Ig/viewform
 -
 
 category-link
 Source Code
-SOURCE_CODE
+source-code
 https://bitbucket.org/rodislav/becoming
