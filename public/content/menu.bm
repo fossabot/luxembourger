@@ -1,36 +1,42 @@
 category
 Quick Summary
 quick-summary
-/content/QuickSummaryItems.bm
+/content/QuickSummary.bm
 -
 
 category
 Housing
 housing
-/content/HousingItems.bm
+/content/Housing.bm
 -
 
 category
 Doctors
 doctors
-/content/DoctorsItems.bm
+/content/Doctors.bm
 -
 
 category
 Schooling
 schooling
-/content/SchoolingItems.bm
+/content/Schooling.bm
 -
 
 category
 Insurance
 insurance
-/content/InsuranceItems.bm
+/content/Insurance.bm
 -
 
 category
 divider
 divider
+-
+
+category
+About
+about
+/content/About.bm
 -
 
 category-link
