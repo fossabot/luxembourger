@@ -80,7 +80,7 @@ class CategoryStore {
 
     _loadCategories(): Observable {
         return Observable.create((observer: Subscriber) => {
-            let tmp = [];
+            let tmp: Category[] = [];
 
             httpHelper.getText("/content/menu.bm").subscribe(data => {
                 bmObjectFactory.textToBMComponents(data).forEach((value: BMCategory) => {

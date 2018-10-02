@@ -14,6 +14,8 @@ import Emergency from '@material-ui/icons/LocalHospital';
 import Code from '@material-ui/icons/Code';
 import Feedback from '@material-ui/icons/Feedback';
 import divider from '@material-ui/icons/OfflineBolt';
+import About from '@material-ui/icons/Help';
+import unknown from '@material-ui/icons/ErrorOutline';
 
 class CategoryIconsHelper {
 
@@ -31,11 +33,16 @@ class CategoryIconsHelper {
         "emergency": Emergency,
         "feedback": Feedback,
         "source-code": Code,
+        "about": About,
         "divider": divider,
     };
 
     get(category: string) {
-        return this.icons[category];
+        if(this.icons[category]) {
+            return this.icons[category];
+        }
+
+        return unknown;
     }
 }
 
