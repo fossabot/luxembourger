@@ -3,12 +3,14 @@ Plans
 -
 
 text
-The idea is to develop a small AI that can help expats and residents in various ways:
+The idea is to develop a small AI that can help expats and residents in various ways and will consider the context of the
+user. In order to do that we need to fill the site with information.
 -
 
 list
 Add more content
-Transform the first page to become a active theme that reflects the state of Luxembourg
+Add a global search
+Transform the first page to become an active theme that reflects the state of Luxembourg
 Find events provider and highlight some with action to visit original site
 Chat bot that can answer questions now
 Help to find the person who can do a certain job
