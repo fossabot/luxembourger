@@ -17,14 +17,20 @@ export default class BMApp extends BMComponent {
         this.subTitle = parts[1];
         this.android = parts[2];
         this.ios = parts[3];
-        this.imageUrl = parts[4];
+        this.imageUrl = parts.length >= 5 ? parts[4] : "";
     }
 
     render(): * {
+        let img = "";
+
+        if(this.imageUrl && this.imageUrl !== "-"){
+            img = <img alt={this.title} title={this.title} src={this.imageUrl}/>
+        }
+
         return <div key={this.key}>
             <div className={"bm_app"}
                  title={this.title}>
-                <img alt={this.title} title={this.title} src={this.imageUrl}/>
+                {img}
                 <span>{this.title}</span>
             </div>
             <div className={"bm_app-subtitle"}>

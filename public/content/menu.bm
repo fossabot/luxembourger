@@ -2,54 +2,45 @@ category
 Quick Summary
 quick-summary
 /content/QuickSummary.bm
--
 
 category
 Work and Jobs
 job
 /content/WorkAndJob.bm
--
 
 category
 Housing
 housing
 /content/Housing.bm
--
 
 category
 Doctors
 doctors
 /content/Doctors.bm
--
 
 category
 Schooling
 schooling
 /content/Schooling.bm
--
 
 category
 Insurance
 insurance
 /content/Insurance.bm
--
 
 category
 divider
 divider
--
 
 category
 About
 about
 /content/About.bm
--
 
 category-link
 Talk to us
 feedback
 https://docs.google.com/forms/d/e/1FAIpQLSdPjxqhzYpI4eqwGIQNK8mV4CarZx1fjCgLbrxcZIpgs2w5Ig/viewform
--
 
 category-link
 Source Code

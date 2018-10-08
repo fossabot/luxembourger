@@ -17,7 +17,7 @@ export default class BMCategoryItem extends BMComponent{
 
         this.title = parts[0];
         this.description = parts[1];
-        this.image = parts[2];
+        this.image = parts[2] === "-" ? "" : parts[2];
         this.url = parts[3];
     }
 
