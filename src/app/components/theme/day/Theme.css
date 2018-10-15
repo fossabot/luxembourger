@@ -8,7 +8,7 @@
     width: 97px;
     height: 48px;
 
-    background: url("/images/assets/plane.png") no-repeat center;
+    background: url("/images/theme/day/plane.png") no-repeat center;
     animation: motion-plane 17s infinite;
 }
 
@@ -21,7 +21,7 @@
     width: 100%;
     height: 164px;
 
-    background: url("/images/assets/image-right-left.png") repeat-x;
+    background: url("/images/theme/day/image-right-left.png") repeat-x;
     overflow-x: visible;
     display: block;
     padding: 0;
@@ -36,7 +36,7 @@
     width: 100%;
     height: 353px;
 
-    background: url("/images/assets/image-center.png") no-repeat center;
+    background: url("/images/theme/day/image-center.png") no-repeat center;
     overflow-x: visible;
     display: block;
     padding: 0;
@@ -54,7 +54,7 @@
     display: block;
     padding: 0;
 
-    background: url("/images/assets/sun.png") no-repeat center;
+    background: url("/images/theme/day/sun.png") no-repeat center;
     animation:sun-spin 20s linear infinite;
 }
 
@@ -67,7 +67,7 @@
     width: 48px;
     height: 82px;
 
-    background: url("/images/assets/balloon.png") no-repeat center;
+    background: url("/images/theme/day/balloon.png") no-repeat center;
     animation: motion-balloon 10s infinite ease-in-out;
 }
 
@@ -80,7 +80,7 @@
     width: 162px;
     height: 166px;
 
-    background: url("/images/assets/cloud-big.png") no-repeat center;
+    background: url("/images/theme/day/cloud-big.png") no-repeat center;
     animation: motion-cloud-big 19s infinite;
 }
 
@@ -93,7 +93,7 @@
     width: 162px;
     height: 166px;
 
-    background: url("/images/assets/cloud-big.png") no-repeat center;
+    background: url("/images/theme/day/cloud-big.png") no-repeat center;
     animation: motion-cloud-big-2 12s infinite;
 }
 
@@ -106,7 +106,7 @@
     width: 162px;
     height: 166px;
 
-    background: url("/images/assets/cloud-medium.png") no-repeat center;
+    background: url("/images/theme/day/cloud-medium.png") no-repeat center;
     animation: motion-cloud-medium 23s infinite;
 }
 
@@ -119,7 +119,7 @@
     width: 162px;
     height: 166px;
 
-    background: url("/images/assets/cloud-small.png") no-repeat center;
+    background: url("/images/theme/day/cloud-small.png") no-repeat center;
     animation: motion-cloud-small 17s infinite;
 }
 
@@ -132,7 +132,7 @@
     top: 0;
     right: 0;
 
-    background: url("/images/assets/univers.png") repeat-x;
+    background: url("/images/theme/day/univers.png") repeat-x;
 }
 
 .be_star-small {
@@ -144,7 +144,7 @@
     width: 8px;
     height: 8px;
 
-    background: url("/images/assets/star-small.png") no-repeat center;
+    background: url("/images/theme/day/star-small.png") no-repeat center;
     animation: motion-star-small 11s infinite ease-out;
 }
 
@@ -157,7 +157,7 @@
     width: 8px;
     height: 8px;
 
-    background: url("/images/assets/star-small.png") no-repeat center;
+    background: url("/images/theme/day/star-small.png") no-repeat center;
     animation: motion-star-small 15s infinite ease-in-out;
 }
 
@@ -170,7 +170,7 @@
     width: 8px;
     height: 8px;
 
-    background: url("/images/assets/star-small.png") no-repeat center;
+    background: url("/images/theme/day/star-small.png") no-repeat center;
     animation: motion-star-small 8s infinite ease-in;
 }
 
@@ -183,6 +183,6 @@
     width: 8px;
     height: 8px;
 
-    background: url("/images/assets/star-big.png") no-repeat center;
+    background: url("/images/theme/day/star-big.png") no-repeat center;
     animation: motion-star-small 20s infinite ease;
 }
