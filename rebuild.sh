@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
+
 rm -r ./build  &&
 
+git reset --hard HEAD &&
 git pull &&
 
 npm install  &&
