@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-rm -r ./build  &&
+rm -r ./build
 
 git reset --hard HEAD &&
 git pull &&
