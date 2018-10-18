@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
 
-    <meta property="og:title" content="Becoming.lu" />
-    <meta property="og:type" content="text/html" />
-    <meta property="og:url" content="http://becoming.lu" />
-    <meta property="og:image" content="http://becoming.lu/images/assets/becoming.png" />
+    <meta property="og:title" content="Becoming.lu"/>
+    <meta property="og:type" content="text/html"/>
+    <meta property="og:url" content="http://becoming.lu"/>
+    <meta property="og:image" content="http://becoming.lu/images/assets/becoming.png"/>
 
     <!--
       manifest.json provides metadata used when your web app is added to the
@@ -16,33 +16,62 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
+    <link rel="stylesheet" type="text/css"
+          href="%PUBLIC_URL%/cookieconsent2/3.1.0/cookieconsent.min.css"/>
+    <script src="%PUBLIC_URL%/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <!--
+    Notice the use of %PUBLIC_URL% in the tags above.
+    It will be replaced with the URL of the `public` folder during the build.
+    Only files inside the `public` folder can be referenced from the HTML.
+
+    Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+    work correctly both with client-side routing and a non-root public URL.
+    Learn how to configure a non-root public URL by running `npm run build`.
+  -->
     <title>Becoming.lu</title>
-  </head>
-  <body>
-    <noscript>
-      Becoming.lu is built on JavaScript, that means you need to enable JavaScript to run this app.
-    </noscript>
+</head>
+<body>
+<noscript>
+    Becoming.lu is built on JavaScript, that means you need to enable JavaScript to run this app.
+</noscript>
 
-    <div id="root"></div>
+<script>
+    window.addEventListener("load", function () {
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#eaf7f7",
+                    "text": "#5c7291"
+                },
+                "button": {
+                    "background": "#56cbdb",
+                    "text": "#ffffff"
+                }
+            },
+            "theme": "classic",
+            "position": "bottom-right",
+            "content": {
+                "message": "We are not using cookies, yet we use third party plugins that might do so.",
+                "dismiss": "I'm fine with it",
+                "link": "See details",
+                "href": "%PUBLIC_URL%/about/cookies"
+            }
+        })
+    });
+</script>
 
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<div id="root"></div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<!--
+  This HTML file is a template.
+  If you open it directly in the browser, you will see an empty page.
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  You can add webfonts, meta tags, or analytics to this file.
+  The build step will place the bundled scripts into the <body> tag.
+
+  To begin the development, run `npm start` or `yarn start`.
+  To create a production bundle, use `npm run build` or `yarn build`.
+-->
+</body>
 </html>
