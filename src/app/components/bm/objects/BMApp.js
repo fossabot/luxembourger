@@ -46,7 +46,7 @@ export default class BMApp extends BMComponent {
                    href={this.ios}
                    title="Get from AppStore"
                    target={"_blank"}>
-                    <img alt="AppStore button"  title="AppStore button" src="/images/logo/app-store.png"/>
+                    <img alt="AppStore button"  title="AppStore button" src="/images/logo/appstore-fr.png"/>
                 </a>
 
             </div>
