@@ -24,4 +24,12 @@ export default class BMComponent {
             {this.content}
         </div>
     }
+
+    nullable(value: string) {
+        if(value === null || value.trim() === "-") {
+            return null;
+        }
+
+        return value;
+    }
 }

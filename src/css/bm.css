@@ -166,19 +166,19 @@
 }
 
 .i-con.blue {
-    background-image: url("/images/assets/i-con/info-blue.svg");
+    background-image: url("/images/icon/info-blue.svg");
 }
 
 .i-con.red {
-    background-image: url("/images/assets/i-con/info-red.svg");
+    background-image: url("/images/icon/info-red.svg");
 }
 
 .i-con.green {
-    background-image: url("/images/assets/i-con/info-green.svg");
+    background-image: url("/images/icon/info-green.svg");
 }
 
 .i-con.yellow {
-    background-image: url("/images/assets/i-con/info-orange.svg");
+    background-image: url("/images/icon/info-orange.svg");
 }
 
 .bm_app {

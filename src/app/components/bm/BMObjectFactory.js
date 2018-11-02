@@ -12,6 +12,7 @@ import BMTitleSmall from "./objects/BMTitleSmall";
 import BMApp from "./objects/BMApp";
 import BMCategory from "./objects/BMCategory";
 import BMCategoryItem from "./objects/BMCategoryItem";
+import BMWorkingHours from "./objects/BMWorkingHours";
 
 class BMObjectFactory {
 
@@ -38,6 +39,7 @@ class BMObjectFactory {
         "category": BMCategory,
         "category-link": BMCategory,
         "category-item": BMCategoryItem,
+        "working-hours": BMWorkingHours,
     };
 
     of(textDescription: string): BMComponent {

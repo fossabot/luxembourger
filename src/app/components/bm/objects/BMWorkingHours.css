@@ -1,0 +1,16 @@
+.bm-container {
+    padding: 10px;
+}
+
+.bm-container .yellow {
+    background-color: #FAF8EA;
+}
+.bm-container .blue{
+    background-color: #E1EBEE;
+}
+.bm-container .red{
+    background-color: #F7EBE7;
+}
+.bm-container .green{
+    background-color: #EAF3E8;
+}
