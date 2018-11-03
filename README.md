@@ -4,6 +4,8 @@
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bbitbucket.org%2Frodislav%2Fbecoming.svg?type=large)](https://app.fossa.io/projects/git%2Bbitbucket.org%2Frodislav%2Fbecoming?ref=badge_large)
 
+[FOSSA Reports](https://app.fossa.io/reports/a8b6858f-3304-4b23-9584-358e76c67a56)
+
 ## About
 
 The project is created as a tool that is going to help newcomers to integrate
