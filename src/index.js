@@ -4,12 +4,12 @@ import './css/index.css';
 import './css/index-mobile.css';
 import './css/bm.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-import { unregister } from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
+// import { unregister } from './registerServiceWorker';
 
 import {BrowserRouter} from "react-router-dom";
 
-unregister();
+// unregister();
 
 ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
 
