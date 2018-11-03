@@ -19,7 +19,7 @@ export default class BMComponent {
         this.key = "bm-" + this.type + "-" + BMComponent.keyIdx++
     }
 
-    render() {
+    render(): * {
         return <div key={this.key} className={"bm_text"}>
             {this.content}
         </div>

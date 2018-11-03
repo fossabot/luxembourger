@@ -3,6 +3,24 @@
 import BMComponent from "./BMComponent";
 import React from "react";
 
+export class BMListItem {
+
+    text: string;
+    items: string[] = [];
+
+    constructor(text: string) {
+        this.text = text;
+    }
+
+    addSubItem(value: string) {
+        if(!this.items) {
+            this.items = []
+        }
+
+        this.items.push(value.replace(" - ", ""))
+    }
+}
+
 export default class BMList extends BMComponent {
     items: BMListItem[] = [];
 
@@ -49,23 +67,5 @@ export default class BMList extends BMComponent {
         return <ul key={this.key} className={"bm_list"}>
             {lis}
         </ul>;
-    }
-}
-
-export class BMListItem {
-
-    text: string;
-    items: string[] = [];
-
-    constructor(text: string) {
-        this.text = text;
-    }
-
-    addSubItem(value: string) {
-        if(!this.items) {
-            this.items = []
-        }
-
-        this.items.push(value.replace(" - ", ""))
     }
 }
