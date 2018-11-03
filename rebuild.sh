@@ -5,6 +5,8 @@ rm -r ./build
 git reset --hard HEAD
 git pull
 
+git push github master
+
 npm install
 npm run-script build
 
