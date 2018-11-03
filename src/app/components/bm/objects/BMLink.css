@@ -6,6 +6,7 @@
 .bm_link img {
     margin-right: 10px;
     width: 162px;
+    flex-shrink: 0;
 }
 
 .bm_link span {
