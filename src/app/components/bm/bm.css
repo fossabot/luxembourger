@@ -1,0 +1,31 @@
+.bm_titleBig {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    color: #3f3f3f;
+
+    padding-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.bm_titleSmall {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #3F3F3F;
+
+    margin-top: 50px;
+    padding-bottom: 10px;
+}
+
+.bm_text {
+    /*text-indent: 35px;*/
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    color: #3F3F3F;
+
+    line-height: 24px;
+
+    margin-bottom: 10px;
+}

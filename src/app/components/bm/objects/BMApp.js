@@ -1,7 +1,6 @@
 import BMComponent from "./BMComponent";
 import React from "react";
-
-const colors = ["yellow", ""];
+import './BMApp.css';
 
 export default class BMApp extends BMComponent {
     title: string;

@@ -1,0 +1,13 @@
+.bm_link {
+    display: flex;
+    color: #0D72B9;
+}
+
+.bm_link img {
+    margin-right: 10px;
+    width: 162px;
+}
+
+.bm_link span {
+    align-self: center;
+}

@@ -1,5 +1,6 @@
 import BMComponent from "./BMComponent";
 import React from "react";
+import './BMShortNumber.css';
 
 export default class BMShortNumber extends BMComponent {
     number: string;

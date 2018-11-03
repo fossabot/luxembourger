@@ -2,6 +2,7 @@ import React from "react";
 import * as ReactDOM from "react-dom";
 import BMComponent from "./objects/BMComponent";
 import {bmObjectFactory} from "./BMObjectFactory";
+import './bm.css';
 
 export default class BasicMarkup extends React.Component {
 

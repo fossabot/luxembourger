@@ -2,6 +2,7 @@
 
 import BMComponent from "./BMComponent";
 import React from "react";
+import './BMInfo.css';
 
 export default class BMInfo extends BMComponent {
     items: string[] = [];

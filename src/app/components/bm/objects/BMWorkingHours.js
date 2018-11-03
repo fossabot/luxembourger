@@ -1,7 +1,4 @@
 import BMComponent from "./BMComponent";
-import Card from "@material-ui/core/Card/Card";
-import CardHeader from "@material-ui/core/CardHeader/CardHeader";
-import Avatar from "@material-ui/core/Avatar/Avatar";
 import React from "react";
 import './BMWorkingHours.css';
 
@@ -27,6 +24,17 @@ export default class BMWorkingHours extends BMComponent {
 
     workingHours: WorkingHour[];
 
+
+    static colors: string[] = ["yellow", "blue", "red", "green"];
+    static idx: number = 0;
+    static getNextColor = () => {
+        if (BMWorkingHours.idx >= BMWorkingHours.colors.length) {
+            BMWorkingHours.idx = 0;
+        }
+
+        return BMWorkingHours.colors[BMWorkingHours.idx++];
+    };
+
     constructor(line: string) {
         super(line);
 
@@ -41,13 +49,13 @@ export default class BMWorkingHours extends BMComponent {
         this.transport = this.nullable(parts[5]);
 
         this.workingHours = [];
-        for(let i = 6; i < parts.length; i++) {
+        for (let i = 6; i < parts.length; i++) {
             this.workingHours.push(new WorkingHour(parts[i]));
         }
     }
 
     render(): * {
-        let logo = !this.logoUrl ? "" : <img src={this.logoUrl} title={this.title + ", Logo"}/>;
+        let logo = !this.logoUrl ? "" : <img className={"bm-img"} src={this.logoUrl} alt={this.title + ", Logo"}/>;
         let link = !this.link ? "" : <a href={this.link} target={"_blank"}
                                         title={"Click to open site " + this.title + " in new tab"}>{this.link}</a>;
 
@@ -57,20 +65,24 @@ export default class BMWorkingHours extends BMComponent {
         let transport = !this.transport ? "" : <div>{this.transport}</div>;
 
         let workingHours = [];
-        for(let i = 0; i < this.workingHours.length; i++) {
+        for (let i = 0; i < this.workingHours.length; i++) {
             let w = this.workingHours[i];
-            workingHours.push(<div><b>{w.day}</b> : {w.time}</div>);
+            workingHours.push(<div key={Date.now() + Math.random() * 100000}>&nbsp;&nbsp;<b>{w.day}</b> : {w.time}<br/>
+            </div>);
         }
 
         return <div key={this.key}
-        className={"ceva"}>
-            <div>{this.title}</div>
+                    className={"bm-container " + BMWorkingHours.getNextColor()}>
+            <div className={"bm-title"}>{this.title}</div>
             <div>{logo}</div>
-            <div>{link}</div>
-            <div>{address}</div>
-            <div>{phone}</div>
-            <div>{transport}</div>
-            <div>{workingHours}</div>
+            <div className={"bm-a"}>{link}</div>
+            <div className={"bm-line address"}><span className={"icon location"}/>{address}</div>
+            <div className={"bm-line"}><span className={"icon phone"}/>{phone}</div>
+            <div className={"bm-line"}><span className={"icon bus"}/><b>{transport}</b></div>
+            <div className={"flex-start"}>
+                <div className={"left icon clock"}/>
+                <div className={"right"}>{workingHours}</div>
+            </div>
         </div>;
     }
 }

@@ -1,0 +1,30 @@
+
+.bm_app {
+    display: flex;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+/*.bm_app:first-child {*/
+/*margin-top: 10px;*/
+/*}*/
+
+.bm_app img {
+    margin-right: 10px;
+}
+
+.bm_app span {
+    align-self: center;
+}
+
+.bm_app-buttons{
+    margin-top: 10px;
+}
+
+.bm_app-subtitle {
+    margin-top: 8px;
+    line-height: 24px;
+    margin-left: 5px;
+}
+

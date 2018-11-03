@@ -1,5 +1,6 @@
 import BMComponent from "./BMComponent";
 import React from "react";
+import './BMLink.css';
 
 export default class BMLink extends BMComponent {
     title: string;

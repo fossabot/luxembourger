@@ -2,6 +2,7 @@
 
 import BMComponent from "./BMComponent";
 import React from "react";
+import './BMList.css';
 
 export class BMListItem {
 

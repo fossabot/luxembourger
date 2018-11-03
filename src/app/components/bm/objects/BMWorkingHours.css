@@ -1,16 +1,90 @@
 .bm-container {
-    padding: 10px;
+    padding: 18px 10px 10px 15px;
+    border-radius: 8px;
+
+    color: black;
+    margin-bottom: 25px;
 }
 
-.bm-container .yellow {
+.bm-img {
+   margin-top: 7px;
+}
+
+.bm-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.bm-a a {
+    color: #0d6ec4;
+}
+
+.bm-container.yellow {
     background-color: #FAF8EA;
 }
-.bm-container .blue{
+
+.bm-container.blue {
     background-color: #E1EBEE;
 }
-.bm-container .red{
+
+.bm-container.red {
     background-color: #F7EBE7;
 }
-.bm-container .green{
+
+.bm-container.green {
     background-color: #EAF3E8;
+}
+
+.bm-line {
+    display: flex;
+    margin-bottom: 9px;
+    margin-top: 5px;
+}
+
+.bm-line.address {
+    margin-top: 10px;
+}
+
+.bm-line.no-flex {
+    display: inline-flex;
+}
+
+.icon {
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 15px;
+    margin-top: 2px;
+    background-repeat: no-repeat;
+}
+
+.flex-start {
+    display: flex;
+}
+
+.left {
+    align-self: flex-start;
+    margin-right: 5px;
+}
+
+.right {
+    align-self: flex-end;
+    margin-right: 5px;
+}
+
+.icon.location {
+    background-image: url("/images/icon/info-blue.svg");
+}
+
+.icon.phone {
+    background-image: url("/images/icon/info-red.svg");
+}
+
+.icon.bus {
+    background-image: url("/images/icon/info-green.svg");
+}
+
+.icon.clock {
+    background-image: url("/images/icon/info-orange.svg");
 }
