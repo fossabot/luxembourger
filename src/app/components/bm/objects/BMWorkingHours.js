@@ -76,12 +76,12 @@ export default class BMWorkingHours extends BMComponent {
 
             <div className={"left width-50prcnt"}>
                 <div className={"bm-title"}>{this.title}</div>
-                <div>{logo}</div>
                 <div className={"bm-a"}>{link}</div>
+                <div>{logo}</div>
                 <div className={"bm-line address"}><span className={"icon location"}/>{address}</div>
             </div>
 
-            <div className={"right width-50prcnt border-left"}>
+            <div className={"right width-50prcnt"}>
                 <div className={"bm-line"}><span className={"icon phone"}/>{phone}</div>
                 <div className={"bm-line"}><span className={"icon bus"}/><b>{transport}</b></div>
                 <div className={"flex-box"}>
