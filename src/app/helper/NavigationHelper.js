@@ -58,7 +58,7 @@ class NavigationHelper {
     }
 
     setTitle(text: string) {
-        document.title = text + ", promoted by Becoming.lu";
+        document.title = text + ", Becoming.lu";
     }
 }
 
