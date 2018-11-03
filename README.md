@@ -1,6 +1,8 @@
 # becoming.lu
 
-[becoming.lu](http://becoming.lu)
+[https://becoming.lu](https://becoming.lu)
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bbitbucket.org%2Frodislav%2Fbecoming.svg?type=large)](https://app.fossa.io/projects/git%2Bbitbucket.org%2Frodislav%2Fbecoming?ref=badge_large)
 
 ## About
 
@@ -33,7 +35,7 @@ In order to run the project locally we have to `npm install && npm start`
 
 https://gist.github.com/nrollr/9a39bb636a820fb97eec2ed85e473d38
 
-```bash
+```text
 # Advanced config for NGINX
 	server_tokens off;
 	add_header X-XSS-Protection "1; mode=block";
