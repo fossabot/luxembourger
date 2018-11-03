@@ -25,7 +25,7 @@ export default class BMWorkingHours extends BMComponent {
     workingHours: WorkingHour[];
 
 
-    static colors: string[] = ["yellow", "blue", "red", "green"];
+    static colors: string[] = ["green", "blue", "yellow", "red", ];
     static idx: number = 0;
     static getNextColor = () => {
         if (BMWorkingHours.idx >= BMWorkingHours.colors.length) {
@@ -72,16 +72,22 @@ export default class BMWorkingHours extends BMComponent {
         }
 
         return <div key={this.key}
-                    className={"bm-container " + BMWorkingHours.getNextColor()}>
-            <div className={"bm-title"}>{this.title}</div>
-            <div>{logo}</div>
-            <div className={"bm-a"}>{link}</div>
-            <div className={"bm-line address"}><span className={"icon location"}/>{address}</div>
-            <div className={"bm-line"}><span className={"icon phone"}/>{phone}</div>
-            <div className={"bm-line"}><span className={"icon bus"}/><b>{transport}</b></div>
-            <div className={"flex-start"}>
-                <div className={"left icon clock"}/>
-                <div className={"right"}>{workingHours}</div>
+                    className={"flex-box bm-container " + BMWorkingHours.getNextColor()}>
+
+            <div className={"left width-50prcnt"}>
+                <div className={"bm-title"}>{this.title}</div>
+                <div>{logo}</div>
+                <div className={"bm-a"}>{link}</div>
+                <div className={"bm-line address"}><span className={"icon location"}/>{address}</div>
+            </div>
+
+            <div className={"right width-50prcnt border-left"}>
+                <div className={"bm-line"}><span className={"icon phone"}/>{phone}</div>
+                <div className={"bm-line"}><span className={"icon bus"}/><b>{transport}</b></div>
+                <div className={"flex-box"}>
+                    <div className={"left icon clock"}/>
+                    <div className={"right"}>{workingHours}</div>
+                </div>
             </div>
         </div>;
     }

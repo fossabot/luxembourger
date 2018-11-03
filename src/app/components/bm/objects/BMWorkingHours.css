@@ -49,6 +49,29 @@
     display: inline-flex;
 }
 
+.width-50prcnt {
+    width: 50%!important;
+}
+
+.border-left {
+    border-left: 2px solid white;
+    padding-left: 10px;
+}
+
+.flex-box {
+    display: flex;
+}
+
+.flex-box .left {
+    align-self: flex-start;
+    margin-right: 5px;
+}
+
+.flex-box .right {
+    align-self: flex-start;
+    margin-right: 5px;
+}
+
 .icon {
     height: 23px;
     width: 23px;
@@ -57,20 +80,7 @@
     margin-right: 15px;
     margin-top: 2px;
     background-repeat: no-repeat;
-}
-
-.flex-start {
-    display: flex;
-}
-
-.left {
-    align-self: flex-start;
-    margin-right: 5px;
-}
-
-.right {
-    align-self: flex-end;
-    margin-right: 5px;
+    flex-shrink: 0;
 }
 
 .icon.location {
