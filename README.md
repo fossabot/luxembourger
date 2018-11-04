@@ -4,7 +4,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/268091279ecef6920f33/maintainability)](https://codeclimate.com/github/becoming/frontend/maintainability)
 
-[Maintainability](https://codeclimate.com/github/becoming/frontend)
+[Code Climate](https://codeclimate.com/github/becoming/frontend)
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bbitbucket.org%2Frodislav%2Fbecoming.svg?type=large)](https://app.fossa.io/projects/git%2Bbitbucket.org%2Frodislav%2Fbecoming?ref=badge_large)
 
