@@ -8,7 +8,7 @@
     <meta property="og:title" content="Becoming.lu"/>
     <meta property="og:type" content="text/html"/>
     <meta property="og:url" content="http://becoming.lu"/>
-    <meta property="og:image" content="http://becoming.lu/images/assets/becoming.png"/>
+    <meta property="og:image" content="http://becoming.lu/images/becoming.png"/>
 
     <!--
       manifest.json provides metadata used when your web app is added to the
@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css"
           href="%PUBLIC_URL%/cookieconsent2/3.1.0/cookieconsent.min.css"/>
     <script src="%PUBLIC_URL%/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script src="%PUBLIC_URL%/cookieconsent2/3.1.0/cookie-init.js"></script>
     <!--
     Notice the use of %PUBLIC_URL% in the tags above.
     It will be replaced with the URL of the `public` folder during the build.
@@ -33,34 +34,8 @@
 </head>
 <body>
 <noscript>
-    Becoming.lu is built on JavaScript, that means you need to enable JavaScript to run this app.
+    Becoming.lu is built on JavaScript, that means you need to enable it.
 </noscript>
-
-<script>
-    window.addEventListener("load", function () {
-        window.cookieconsent.initialise({
-            "palette": {
-                "popup": {
-                    "background": "#eaf7f7",
-                    "text": "#5c7291"
-                },
-                "button": {
-                    "background": "#56cbdb",
-                    "text": "#ffffff"
-                }
-            },
-            "theme": "classic",
-            "position": "bottom-right",
-            "content": {
-                "message": "We are not using cookies, yet we use third party plugins that might do so.",
-                "dismiss": "I'm fine with it",
-                "link": "See details",
-                "target": "_self",
-                "href": "%PUBLIC_URL%/about/cookies"
-            }
-        })
-    });
-</script>
 
 <div id="root"></div>
 
