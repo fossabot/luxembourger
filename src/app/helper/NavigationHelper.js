@@ -7,10 +7,14 @@ import Category from "../data/Category";
 import EmptyProps from "./TypeHelper";
 
 class NavigationHelper {
-    //FIXME find a good way to handle navigation in REACT
+    // FIXME find a good way to handle navigation in REACT
 
     gotoRoot(component: React.Component<EmptyProps>) {
-        component.props.history.push('/');
+        if(component) {
+            component.props.history.push('/');
+        }
+
+        categoryStore.setCurrentCategory(null);
     }
 
     restoreFromUri(component: React.Component<EmptyProps>, categoryId: string, categoryItemId: string) {

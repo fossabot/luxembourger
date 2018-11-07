@@ -48,7 +48,12 @@ class CategoryMenu extends React.Component {
             />)
         });
 
-        return <div className={'be_CategoryMenu'}>
+        let maybeHidden = "";
+        if(categoryStore.categoryItem) {
+            maybeHidden = "hidden";
+        }
+
+        return <div className={'be_CategoryMenu ' + maybeHidden}>
             {items}
         </div>;
     }

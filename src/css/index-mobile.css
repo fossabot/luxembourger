@@ -4,33 +4,64 @@
         background: white!important;
     }
 
+    .be_Logo {
+        position: unset!important;
+
+        margin-left: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        width: 162px;
+        height: 50px;
+
+        background-image: url("/images/becoming-small.png");
+    }
+
+    .hidden {
+        display: none!important;
+    }
+
+    .theme {
+        display: none!important;
+    }
+
     .be_Menu {
+        position: unset;
+
         width: 100%!important;
         border: none!important;
 
-        height: calc(100% - 150px) !important;
-        max-height: none!important;
+        height: unset!important;
+        max-height: unset!important;
 
         box-shadow: none!important;
         border-radius: 0!important;
 
         z-index: 1;
+
+        margin-top: 0;
+
+        display: contents;
     }
 
     .be_CategoryMenu {
+        position: unset;
+
         margin: 0!important;
 
         width: calc(100% - 10px)!important;
         border: none!important;
 
-        height: 100%!important;
-        max-height: none!important;
+        height: unset!important;
+        max-height: unset!important;
 
         padding: 5px 5px 0 5px!important;
 
         background: #F2F2F2!important;
 
         z-index: 2;
+
+        display: contents;
     }
 
     .be_CategoryItemView * {
@@ -39,15 +70,19 @@
     }
 
     .be_CategoryItemView {
+        position: unset;
+
         margin: 0!important;
 
         width: 100%!important;
-        height: 100%!important;
-        max-height: none!important;
+        height: unset!important;
+        max-height: unset!important;
 
         z-index: 3;
         border-radius: unset!important;
         background-color: white;
+
+        display: contents;
     }
 
     .be_CategoryItemView-paper {

@@ -20,12 +20,15 @@ export default class RouterHandler extends React.Component<EmptyProps> {
         let categoryId: string;
         let categoryItemId: string;
 
+        console.log("check uri, location: " + location);
+
         if(!location) {
             categoryStore._loadCategories().subscribe();
             return;
         }
 
         if(location.pathname === '' || location.pathname === '/') {
+            navigationHelper.gotoRoot(this);
             return;
         }
 

@@ -32,11 +32,13 @@ class CategoryStore {
         this.category = category;
         this.categoryItem = null;
 
-        if(category.items.length < 1) {
-            this.loadCategoryItems(category).subscribe();
-        } else {
-            if(this.category === category) {
-                this.categoryItems = category.items;
+        if(category) {
+            if(category.items.length < 1) {
+                this.loadCategoryItems(category).subscribe();
+            } else {
+                if(this.category === category) {
+                    this.categoryItems = category.items;
+                }
             }
         }
     }
