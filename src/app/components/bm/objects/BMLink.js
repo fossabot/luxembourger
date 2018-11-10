@@ -2,10 +2,13 @@ import BMComponent from "./BMComponent";
 import React from "react";
 import './BMLink.css';
 
+const imgHttps = "/images/default-link.png";
+const imgHttp = "/images/default-link-not-secure.png";
+
 export default class BMLink extends BMComponent {
     title: string;
     url: string;
-    imageUrl: string = "/images/default-link.png";
+    imageUrl: string = imgHttps;
 
     constructor(line: string) {
         super(line);
@@ -14,6 +17,10 @@ export default class BMLink extends BMComponent {
 
         this.title = parts[0];
         this.url= parts[1];
+
+        if(this.url && !this.url.startsWith("https")) {
+            this.imageUrl = imgHttp;
+        }
 
         let tmp = parts[2];
 
