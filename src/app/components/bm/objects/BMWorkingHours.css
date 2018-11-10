@@ -84,17 +84,17 @@
 }
 
 .icon.location {
-    background-image: url("/images/icon/info-blue.svg");
+    background-image: url("/images/icon/pin.svg");
 }
 
 .icon.phone {
-    background-image: url("/images/icon/info-red.svg");
+    background-image: url("/images/icon/phone.svg");
 }
 
 .icon.bus {
-    background-image: url("/images/icon/info-green.svg");
+    background-image: url("/images/icon/bus.svg");
 }
 
 .icon.clock {
-    background-image: url("/images/icon/info-orange.svg");
+    background-image: url("/images/icon/clock.svg");
 }
