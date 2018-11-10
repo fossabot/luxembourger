@@ -29,6 +29,26 @@ insurance
 /wiki/menu/Insurance.bm
 
 category
+Banks
+banks
+/wiki/menu/Banks.bm
+
+category
+Bus, Train, etc
+bus-train
+/wiki/menu/BusTrainTram.bm
+
+category
+Shopping
+shopping
+/wiki/menu/Shopping.bm
+
+category
+Phone, Internet, TV
+phone-internet-tv
+/wiki/menu/PhoneInternetTV.bm
+
+category
 divider
 divider
 
