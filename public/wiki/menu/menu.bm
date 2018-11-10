@@ -34,9 +34,9 @@ banks
 /wiki/menu/Banks.bm
 
 category
-Bus, Train, etc
-bus-train
-/wiki/menu/BusTrainTram.bm
+Bus, Train, Tram, Taxi
+bus-train-tram-taxi
+/wiki/menu/BusTrainTramTaxi.bm
 
 category
 Shopping
