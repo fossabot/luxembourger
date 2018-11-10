@@ -59,7 +59,15 @@ export default class BMWorkingHours extends BMComponent {
         let link = !this.link ? "" : <a href={this.link} target={"_blank"}
                                         title={"Click to open site " + this.title + " in new tab"}>{this.link}</a>;
 
-        let address = !this.address ? "" : <div>{this.address}</div>;
+        let address = "";
+        if(this.address) {
+            if(this.address.trim().startsWith("http")) {
+                address = <a href={this.address} target={"_blank"}
+                   title={"Click to open site " + this.title + " in new tab"}>Addresses on official site</a>;
+            } else {
+                address = <div>{this.address}</div>;
+            }
+        }
 
         let phone = !this.phone ? "" : <div>{this.phone}</div>;
         let transport = !this.transport ? "" : <div>{this.transport}</div>;
