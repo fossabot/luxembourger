@@ -34,6 +34,7 @@ class CategoryIconsHelper {
         "cars": Cars,
 
         "bus-train-tram": Bus,
+        "bus-train-tram-taxi": Bus,
         "bus-train": Bus,
         "bus": Bus,
         "train": Train,
