@@ -5,7 +5,7 @@ import './BMLink.css';
 export default class BMLink extends BMComponent {
     title: string;
     url: string;
-    imageUrl: string = "/images/assets/default-link.png";
+    imageUrl: string = "/images/default-link.png";
 
     constructor(line: string) {
         super(line);
@@ -14,7 +14,12 @@ export default class BMLink extends BMComponent {
 
         this.title = parts[0];
         this.url= parts[1];
-        this.imageUrl= parts[2];
+
+        let tmp = parts[2];
+
+        if(tmp && tmp.trim() !== '') {
+            this.imageUrl = tmp;
+        }
     }
 
     render(): * {
