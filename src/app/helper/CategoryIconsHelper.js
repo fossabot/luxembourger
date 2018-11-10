@@ -2,7 +2,7 @@
 
 import QuickSummary from '@material-ui/icons/Category';
 import Housing from '@material-ui/icons/Home';
-import Doctors from '@material-ui/icons/FavoriteBorder';
+import Doctors from '@material-ui/icons/LocalHospital';
 import Banks from '@material-ui/icons/LocalAtm';
 import Schooling from '@material-ui/icons/LocalLibrary';
 import Insurance from '@material-ui/icons/VerifiedUser';
@@ -13,11 +13,14 @@ import Playgrounds from '@material-ui/icons/ChildFriendly';
 import Emergency from '@material-ui/icons/LocalHospital';
 import Code from '@material-ui/icons/Code';
 import Feedback from '@material-ui/icons/Feedback';
-import divider from '@material-ui/icons/OfflineBolt';
-import job from '@material-ui/icons/Work';
-import train from '@material-ui/icons/Train';
+import Job from '@material-ui/icons/Work';
+import Train from '@material-ui/icons/Train';
 import About from '@material-ui/icons/Help';
-import playground from '@material-ui/icons/ChildCare';
+import Playground from '@material-ui/icons/ChildCare';
+import Shopping from '@material-ui/icons/ShoppingBasket';
+import Phone from '@material-ui/icons/Phone';
+
+import divider from '@material-ui/icons/OfflineBolt';
 import unknown from '@material-ui/icons/ErrorOutline';
 
 class CategoryIconsHelper {
@@ -29,18 +32,27 @@ class CategoryIconsHelper {
         "schooling": Schooling,
         "insurance": Insurance,
         "cars": Cars,
+
+        "bus-train-tram": Bus,
         "bus-train": Bus,
+        "bus": Bus,
+        "train": Train,
+
+        "shopping" : Shopping,
+
+        "phone" : Phone,
+        "phone-internet-tv" : Phone,
+
         "legal": Legal,
         "banks": Banks,
-        "playgrounds": Playgrounds,
         "emergency": Emergency,
         "feedback": Feedback,
         "source-code": Code,
         "about": About,
-        "job": job,
-        "train": train,
-        "bus": train,
-        "playground": playground,
+        "job": Job,
+        "train": Train,
+        "playgrounds": Playgrounds,
+        "playground": Playground,
         "divider": divider,
     };
 

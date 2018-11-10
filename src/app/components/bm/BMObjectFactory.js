@@ -18,7 +18,11 @@ class BMObjectFactory {
 
     textToBMComponents(text: string): BMComponent[] {
         let result: BMComponent[] = [];
-        text.split("\n\n").forEach(value => result.push(this.of(value)));
+        text.split("\n\n").forEach(value => {
+            if(value.trim() !== "") {
+                result.push(this.of(value))
+            }
+        });
 
         return result;
     }
