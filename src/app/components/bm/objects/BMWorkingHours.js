@@ -25,7 +25,7 @@ export default class BMWorkingHours extends BMComponent {
     workingHours: WorkingHour[];
 
 
-    static colors: string[] = ["green", "blue", "yellow", "red", ];
+    static colors: string[] = ["green", "blue", "yellow", "red",];
     static idx: number = 0;
     static getNextColor = () => {
         if (BMWorkingHours.idx >= BMWorkingHours.colors.length) {
@@ -54,24 +54,57 @@ export default class BMWorkingHours extends BMComponent {
         }
     }
 
-    render(): * {
+    createLogo() {
         let logo = !this.logoUrl ? "" : <img className={"bm-img"} src={this.logoUrl} alt={this.title + ", Logo"}/>;
-        let link = !this.link ? "" : <a href={this.link} target={"_blank"}
-                                        title={"Click to open site " + this.title + " in new tab"}>{this.link}</a>;
 
+        return <div>{logo}</div>;
+    }
+
+    createLink() {
+        return !this.link ? "" :
+            <div className={"bm-a"}>
+                <a href={this.link} target={"_blank"}
+                   title={"Click to open site " + this.title + " in new tab"}>
+                    {this.link}
+                </a>
+            </div>;
+    }
+
+    createAddress() {
         let address = "";
-        if(this.address) {
-            if(this.address.trim().startsWith("http")) {
+        if (this.address) {
+            if (this.address.trim().startsWith("http")) {
                 address = <a href={this.address} target={"_blank"}
-                   title={"Click to open site " + this.title + " in new tab"}>Addresses on official site</a>;
+                             title={"Click to open site " + this.title + " in new tab"}>Addresses and Contacts</a>;
             } else {
                 address = <div>{this.address}</div>;
             }
+
+            address = <div className={"bm-line address"}><span className={"icon location"}/>{address}</div>
         }
 
-        let phone = !this.phone ? "" : <div>{this.phone}</div>;
-        let transport = !this.transport ? "" : <div>{this.transport}</div>;
+        return address;
+    }
 
+    createPhone() {
+        return !this.phone ? "" :
+            <div className={"bm-line"}>
+                <span className={"icon phone"}/>
+                <div>{this.phone}</div>
+            </div>;
+    }
+
+    createTransport() {
+        return !this.transport ? "" :
+            <div className={"bm-line"}>
+                <span className={"icon bus"}/>
+                <b>
+                    <div>{this.transport}</div>
+                </b>
+            </div>;
+    }
+
+    createWorkingHours() {
         let workingHours = [];
         for (let i = 0; i < this.workingHours.length; i++) {
             let w = this.workingHours[i];
@@ -79,23 +112,39 @@ export default class BMWorkingHours extends BMComponent {
             </div>);
         }
 
+        if(workingHours.length < 1) {
+            return "";
+        }
+
+        return <div className={"flex-box"}>
+            <div className={"left icon clock"}/>
+            <div className={"right"}>{workingHours}</div>
+        </div>
+    }
+
+    render(): * {
+        let logo = this.createLogo();
+        let link = this.createLink();
+
+        let address = this.createAddress();
+        let phone = this.createPhone();
+        let transport = this.createTransport();
+        let workingHours = this.createWorkingHours();
+
         return <div key={this.key}
                     className={"flex-box bm-container " + BMWorkingHours.getNextColor()}>
 
             <div className={"left width-50prcnt"}>
                 <div className={"bm-title"}>{this.title}</div>
-                <div className={"bm-a"}>{link}</div>
-                <div>{logo}</div>
-                <div className={"bm-line address"}><span className={"icon location"}/>{address}</div>
+                {link}
+                {logo}
+                {address}
             </div>
 
             <div className={"right width-50prcnt"}>
-                <div className={"bm-line"}><span className={"icon phone"}/>{phone}</div>
-                <div className={"bm-line"}><span className={"icon bus"}/><b>{transport}</b></div>
-                <div className={"flex-box"}>
-                    <div className={"left icon clock"}/>
-                    <div className={"right"}>{workingHours}</div>
-                </div>
+                {phone}
+                {transport}
+                {workingHours}
             </div>
         </div>;
     }
