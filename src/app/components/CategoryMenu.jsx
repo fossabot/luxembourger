@@ -21,20 +21,9 @@ class CategoryMenu extends React.Component {
             this.props.match.params.categoryItemId);
     }
 
-    scrollTopIfNeeded() {
-        if(this.category && this.category.id !== categoryStore.category.id && ReactDOM.findDOMNode(this)) {
-            ReactDOM.findDOMNode(this).scrollTop = 0;
-        }
-
-        this.category = categoryStore.category;
-    }
-
     render() {
-
-        setTimeout(() => this.scrollTopIfNeeded(), 10);
-
         if (!categoryStore.category) {
-            return <div/>;
+            return <span />;
         }
 
         let currentCategoryItemId = categoryStore.categoryItem ? categoryStore.categoryItem.id : "";
@@ -48,12 +37,12 @@ class CategoryMenu extends React.Component {
             />)
         });
 
-        let maybeHidden = "";
+        let maybeHidden = 'be_CategoryMenu';
         if(categoryStore.categoryItem) {
-            maybeHidden = "hidden";
+            maybeHidden += " hidden";
         }
 
-        return <div className={'be_CategoryMenu ' + maybeHidden}>
+        return <div className={maybeHidden}>
             {items}
         </div>;
     }

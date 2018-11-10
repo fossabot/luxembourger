@@ -32,6 +32,7 @@
     margin-right: 15px;
     margin-top: 2px;
     background-repeat: no-repeat;
+    flex-shrink: 0;
 }
 
 .i-con.blue {

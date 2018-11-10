@@ -51,12 +51,12 @@ class Menu extends React.Component<EmptyProps> {
             </ListItem>);
         });
 
-        let maybeHidden = "";
+        let maybeHidden = 'be_Menu';
         if(categoryStore.category || categoryStore.categoryItem) {
-            maybeHidden = "hidden";
+            maybeHidden += " hidden";
         }
 
-        return <div className={'be_Menu ' + maybeHidden}>
+        return <div className={maybeHidden}>
             <List component="nav">
                 {listItems}
             </List>

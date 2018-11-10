@@ -17,20 +17,19 @@ class Post extends React.Component {
 
     scrollTop() {
         try {
-            if(ReactDOM.findDOMNode(this)) {
-                ReactDOM.findDOMNode(this).scrollTop = 0;
-            }
+            window.scrollTo(0, 0);
         } catch (e) {
-        //    ignore error
+            //    ignore error
+            console.error(e);
         }
     }
 
     render() {
+        setTimeout(() => this.scrollTop(), 10);
+
         if(!categoryStore.categoryItem) {
             return <div/>
         }
-
-        setTimeout(() => this.scrollTop(), 10);
 
         let markupView;
 
