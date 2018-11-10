@@ -21,7 +21,19 @@ class CategoryMenu extends React.Component {
             this.props.match.params.categoryItemId);
     }
 
+    scrollTop() {
+        try {
+            window.scrollTo(0, 0);
+        } catch (e) {
+            //    ignore error
+            console.error(e);
+        }
+    }
+
     render() {
+
+        setTimeout(() => this.scrollTop(), 10);
+
         if (!categoryStore.category) {
             return <span />;
         }
