@@ -13,7 +13,7 @@ window.addEventListener("load", function () {
         "theme": "classic",
         "position": "bottom-right",
         "content": {
-            "message": "We are not using cookies, yet we use third party plugins that might do so.",
+            "message": "We do use some cookies",
             "dismiss": "I'm fine with it",
             "link": "See details",
             "target": "_self",
