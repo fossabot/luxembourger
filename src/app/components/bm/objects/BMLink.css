@@ -8,13 +8,10 @@
     width: 162px;
     flex-shrink: 0;
     height: 50px;
-
-    border: 1px solid #DBDBDB;
-    border-radius: 5px;
-    background-color: white;
-
+    border: 1px solid #DBDBDB!important;
+    border-radius: 5px!important;
+    background-color: white!important;
     padding: 0;
-
     margin-bottom: 5px;
 }
 
