@@ -12,6 +12,10 @@
     border: 1px solid #DBDBDB;
     border-radius: 5px;
     background-color: white;
+
+    padding: 0;
+
+    margin-bottom: 5px;
 }
 
 .bm_link span {
