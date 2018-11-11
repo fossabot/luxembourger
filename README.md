@@ -103,3 +103,6 @@ server {
 # mac example
 echo `/Applications/GoogleChrome.app/Contents/MacOS/Google\ Chrome  --headless --disable-gpu --crash-dumps-dir=/tmp/chrome-headless --dump-dom https://becoming.lu/about/cookies` > becoming.html
 ```
+
+nginx prerender
+https://gist.github.com/Stanback/6998085
