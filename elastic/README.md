@@ -1,0 +1,33 @@
+### Set OS settings
+
+https://github.com/docker-library/elasticsearch/issues/111#issuecomment-268511769
+```bash
+# set OS settings
+sudo sysctl -w vm.max_map_count=262144
+```
+
+### Create credentials file
+
+https://httpd.apache.org/docs/2.4/programs/htpasswd.html
+```bash
+htpasswd -c -db .htpasswd $USER $PASS
+```
+
+elastic need same ammount of ram for Xms and Xmx
+```yaml
+elasticsearch:
+  image: docker.elastic.co/elasticsearch/elasticsearch:6.4.3
+  environment:
+    - bootstrap.memory_lock=true
+    - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
+```
+
+### Debug
+
+for debugging purposes you can jump into any container like this
+https://medium.com/the-code-review/run-bash-or-any-command-in-a-docker-container-9a1e7f0ec204
+```bash
+docker exec -i -t container_name /bin/bash
+```
+
+then use **yum** for **elastic** and **apt** for **nginx** to install **curl, less**, etc
