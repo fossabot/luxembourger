@@ -1,14 +1,14 @@
 @media only screen and (max-width: 980px) {
 
     body {
-        background: white!important;
+        background: #B6DFF5!important;
     }
 
     .be_Logo {
         position: unset!important;
 
-        margin-left: 5px;
-        margin-top: 5px;
+        margin-left: calc(50% - 81px);
+        margin-top: 15px;
         margin-bottom: 5px;
 
         width: 162px;
@@ -30,18 +30,18 @@
     .be_Menu {
         position: unset;
 
-        width: 100%!important;
+        margin: 15px 40px 30px;
+
+        width: calc(100% - 80px)!important;
         border: none!important;
 
         height: unset!important;
         max-height: unset!important;
 
         box-shadow: none!important;
-        border-radius: 0!important;
+        border-radius: 20px!important;
 
         z-index: 1;
-
-        margin-top: 0;
 
         display: block;
     }
@@ -59,7 +59,7 @@
 
         padding: 5px 5px 0 5px!important;
 
-        background: #F2F2F2!important;
+        background: #B6DFF5!important;
 
         z-index: 2;
 
