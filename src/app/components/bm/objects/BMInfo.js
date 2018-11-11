@@ -3,6 +3,7 @@
 import BMComponent from "./BMComponent";
 import React from "react";
 import './BMInfo.css';
+import KeyHelper from "../../../helper/KeyHelper";
 
 export default class BMInfo extends BMComponent {
     items: string[] = [];
@@ -19,10 +20,11 @@ export default class BMInfo extends BMComponent {
         let colors: string[] = ["red", "blue", "green", "yellow"];
 
         let lis = [];
+        let key = new KeyHelper();
 
         this.items.forEach(value => {
 
-            lis.push(<li><span className={"i-con " + colors[colorIndex++]}/>{value}</li>);
+            lis.push(<li key={key.next()}><span className={"i-con " + colors[colorIndex++]}/>{value}</li>);
 
             if (colorIndex >= colors.length) {
                 colorIndex = 0

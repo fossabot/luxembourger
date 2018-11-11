@@ -1,10 +1,10 @@
 // @flow
 
-import Category from "../data/Category";
+import Category from "../objects/Category";
 import {extendObservable} from "mobx";
-import CategoryItem from "../data/CategoryItem";
+import CategoryItem from "../objects/CategoryItem";
 import {httpHelper} from "../helper/HttpHelper";
-import CategoryLink from "../data/CategoryLink";
+import CategoryLink from "../objects/CategoryLink";
 import {bmObjectFactory} from "../components/bm/BMObjectFactory";
 import BMCategory from "../components/bm/objects/BMCategory";
 import BMCategoryItem from "../components/bm/objects/BMCategoryItem";
@@ -28,59 +28,7 @@ class CategoryStore {
         });
     }
 
-    setCurrentCategory(category: Category) {
-        this.category = category;
-        this.categoryItem = null;
-
-        if(category) {
-            if(category.items.length < 1) {
-                this.loadCategoryItems(category).subscribe();
-            } else {
-                if(this.category === category) {
-                    this.categoryItems = category.items;
-                }
-            }
-        }
-    }
-
-    loadCategoryItems(category: Category) {
-        return Observable.create((observer: Subscriber) => {
-            httpHelper.getText(category.url).subscribe(data => {
-                let tmp = [];
-
-                bmObjectFactory.textToBMComponents(data).forEach((value: BMCategoryItem) => {
-                    tmp.push(new CategoryItem(value.title, value.description, value.image, value.url))
-                });
-
-                category.items = tmp;
-                this.categoryItems = tmp;
-                observer.next();
-                observer.complete();
-            });
-        });
-    }
-
-    setCurrentCategoryItem(categoryItem: CategoryItem) {
-        this.categoryItem = categoryItem;
-
-        httpHelper.getText(categoryItem.markdownUrl).subscribe(data => this.currentArticle = data);
-    }
-
-    findCategory(categoryId: string): Observable<Category> {
-        return Observable.create((observer: Subscriber) => {
-            if(this.categories.length < 1) {
-                this._loadCategories().subscribe(() => {
-                    observer.next(this._doLookUpCategory(categoryId));
-                    observer.complete();
-                })
-            } else {
-                observer.next(this._doLookUpCategory(categoryId));
-                observer.complete();
-            }
-        });
-    }
-
-    _loadCategories(): Observable {
+    loadCategories(): Observable {
         return Observable.create((observer: Subscriber) => {
             let tmp: Category[] = [];
 
@@ -98,6 +46,58 @@ class CategoryStore {
                 observer.next(tmp);
                 observer.complete();
             });
+        });
+    }
+
+    loadCategoryItems(category: Category) {
+        return Observable.create((observer: Subscriber) => {
+            httpHelper.getText(category.url).subscribe(data => {
+                let tmp = [];
+
+                bmObjectFactory.textToBMComponents(data).forEach((value: BMCategoryItem) => {
+                    tmp.push(new CategoryItem(value.title, value.description, value.image, value.url))
+                });
+
+                category.items = tmp;
+                this.categoryItems = tmp;
+                observer.next(tmp);
+                observer.complete();
+            });
+        });
+    }
+
+    setCurrentCategory(category: Category) {
+        this.category = category;
+        this.categoryItem = null;
+
+        if(category) {
+            if(category.items.length < 1) {
+                this.loadCategoryItems(category).subscribe();
+            } else {
+                if(this.category === category) {
+                    this.categoryItems = category.items;
+                }
+            }
+        }
+    }
+
+    setCurrentCategoryItem(categoryItem: CategoryItem) {
+        this.categoryItem = categoryItem;
+
+        httpHelper.getText(categoryItem.markdownUrl).subscribe(data => this.currentArticle = data);
+    }
+
+    findCategory(categoryId: string): Observable<Category> {
+        return Observable.create((observer: Subscriber) => {
+            if(this.categories.length < 1) {
+                this.loadCategories().subscribe(() => {
+                    observer.next(this._doLookUpCategory(categoryId));
+                    observer.complete();
+                })
+            } else {
+                observer.next(this._doLookUpCategory(categoryId));
+                observer.complete();
+            }
         });
     }
 

@@ -3,6 +3,7 @@
 import BMComponent from "./BMComponent";
 import React from "react";
 import './BMList.css';
+import KeyHelper from "../../../helper/KeyHelper";
 
 export class BMListItem {
 
@@ -51,14 +52,15 @@ export default class BMList extends BMComponent {
         let colors: string[] = ["red", "blue", "green", "yellow"];
 
         let lis = [];
+        let key = new KeyHelper();
 
         this.items.forEach(value => {
             let subItems = [];
             value.items.forEach(subItem => {
-                subItems.push(<div className={"list-subItem"}>{subItem}</div>)
+                subItems.push(<div key={key.next()} className={"list-subItem"}>{subItem}</div>)
             });
 
-            lis.push(<li><span className={"dot " + colors[colorIndex++]}/>{value.text}{subItems}</li>)
+            lis.push(<li key={key.next()}><span className={"dot " + colors[colorIndex++]}/>{value.text}{subItems}</li>)
 
             if (colorIndex >= colors.length) {
                 colorIndex = 0

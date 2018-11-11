@@ -1,5 +1,5 @@
 import React from "react";
-import {navigationHelper} from "../../helper/NavigationHelper";
+import {navigationHelper} from "../helper/NavigationHelper";
 
 export default class Logo extends React.Component {
     render() {

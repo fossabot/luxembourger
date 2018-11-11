@@ -2,15 +2,17 @@
 
 import {categoryStore} from "../store/CategoryStore";
 
-class MetaHelper {
+class HtmlHelper {
 
-    updateMeta(text: string) {
+    // noinspection JSMethodCanBeStatic
+    updateHeadMeta(text: string) {
         document.title = text + ", Becoming.lu";
 
         let category = categoryStore.category;
         let categoryItem = categoryStore.categoryItem;
 
-        let metas: [] = document.getElementsByTagName("META");
+        // NodeListOf<Element>
+        let metas: * = document.getElementsByTagName("META");
 
         for (const meta of metas) {
             try {
@@ -45,4 +47,4 @@ class MetaHelper {
     }
 }
 
-export const metaHelper = new MetaHelper();
+export const htmlHelper = new HtmlHelper();

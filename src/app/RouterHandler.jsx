@@ -1,9 +1,9 @@
 // @flow
 
 import * as React from "react";
-import {navigationHelper} from "./NavigationHelper";
-import EmptyProps from "./TypeHelper";
-import {categoryStore} from "../store/CategoryStore";
+import {navigationHelper} from "./helper/NavigationHelper";
+import EmptyProps from "./helper/TypeHelper";
+import {categoryStore} from "./store/CategoryStore";
 
 //FIXME find a good way to handle navigation in REACT
 export default class RouterHandler extends React.Component<EmptyProps> {
@@ -23,7 +23,7 @@ export default class RouterHandler extends React.Component<EmptyProps> {
         console.log("check uri, location: " + location);
 
         if(!location) {
-            categoryStore._loadCategories().subscribe();
+            categoryStore.loadCategories().subscribe();
             return;
         }
 

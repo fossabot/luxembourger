@@ -2,8 +2,8 @@ import React from "react";
 import Paper from "@material-ui/core/Paper";
 import ReactMarkdown from 'react-markdown';
 import {observer} from "mobx-react/index";
-import {categoryStore} from "../store/CategoryStore";
-import BasicMarkup from "./bm/BasicMarkup";
+import {categoryStore} from "./store/CategoryStore";
+import BasicMarkup from "./components/bm/BasicMarkup";
 
 class Post extends React.Component {
 

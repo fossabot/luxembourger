@@ -1,11 +1,11 @@
 // @flow
 
 import React from "react";
-import CategoryItem from "../data/CategoryItem";
+import CategoryItem from "../objects/CategoryItem";
 import {categoryStore} from "../store/CategoryStore";
-import Category from "../data/Category";
+import Category from "../objects/Category";
 import EmptyProps from "./TypeHelper";
-import {metaHelper} from "./MetaHelper";
+import {htmlHelper} from "./HtmlHelper";
 
 class NavigationHelper {
     // FIXME find a good way to handle navigation in REACT
@@ -39,7 +39,7 @@ class NavigationHelper {
                 categoryStore.findCategoryItem(categoryItemId).subscribe((categoryItem: CategoryItem) => {
                     if(categoryItem) {
                         categoryStore.setCurrentCategoryItem(categoryItem);
-                        metaHelper.updateMeta(categoryItem.title);
+                        htmlHelper.updateHeadMeta(categoryItem.title);
                     } else {
                         this.category(component, category);
                     }
@@ -52,14 +52,14 @@ class NavigationHelper {
         component.props.history.push('/' + category.id);
         categoryStore.setCurrentCategory(category);
 
-        metaHelper.updateMeta(category.name);
+        htmlHelper.updateHeadMeta(category.name);
     }
 
     categoryItem(component: React.Component<EmptyProps>, categoryItem: CategoryItem) {
         component.props.history.push('/' + categoryStore.category.id + "/" + categoryItem.id);
         categoryStore.setCurrentCategoryItem(categoryItem);
 
-        metaHelper.updateMeta(categoryItem.title);
+        htmlHelper.updateHeadMeta(categoryItem.title);
     }
 }
 

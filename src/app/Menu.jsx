@@ -5,13 +5,13 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import {categoryStore} from "../store/CategoryStore";
+import {categoryStore} from "./store/CategoryStore";
 import {observer} from "mobx-react";
-import Category, {DIVIDER} from "../data/Category";
-import {navigationHelper} from "../helper/NavigationHelper";
+import Category, {DIVIDER} from "./objects/Category";
+import {navigationHelper} from "./helper/NavigationHelper";
 import Divider from '@material-ui/core/Divider';
-import CategoryLink from "../data/CategoryLink";
-import EmptyProps from "../helper/TypeHelper";
+import CategoryLink from "./objects/CategoryLink";
+import EmptyProps from "./helper/TypeHelper";
 
 class Menu extends React.Component<EmptyProps> {
 

@@ -3,29 +3,12 @@
 import {Observable} from "rxjs";
 import {Subscriber} from "rxjs";
 
-type error = (response: Response) => {};
-
 class HttpHelper {
 
     timeout: number = 100;
 
-    getText(...url: string[]): Observable {
-        return this.textCall(this.GETRequest(url));
-    }
-
-    GETRequest(...url: string[]): Request {
-        return this.defaultParams(url.join("/"), "get");
-    }
-
-    POSTRequest(body, ...url: string[]): Request {
-        return this.defaultParams(url.join("/"), "post", body);
-    }
-
-    DELETERequest(...url: string[]): Request {
-        return this.defaultParams(url.join("/"), "delete");
-    }
-
-    defaultParams(url: string, method: string, body: any = null): Request {
+    // noinspection JSMethodCanBeStatic
+    _createDefaultRequest(url: string[], method: string, body: any = null): Request {
         let h: Headers = new Headers();
         h.append("Authorization", "Basic " + btoa("admin:password"));
         h.append("Content-Type", "application/json");
@@ -41,41 +24,51 @@ class HttpHelper {
             request.body = JSON.stringify(body);
         }
 
-        return new Request(url, request);
+        return new Request(url.join("/"), request);
     };
 
-    defaultErrorCallback: error = (response: Response) => {
-        console.error(response)
-    };
+    _createGetRequest(url: string[]): Request {
+        return this._createDefaultRequest(url, "get");
+    }
 
-    jsonCall(request, successCallback, errorCallback) {
+    getText(...url: string[]): Observable {
+        return Observable.create((observer: Subscriber) => {
+            const request: Request = this._createGetRequest(url);
 
-        errorCallback = !errorCallback ? this.defaultErrorCallback : errorCallback;
-
-        setTimeout(() => {
             fetch(request)
                 .then((response) => {
-                    response.json().then((data) => {
+                    response.text().then((data) => {
                         if (response.ok) {
-                            successCallback(data)
+                            observer.next(data);
+                            observer.complete();
                         } else {
                             console.error(data, response.status, request.url);
-                            errorCallback(response)
+                            observer.error(data)
                         }
                     })
                 })
                 .catch((e) => {
                     console.error(e.message, request.url);
-                    errorCallback(e)
+                    observer.error(e)
                 });
-        }, this.timeout)
+        });
     }
 
-    textCall(request: Request): Observable {
+    // --------   UNUSED SO FAR ----------------------
+
+    _createPostRequest(body, ...url: string[]): Request {
+        return this._createDefaultRequest(url, "post", body);
+    }
+
+    _createDeleteRequest(...url: string[]): Request {
+        return this._createDefaultRequest(url, "delete");
+    }
+
+    getJson(request) {
         return Observable.create((observer: Subscriber) => {
             fetch(request)
                 .then((response) => {
-                    response.text().then((data) => {
+                    response.json().then((data) => {
                         if (response.ok) {
                             observer.next(data);
                             observer.complete();

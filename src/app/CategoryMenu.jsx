@@ -1,10 +1,10 @@
 import React from "react";
 import {observer} from "mobx-react";
-import {categoryStore} from "../store/CategoryStore";
-import CategoryCard from "./CategoryCard";
-import CategoryItem from "../data/CategoryItem";
-import {navigationHelper} from "../helper/NavigationHelper";
-import Category from "../data/Category";
+import {categoryStore} from "./store/CategoryStore";
+import CategoryCard from "./components/CategoryCard";
+import CategoryItem from "./objects/CategoryItem";
+import {navigationHelper} from "./helper/NavigationHelper";
+import Category from "./objects/Category";
 
 class CategoryMenu extends React.Component {
 

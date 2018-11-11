@@ -1,10 +1,10 @@
 import React from 'react';
-import Menu from "./app/components/Menu";
-import CategoryMenu from "./app/components/CategoryMenu";
-import Post from "./app/components/Post";
-import Logo from "./app/components/logo/Logo";
+import Menu from "./app/Menu";
+import CategoryMenu from "./app/CategoryMenu";
+import Post from "./app/Post";
+import Logo from "./app/components/Logo";
 import {Route} from "react-router-dom";
-import RouterHandler from "./app/helper/RouterHandler";
+import RouterHandler from "./app/RouterHandler";
 import Theme from "./app/components/theme/day/Theme";
 
 class App extends React.Component {
