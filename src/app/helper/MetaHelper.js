@@ -1,10 +1,6 @@
 // @flow
 
-import React from "react";
-import CategoryItem from "../data/CategoryItem";
 import {categoryStore} from "../store/CategoryStore";
-import Category from "../data/Category";
-import EmptyProps from "./TypeHelper";
 
 class MetaHelper {
 

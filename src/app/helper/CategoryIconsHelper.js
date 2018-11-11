@@ -51,7 +51,6 @@ class CategoryIconsHelper {
         "source-code": Code,
         "about": About,
         "job": Job,
-        "train": Train,
         "playgrounds": Playgrounds,
         "playground": Playground,
         "divider": divider,
