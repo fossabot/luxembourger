@@ -31,3 +31,10 @@ docker exec -i -t container_name /bin/bash
 ```
 
 then use **yum** for **elastic** and **apt** for **nginx** to install **curl, less**, etc
+
+### references
+
+https://christianfei.com/posts/setup-nginx-as-a-reverse-proxy-with-basic-auth-for-an-upstream/
+https://dev.to/domysee/setting-up-a-reverse-proxy-with-nginx-and-docker-compose-29jg
+https://stackoverflow.com/questions/33639138/docker-networking-nginx-emerg-host-not-found-in-upstream
+
