@@ -8,6 +8,10 @@
     width: 162px;
     flex-shrink: 0;
     height: 50px;
+
+    border: 1px solid #DBDBDB;
+    border-radius: 5px;
+    background-color: white;
 }
 
 .bm_link span {
