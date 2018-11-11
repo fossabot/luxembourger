@@ -6,7 +6,7 @@
   "author": "Rodislav MOLDOVAN",
   "scripts": {
     "start": "PORT=3002 react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && node scripts/generate-og-tags.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

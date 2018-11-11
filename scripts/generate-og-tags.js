@@ -1,0 +1,76 @@
+const fs = require('fs');
+const path = require('path');
+
+async function readFile(pathname) {
+  return (await fs.promises.readFile(pathname)).toString();
+}
+
+function ensureDirectoryExistence(filePath) {
+  var dirname = path.dirname(filePath);
+  if (fs.existsSync(dirname)) {
+    return true;
+  }
+  ensureDirectoryExistence(dirname);
+  fs.mkdirSync(dirname);
+}
+
+async function parseFile(pathname) {
+  return (await readFile(pathname))
+    .split('\n\n')
+    .map(_ => {
+      const content = _.split('\n');
+      if (content[0] == 'category') {
+        const [type, title, url, pathname] = content;
+        if (!pathname) {
+          return;
+        }
+        return {
+          type,
+          title,
+          url: '/' + url,
+          pathname
+        };
+      } else if (content[0] == 'category-item') {
+        const [type, title, description, image, pathname] = content;
+        return {
+          type,
+          title,
+          description,
+          image,
+          url: pathname.replace('/wiki', '').replace('.bm', '')
+        };
+      }
+    })
+}
+
+function renderHTML({ title, url, image, description, type }) {
+  return type == 'category-item' ? `  <meta property="og:title" content="${title}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://becoming.lu${url}"/>
+  <meta property="og:image" content="http://becoming.lu/images${image.replace('/wiki', '')}"/>
+  <meta property="og:description" content="${description}"/>
+  ` : `  <meta property="og:title" content="${title}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://becoming.lu${url}"/>
+  `
+}
+
+function saveData(data) {
+  const pathname = './build/og' + data.url + '.html';
+  ensureDirectoryExistence(pathname);
+  fs.promises.writeFile(pathname, renderHTML(data));
+}
+
+async function main() {
+  const data = (await parseFile('./public/wiki/menu/menu.bm'))
+    .filter(Boolean);
+
+  data.forEach(async _ => {
+    saveData(_);
+    (await parseFile('./public' + _.pathname))
+      .filter(_ => _ && _.type == 'category-item')
+      .map(saveData);
+  });
+}
+
+main();
