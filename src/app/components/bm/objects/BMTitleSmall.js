@@ -2,6 +2,7 @@
 
 import React from "react";
 import BMComponent from "./BMComponent";
+import './BMTitleSmall.css';
 
 export default class BMTitleSmall extends BMComponent{
 
