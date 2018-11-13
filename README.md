@@ -106,3 +106,6 @@ echo `/Applications/GoogleChrome.app/Contents/MacOS/Google\ Chrome  --headless -
 
 nginx prerender
 https://gist.github.com/Stanback/6998085
+
+ngingx cache
+https://serversforhackers.com/c/nginx-caching
