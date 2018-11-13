@@ -6,9 +6,11 @@
   "author": "Rodislav MOLDOVAN",
   "scripts": {
     "start": "PORT=3002 react-scripts start",
-    "build": "react-scripts build && node scripts/generate-og-tags.js",
+    "build": "react-scripts build && yarn og && yarn sitemap",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "og": "node scripts/generate-og-tags.js",
+    "sitemap": "node scripts/generate-sitemap-xml.js"
   },
   "dependencies": {
     "@material-ui/core": "3.3.2",
