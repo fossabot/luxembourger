@@ -49,6 +49,9 @@ const htmlTail = `</head><body/></html>`;
 function renderHTML({title, url, image, description, type}) {
     return type === 'category-item' ?
         htmlHead + `
+          <title>${title}, Becoming.lu</title>
+          <meta name = "description" content="${description}" />
+          
           <meta property="og:title" content="${title}"/>
           <meta property="og:type" content="website"/>
           <meta property="og:url" content="https://becoming.lu${url}"/>
@@ -58,6 +61,7 @@ function renderHTML({title, url, image, description, type}) {
         + htmlTail
         :
         htmlHead + `
+          <title>${title}, Becoming.lu</title>          
           <meta property="og:title" content="${title}"/>
           <meta property="og:type" content="website"/>
           <meta property="og:url" content="https://becoming.lu${url}"/>
