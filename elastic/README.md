@@ -38,3 +38,11 @@ https://christianfei.com/posts/setup-nginx-as-a-reverse-proxy-with-basic-auth-fo
 https://dev.to/domysee/setting-up-a-reverse-proxy-with-nginx-and-docker-compose-29jg
 https://stackoverflow.com/questions/33639138/docker-networking-nginx-emerg-host-not-found-in-upstream
 
+https://serverfault.com/questions/698559/disable-authentication-for-http-options-method-preflight-request-in-nginx
+
+
+nginx prerender
+https://gist.github.com/Stanback/6998085
+
+ngingx cache
+https://serversforhackers.com/c/nginx-caching
