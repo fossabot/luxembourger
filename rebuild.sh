@@ -7,8 +7,8 @@ git pull
 
 git push github master
 
-npm install
-npm run-script build
+yarn
+yarn build
 
 docker-compose build
 docker-compose down
