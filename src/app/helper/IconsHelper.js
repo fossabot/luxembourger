@@ -19,11 +19,12 @@ import About from '@material-ui/icons/Help';
 import Playground from '@material-ui/icons/ChildCare';
 import Shopping from '@material-ui/icons/ShoppingBasket';
 import Phone from '@material-ui/icons/Phone';
+import Motorcycle from '@material-ui/icons/Motorcycle';
 
 import divider from '@material-ui/icons/OfflineBolt';
 import unknown from '@material-ui/icons/ErrorOutline';
 
-class CategoryIconsHelper {
+class IconsHelper {
 
     icons: {} = {
         "quick-summary": QuickSummary,
@@ -38,6 +39,8 @@ class CategoryIconsHelper {
         "bus-train": Bus,
         "bus": Bus,
         "train": Train,
+        "motorcycle": Motorcycle,
+        "bicycles": Motorcycle,
 
         "shopping" : Shopping,
 
@@ -65,4 +68,4 @@ class CategoryIconsHelper {
     }
 }
 
-export const categoryIconsHelper = new CategoryIconsHelper();
+export const iconsHelper = new IconsHelper();

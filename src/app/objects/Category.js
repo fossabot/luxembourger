@@ -1,5 +1,5 @@
 import React from "react";
-import {categoryIconsHelper} from "../helper/CategoryIconsHelper";
+import {iconsHelper} from "../helper/IconsHelper";
 import CategoryItem from "./CategoryItem";
 
 export const DIVIDER = 'divider';
@@ -15,7 +15,7 @@ export default class Category {
     constructor(name, id, url) {
         this.name = name;
         this.url = url;
-        this.icon = React.createElement(categoryIconsHelper.get(id));
+        this.icon = React.createElement(iconsHelper.get(id));
         this.id = id;
         this.items = [];
     }
