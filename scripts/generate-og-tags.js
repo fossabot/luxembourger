@@ -31,22 +31,27 @@ async function parseFile(pathname, category) {
                     pathname
                 };
             } else if (content[0] == 'category-item') {
-                const [type, title, description, image, pathname] = content;
+                const [type, title, description, image, bmPath] = content;
                 return {
                     type,
                     title,
                     description,
                     image,
-                    url: category.url + "/" + title.toLowerCase().split(' ').join('-')
+                    url: category.url + "/" + title.toLowerCase().split(' ').join('-'),
+                    pathname: bmPath
                 };
             }
         })
 }
 
 const htmlHead = `<!DOCTYPE html><html lang="en"><head>`;
-const htmlTail = `</head><body/></html>`;
+const htmlBody = `</head><body>`;
+const htmlTail = `</body></html>`;
 
-function renderHTML({title, url, image, description, type}) {
+async function renderHTML({title, url, image, description, type, pathname}, category) {
+    let str = "";
+    str = (await readFile('./public' + pathname, category));
+
     return type === 'category-item' ?
         htmlHead + `
           <title>${title}, Becoming.lu</title>
@@ -58,6 +63,8 @@ function renderHTML({title, url, image, description, type}) {
           <meta property="og:image" content="https://becoming.lu/${image}"/>
           <meta property="og:description" content="${description}"/>
         `
+        + htmlBody
+        + str
         + htmlTail
         :
         htmlHead + `
@@ -66,13 +73,17 @@ function renderHTML({title, url, image, description, type}) {
           <meta property="og:type" content="website"/>
           <meta property="og:url" content="https://becoming.lu${url}"/>
         `
+        + htmlBody
+        + str
         + htmlTail
 }
 
-function saveData(data) {
+async function saveData(data, category) {
     const pathname = './build/og/' + data.url + '.html';
     ensureDirectoryExistence(pathname);
-    fs.promises.writeFile(pathname, renderHTML(data));
+
+    let str = (await renderHTML(data, category));
+    fs.promises.writeFile(pathname, str);
 }
 
 async function main() {
@@ -83,7 +94,7 @@ async function main() {
         saveData(_);
         (await parseFile('./public' + _.pathname, _))
             .filter(_ => _ && _.type === 'category-item')
-            .map(saveData);
+            .map(saveData, _);
     });
 }
 
