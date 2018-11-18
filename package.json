@@ -10,6 +10,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "og": "node scripts/generate-og-tags.js",
+    "elastic": "node scripts/push-to-elastic.js",
     "sitemap": "node scripts/generate-sitemap-xml.js"
   },
   "dependencies": {
