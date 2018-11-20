@@ -35,7 +35,10 @@ export default class BMLink extends BMComponent {
         let target= "_blank";
 
         if(this.url) {
-            if(this.url.startsWith("https://becoming.lu") || this.url.startsWith("http://becoming.lu")) {
+            if(this.url.startsWith("https://becoming.lu")
+                || this.url.startsWith("http://becoming.lu")
+                || this.url.startsWith("/")) {
+
                 rel="";
                 target = "_self";
             }
