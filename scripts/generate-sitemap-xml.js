@@ -44,7 +44,9 @@ async function parseFile(pathname, category) {
 }
 
 let now = new Date();
-const date = now.getFullYear() + "-" + now.getMonth() + "-" + now.getHours();
+let day = now.getDate();
+day = day.length < 2 ? "0" + day : day;
+const date = now.getFullYear() + "-" + now.getMonth() + "-" + day;
 
 function renderXML({url}) {
 
