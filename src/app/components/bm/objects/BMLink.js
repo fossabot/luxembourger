@@ -30,12 +30,22 @@ export default class BMLink extends BMComponent {
     }
 
     render(): * {
+
+        let rel = "noopener noreferrer nofollow";
+        let target= "_blank";
+
+        if(this.url) {
+            if(this.url.startsWith("https://becoming.lu") || this.url.startsWith("http://becoming.lu")) {
+                rel="";
+                target = "_self";
+            }
+        }
+
         return <a key={this.key}
                   className={"bm_link"}
-                  rel="noopener noreferrer"
+                  rel={rel}
                   href={this.url}
-                  title={this.title}
-                  target={"_blank"}>
+                  target={target}>
             <img src={this.imageUrl} alt={this.title} title={this.title}/>
 
             <span>{this.title}</span>
