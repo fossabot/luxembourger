@@ -77,6 +77,11 @@ body {
     margin-top: var(--margin-top-large-screen);
 }
 
+.be_Menu a {
+    text-decoration: none;
+    color: #3f3f3f;
+}
+
 /******************************************/
 
 .be_Category-selected {
@@ -112,6 +117,15 @@ body {
 .be_CategoryMenu-image {
     width: 370px;
     height: 200px;
+}
+
+.be_CategoryMenu a {
+    text-decoration: none;
+    color: #3f3f3f!important;
+}
+
+.be_CategoryMenu a span{
+    color: #3f3f3f;
 }
 
 /******************************************/
