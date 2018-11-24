@@ -9,50 +9,61 @@ import CardActions from '@material-ui/core/CardActions';
 import Typography from '@material-ui/core/Typography';
 import Button from "@material-ui/core/Button";
 import CategoryItem from "../objects/CategoryItem";
+import {Link} from "react-router-dom";
 
 type Props = {
     categoryItem: CategoryItem,
-    selected: boolean,
-    onSelect: (c: CategoryItem) => {}
+    selected: boolean
 }
 
 export default class CategoryCard extends React.Component<Props> {
 
     render() {
         let icon = this.props.selected ? "👍 " : "";
-
         let image = "";
+        let description = "";
+        let subHeader = "";
+        let categoryItem: CategoryItem = this.props.categoryItem;
 
-        if(this.props.categoryItem.image && this.props.categoryItem.image.replace(" ", "") !== "") {
-            image = <CardMedia
-                className={"be_CategoryMenu-image"}
-                image={this.props.categoryItem.image}
-                title={this.props.categoryItem.imageTitle}
-            />
+        if (categoryItem.imageUrl && categoryItem.imageUrl.replace(" ", "") !== "") {
+            image =
+                <CardMedia
+                    className={"be_CategoryMenu-image"}
+                    image={categoryItem.imageUrl}
+                    title={categoryItem.imageTitle}
+                />;
+
+            description =
+                <CardContent>
+                    <Typography component="p">
+                        {categoryItem.description}
+                    </Typography>
+                </CardContent>;
+        } else {
+            subHeader = categoryItem.description;
         }
 
         return (
-            <Card className={'be_margin-bottom-30px hand-cursor'}
-                  onClick={(e) => this.props.onSelect ? this.props.onSelect(this.props.categoryItem) : ''}>
+            <Link to={categoryItem.getUri()} title={categoryItem.title}>
+                <Card className={'be_margin-bottom-30px'}>
 
-                <CardHeader
-                    title={icon + this.props.categoryItem.title}
-                    // subheader={this.props.categoryItem.date.toString()}
-                />
+                    <CardHeader
+                        title={icon + categoryItem.title}
+                        subheader={subHeader}
+                    />
 
-                {image}
+                    {image}
+                    {description}
 
-                <CardContent>
-                    <Typography component="p">
-                        {this.props.categoryItem.description}
-                    </Typography>
-                </CardContent>
-                <CardActions disableActionSpacing>
-                    <Button variant="outlined" color={"primary"} >
-                        Learn more
-                    </Button>
-                </CardActions>
-            </Card>
+                    <CardActions disableActionSpacing>
+                        <Button variant="outlined" color={"primary"}>
+                            Learn more
+                        </Button>
+                    </CardActions>
+                </Card>
+            </Link>
+
+
         );
     }
 }
