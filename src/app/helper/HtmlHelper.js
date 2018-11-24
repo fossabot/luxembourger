@@ -24,7 +24,7 @@ class HtmlHelper {
 
                 if(categoryItem) {
                     if(metaName === "og:image") {
-                        meta.setAttribute("content", "https://becoming.lu" + categoryItem.image);
+                        meta.setAttribute("content", "https://becoming.lu" + categoryItem.imageUrl);
                     }
 
                     if(metaName === "og:url") {

@@ -34,33 +34,19 @@ class NavigationHelper {
             }
 
             categoryStore.setCurrentCategory(category);
+            htmlHelper.updateHeadMeta(category.name);
 
             if(categoryItemId) {
                 categoryStore.findCategoryItem(categoryItemId).subscribe((categoryItem: CategoryItem) => {
                     if(categoryItem) {
                         categoryStore.setCurrentCategoryItem(categoryItem);
                         htmlHelper.updateHeadMeta(categoryItem.title);
-                    } else {
-                        this.category(component, category);
                     }
                 });
             }
         });
     }
 
-    category(component: React.Component<EmptyProps>, category: Category) {
-        component.props.history.push('/' + category.id);
-        categoryStore.setCurrentCategory(category);
-
-        htmlHelper.updateHeadMeta(category.name);
-    }
-
-    categoryItem(component: React.Component<EmptyProps>, categoryItem: CategoryItem) {
-        component.props.history.push('/' + categoryStore.category.id + "/" + categoryItem.id);
-        categoryStore.setCurrentCategoryItem(categoryItem);
-
-        htmlHelper.updateHeadMeta(categoryItem.title);
-    }
 }
 
 export const navigationHelper = new NavigationHelper();

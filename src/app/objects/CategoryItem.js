@@ -1,18 +1,26 @@
+import Category from "./Category";
+
 export default class CategoryItem {
 
-    title;
-    image;
-    description;
-    imageTitle;
-    id;
-    markdownUrl;
+    title: string;
+    imageUrl: string;
+    description: string;
+    imageTitle: string;
+    id: string;
+    markdownUrl: string;
+    category: Category;
 
-    constructor(title, description, image, markdownUrl) {
+    constructor(category: Category, title: string, description: string, imageUrl: string, markdownUrl: string) {
+        this.category = category;
         this.title = title;
         this.imageTitle = title;
-        this.image = image;
+        this.imageUrl = imageUrl;
         this.description = description;
         this.id = title.toLowerCase().split(' ').join('-');
         this.markdownUrl = markdownUrl;
+    }
+
+    getUri(): string {
+        return "/" + this.category.id + "/" + this.id;
     }
 }

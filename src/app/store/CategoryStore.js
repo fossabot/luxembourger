@@ -51,11 +51,11 @@ class CategoryStore {
 
     loadCategoryItems(category: Category) {
         return Observable.create((observer: Subscriber) => {
-            httpHelper.getText(category.url).subscribe(data => {
+            httpHelper.getText(category.markdownUrl).subscribe(data => {
                 let tmp = [];
 
                 bmObjectFactory.textToBMComponents(data).forEach((value: BMCategoryItem) => {
-                    tmp.push(new CategoryItem(value.title, value.description, value.image, value.url))
+                    tmp.push(new CategoryItem(category, value.title, value.description, value.image, value.url))
                 });
 
                 category.items = tmp;

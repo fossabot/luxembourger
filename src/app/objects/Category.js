@@ -9,15 +9,19 @@ export default class Category {
     name;
     icon;
     id;
-    url;
+    markdownUrl;
     items: CategoryItem[];
 
-    constructor(name, id, url) {
+    constructor(name, id, markdownUrl) {
         this.name = name;
-        this.url = url;
+        this.markdownUrl = markdownUrl;
         this.icon = React.createElement(iconsHelper.get(id));
         this.id = id;
         this.items = [];
+    }
+
+    getUri(): string {
+        return "/" + this.id;
     }
 
 }

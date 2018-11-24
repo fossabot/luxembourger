@@ -11,7 +11,7 @@ class CategoryMenu extends React.Component {
     category: Category = null;
 
     onArticleSelect(categoryItem: CategoryItem) {
-        navigationHelper.categoryItem(this, categoryItem);
+        // navigationHelper.categoryItem(this, categoryItem);
     }
 
     componentDidMount() {
@@ -44,7 +44,6 @@ class CategoryMenu extends React.Component {
             items.push(<CategoryCard key={categoryItem.id}
                                      selected={currentCategoryItemId === categoryItem.id}
                                      categoryItem={categoryItem}
-                                     onSelect={(ci: CategoryItem) => this.onArticleSelect(ci)}
             />)
         });
 
