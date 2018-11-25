@@ -10,41 +10,54 @@ import {htmlHelper} from "./HtmlHelper";
 class NavigationHelper {
     // FIXME find a good way to handle navigation in REACT
 
+    // noinspection JSMethodCanBeStatic
     gotoRoot(component: React.Component<EmptyProps>) {
-        if(component) {
+        if (component) {
             component.props.history.push('/');
         }
 
         categoryStore.setCurrentCategory(null);
     }
 
+    // noinspection JSMethodCanBeStatic
+    goto404(component: React.Component<EmptyProps>) {
+        if (component) {
+            component.props.history.replace('/');
+        }
+        window.open('/404.html', "_self");
+    }
+
     restoreFromUri(component: React.Component<EmptyProps>, categoryId: string, categoryItemId: string) {
 
         console.info('Restoring url, categoryId: ', categoryId, ', categoryItemId: ', categoryItemId);
 
-        if(!categoryId || categoryId === "") {
+        if (!categoryId || categoryId === "") {
             this.gotoRoot(component);
             return;
         }
 
-        categoryStore.findCategory(categoryId).subscribe((category: Category) => {
-            if(!category) {
-                this.gotoRoot(component);
-                return;
-            }
+        categoryStore
+            .findCategory(categoryId)
+            .subscribe((category: Category) => {
+                if (!category) {
+                    this.goto404(component);
+                    return;
+                }
 
-            categoryStore.setCurrentCategory(category);
-            htmlHelper.updateHeadMeta(category.name);
+                categoryStore.setCurrentCategory(category);
+                htmlHelper.updateHeadMeta(category.name);
 
-            if(categoryItemId) {
-                categoryStore.findCategoryItem(categoryItemId).subscribe((categoryItem: CategoryItem) => {
-                    if(categoryItem) {
-                        categoryStore.setCurrentCategoryItem(categoryItem);
-                        htmlHelper.updateHeadMeta(categoryItem.title);
-                    }
-                });
-            }
-        });
+                if (categoryItemId) {
+                    categoryStore.findCategoryItem(categoryItemId).subscribe((categoryItem: CategoryItem) => {
+                        if (categoryItem) {
+                            categoryStore.setCurrentCategoryItem(categoryItem);
+                            htmlHelper.updateHeadMeta(categoryItem.title);
+                        } else {
+                            this.goto404(component);
+                        }
+                    });
+                }
+            });
     }
 
 }
