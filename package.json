@@ -6,12 +6,17 @@
   "author": "Rodislav MOLDOVAN",
   "scripts": {
     "start": "PORT=3002 react-scripts start",
-    "build": "react-scripts build && yarn og && yarn sitemap",
+    "build": "react-scripts build && react-snap && yarn sitemap",
+    "snap": "react-snap",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "og": "node scripts/generate-og-tags.js",
     "elastic": "node scripts/push-to-elastic.js",
     "sitemap": "node scripts/generate-sitemap-xml.js"
+  },
+  "reactSnap": {
+    "inlineCss": true,
+    "destination": "build/og"
   },
   "dependencies": {
     "@material-ui/core": "3.3.2",
@@ -27,7 +32,8 @@
     "rxjs": "6.3.3"
   },
   "devDependencies": {
-    "flow-bin": "0.85.0"
+    "flow-bin": "0.85.0",
+    "react-snap": "^1.21.0"
   },
   "browserslist": [
     ">0.2%",

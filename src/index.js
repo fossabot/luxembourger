@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { hydrate, render } from "react-dom";
 import './css/index.css';
 import './css/index-tablet.css';
 import './css/index-mobile.css';
@@ -11,6 +11,12 @@ import {BrowserRouter} from "react-router-dom";
 
 // unregister();
 
-ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
+const rootElement = document.getElementById("root");
+if (rootElement.hasChildNodes()) {
+    hydrate(<BrowserRouter><App /></BrowserRouter>, rootElement);
+} else {
+    render(<BrowserRouter><App /></BrowserRouter>, rootElement);
+}
+
 
 // registerServiceWorker();

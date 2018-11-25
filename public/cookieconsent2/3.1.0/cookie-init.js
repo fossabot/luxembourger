@@ -17,7 +17,7 @@ window.addEventListener("load", function () {
             "dismiss": "I'm fine with it",
             "link": "See details",
             "target": "_self",
-            "href": "%PUBLIC_URL%/about/cookies"
+            "href": "/about/cookies"
         }
     })
 });
