@@ -2,8 +2,6 @@
 
 import React from 'react';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import {categoryStore} from "./store/CategoryStore";
 import {observer} from "mobx-react";
 import Category, {DIVIDER} from "./objects/Category";
