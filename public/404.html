@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
     <meta name="theme-color" content="#163347">
 
     <meta property="og:title" content="Becoming.lu's 404 page"/>
@@ -54,6 +54,37 @@
             text-align: center;
             text-decoration: none;
         }
+
+        @media only screen and (max-width: 980px) {
+            body {
+                padding-left: 30px;
+                padding-top: 20px;
+            }
+
+            img {
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 55px;
+            }
+
+            h2 {
+                font-size: 21px;
+            }
+
+            p {
+                font-size: 16px;
+                margin: 0;
+            }
+
+            .button {
+                font-size: 18px;
+                width: 250px;
+                padding: 10px 5px 10px 5px;
+            }
+        }
+
     </style>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -73,7 +104,7 @@
 
     <div style="float: left;">
         <h1>SORRY</h1>
-        <h2>It seems that somebody 404 'ed this page</h2>
+        <h2>It seems that somebody <br>404 'ed this page</h2>
         <p>You can hangout for a while, of course.</p>
         <p>Yet we would suggest to go to main page</p>
 
