@@ -16,7 +16,8 @@
   },
   "reactSnap": {
     "inlineCss": true,
-    "destination": "build/og"
+    "destination": "build/og",
+    "puppeteerArgs": ["--no-sandbox"]
   },
   "dependencies": {
     "@material-ui/core": "3.3.2",
