@@ -9,4 +9,8 @@ export default class CategoryLink extends Category {
         this.link = link;
     }
 
+    getUri(): string {
+        return this.link;
+    }
+
 }
