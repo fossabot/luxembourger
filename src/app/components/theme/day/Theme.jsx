@@ -10,7 +10,7 @@ export default class Theme extends React.Component<EmptyProps> {
 
     render() {
         return (
-            <div className={"theme"}>
+            <div className="theme">
 
                 <div className="be_theme-image-left-right"/>
                 <div className="be_theme-image-center"/>
