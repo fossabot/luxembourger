@@ -19,7 +19,7 @@ class HtmlHelper {
                 const metaName = meta.attributes.getNamedItem("property").nodeValue;
 
                 if(metaName === "og:title") {
-                    meta.setAttribute("content", text + ", promoted by Becoming.lu");
+                    meta.setAttribute("content", text + ", Becoming.lu");
                 }
 
                 if(categoryItem) {
