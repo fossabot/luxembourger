@@ -65,7 +65,7 @@ body {
     background-color: white;
     border: 1px;
 
-    max-height: calc(100% - 215px);
+    max-height: calc(100% - 245px);
     overflow-y: auto;
     overflow-x: hidden;
 
