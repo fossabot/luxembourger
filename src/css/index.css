@@ -34,6 +34,20 @@ body {
 
 /******************************************/
 
+.be-CardHeader-rounded-corners {
+    border-radius: 20px!important;
+    box-shadow: none!important;
+}
+
+.be-CardHeader-not-selected {
+    background: url("/images/right-arrow-light.png") no-repeat right;
+    background-blend-mode: lighten;
+}
+
+.be-CardHeader-selected {
+    background: url("/images/right-arrow.png") no-repeat right;
+}
+
 .be_margin-bottom-30px {
     margin-bottom: 30px;
 }

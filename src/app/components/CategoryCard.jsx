@@ -19,7 +19,7 @@ type Props = {
 export default class CategoryCard extends React.Component<Props> {
 
     render() {
-        let icon = this.props.selected ? "👍 " : "";
+        let selectedClass = this.props.selected ? "be-CardHeader-selected" : "be-CardHeader-not-selected";
         let image = "";
         let description = "";
         let subHeader = "";
@@ -45,21 +45,15 @@ export default class CategoryCard extends React.Component<Props> {
 
         return (
             <Link to={categoryItem.getUri()} title={categoryItem.title}>
-                <Card className={'be_margin-bottom-30px'}>
+                <Card className={'be-CardHeader-rounded-corners be_margin-bottom-30px'}>
 
-                    <CardHeader
-                        title={icon + categoryItem.title}
+                    <CardHeader className={selectedClass}
+                        title={categoryItem.title}
                         subheader={subHeader}
                     />
 
                     {image}
                     {description}
-
-                    <CardActions disableActionSpacing>
-                        <Button variant="outlined" color={"primary"}>
-                            Learn more
-                        </Button>
-                    </CardActions>
                 </Card>
             </Link>
 
