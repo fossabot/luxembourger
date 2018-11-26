@@ -8425,7 +8425,7 @@ react-scripts@2.1.1:
   optionalDependencies:
     fsevents "1.2.4"
 
-react-snap@^1.21.0:
+react-snap@1.21.0:
   version "1.21.0"
   resolved "https://registry.yarnpkg.com/react-snap/-/react-snap-1.21.0.tgz#b214b497d87b92b063e35fe42c96501f51a4df82"
   integrity sha512-BJeeV4cNuKQ19YE9QvI87zQBFS8K5MD+YPGLy0HnLdNKhgjVNKlaxFrU0hpgOqJIan0JhCwmcU/WS6cbkup/OQ==
