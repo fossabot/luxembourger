@@ -75,7 +75,7 @@ const htmlHead = `<?xml version="1.0" encoding="UTF-8"?>
 const htmlTail = `</urlset>`;
 
 async function main() {
-    const data = (await parseFile('./public/wiki/menu/menu.bm'))
+    const data = (await parseFile('./public/wiki/menu.bm'))
         .filter(Boolean);
 
     let siteMapBody = htmlHead;

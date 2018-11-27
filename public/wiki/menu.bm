@@ -1,57 +1,57 @@
 category
 Quick Summary
 quick-summary
-/wiki/menu/QuickSummary.bm
+/wiki/summary/QuickSummary.bm
 
 category
 Work and Jobs
 job
-/wiki/menu/WorkAndJob.bm
+/wiki/job/WorkAndJob.bm
 
 category
 Housing
 housing
-/wiki/menu/Housing.bm
+/wiki/housing/Housing.bm
 
 category
 Doctors
 doctors
-/wiki/menu/Doctors.bm
+/wiki/doctors/Doctors.bm
 
 category
 Schooling
 schooling
-/wiki/menu/Schooling.bm
+/wiki/schooling/Schooling.bm
 
 category
 Insurance
 insurance
-/wiki/menu/Insurance.bm
+/wiki/insurance/Insurance.bm
 
 category
 Banks
 banks
-/wiki/menu/Banks.bm
+/wiki/banks/Banks.bm
 
 category
 Bicycles
 bicycles
-/wiki/menu/Bicycles.bm
+/wiki/bicycles/Bicycles.bm
 
 category
 Bus, Train, Tram, Taxi
 bus-train-tram-taxi
-/wiki/menu/BusTrainTramTaxi.bm
+/wiki/bus/BusTrainTramTaxi.bm
 
 category
 Shopping
 shopping
-/wiki/menu/Shopping.bm
+/wiki/shopping/Shopping.bm
 
 category
 Phone, Internet, TV
 phone-internet-tv
-/wiki/menu/PhoneInternetTV.bm
+/wiki/phone/PhoneInternetTV.bm
 
 category
 divider
@@ -60,7 +60,7 @@ divider
 category
 About
 about
-/wiki/menu/About.bm
+/wiki/about/About.bm
 
 category-link
 Talk to us

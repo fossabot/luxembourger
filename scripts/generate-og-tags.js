@@ -87,7 +87,7 @@ async function saveData(data, category) {
 }
 
 async function main() {
-    const data = (await parseFile('./public/wiki/menu/menu.bm'))
+    const data = (await parseFile('./public/wiki/menu.bm'))
         .filter(Boolean);
 
     data.forEach(async _ => {

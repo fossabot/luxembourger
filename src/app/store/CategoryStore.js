@@ -32,7 +32,7 @@ class CategoryStore {
         return Observable.create((observer: Subscriber) => {
             let tmp: Category[] = [];
 
-            httpHelper.getText("/wiki/menu/menu.bm").subscribe(data => {
+            httpHelper.getText("/wiki/menu.bm").subscribe(data => {
                 bmObjectFactory.textToBMComponents(data).forEach((value: BMCategory) => {
                     if(value.type === "category-link") {
                         tmp.push(new CategoryLink(value.title, value.id, value.url))
