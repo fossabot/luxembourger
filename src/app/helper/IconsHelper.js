@@ -20,6 +20,7 @@ import Playground from '@material-ui/icons/ChildCare';
 import Shopping from '@material-ui/icons/ShoppingBasket';
 import Phone from '@material-ui/icons/Phone';
 import Motorcycle from '@material-ui/icons/Motorcycle';
+import Event from '@material-ui/icons/Event';
 
 import divider from '@material-ui/icons/OfflineBolt';
 import unknown from '@material-ui/icons/ErrorOutline';
@@ -56,6 +57,7 @@ class IconsHelper {
         "about": About,
         "job": Job,
         "playgrounds": Playgrounds,
+        "events": Event,
         "playground": Playground,
         "facebook": FacebookIcon,
         "divider": divider,
