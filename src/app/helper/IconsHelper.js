@@ -21,6 +21,7 @@ import Shopping from '@material-ui/icons/ShoppingBasket';
 import Phone from '@material-ui/icons/Phone';
 import Motorcycle from '@material-ui/icons/Motorcycle';
 import Event from '@material-ui/icons/Event';
+import Learning from '@material-ui/icons/LibraryBooks';
 
 import divider from '@material-ui/icons/OfflineBolt';
 import unknown from '@material-ui/icons/ErrorOutline';
@@ -51,6 +52,7 @@ class IconsHelper {
 
         "legal": Legal,
         "banks": Banks,
+        "learning": Learning,
         "emergency": Emergency,
         "feedback": Feedback,
         "source-code": Code,
