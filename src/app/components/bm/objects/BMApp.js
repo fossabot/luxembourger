@@ -39,12 +39,14 @@ export default class BMApp extends BMComponent {
             </div>
             <div className={"bm_app-buttons"}>
                 <a href={this.android}
+                   rel="noopener noreferrer nofollow"
                    title="Get from PlayStore"
                    target={"_blank"}>
                     <img alt="PlayStore button" title="PlayStore button" src="/images/logo/google-play.png"/>
                 </a>
                 <a className={"be_margin-left-10px"}
                    href={this.ios}
+                   rel="noopener noreferrer nofollow"
                    title="Get from AppStore"
                    target={"_blank"}>
                     <img alt="AppStore button"  title="AppStore button" src="/images/logo/appstore-fr.png"/>

@@ -64,6 +64,7 @@ export default class BMWorkingHours extends BMComponent {
         return !this.link ? "" :
             <div className={"bm-a"}>
                 <a href={this.link} target={"_blank"}
+                   rel="noopener noreferrer nofollow"
                    title={"Click to open site " + this.title + " in new tab"}>
                     {this.link}
                 </a>
@@ -75,6 +76,7 @@ export default class BMWorkingHours extends BMComponent {
         if (this.address) {
             if (this.address.trim().startsWith("http")) {
                 address = <a href={this.address} target={"_blank"}
+                             rel="noopener noreferrer nofollow"
                              title={"Click to open site " + this.title + " in new tab"}>Addresses and Contacts</a>;
             } else {
                 address = <div>{this.address}</div>;
