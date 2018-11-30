@@ -3,13 +3,18 @@ import React from "react";
 import './BMWorkingHours.css';
 
 class WorkingHour {
+    url: string;
     day: string;
     time: string;
 
     constructor(pairValue: string) {
-        let parts: string[] = pairValue.trim().split(" : ");
-        this.day = parts[0];
-        this.time = parts[1];
+        if (pairValue.startsWith("http")) {
+            this.url = pairValue;
+        } else {
+            let parts: string[] = pairValue.trim().split(" : ");
+            this.day = parts[0];
+            this.time = parts[1];
+        }
     }
 }
 
@@ -97,24 +102,50 @@ export default class BMWorkingHours extends BMComponent {
     }
 
     createTransport() {
-        return !this.transport ? "" :
-            <div className={"bm-line"}>
-                <span className={"icon bus"}/>
-                <b>
-                    <div>{this.transport}</div>
-                </b>
-            </div>;
+        let html = "";
+
+        if(this.transport) {
+            if (this.transport.trim().startsWith("http")) {
+                html = <div className={"bm-line"}>
+                    <span className={"icon bus"}/>
+                    <a href={this.transport} target={"_blank"}
+                       rel="noopener noreferrer nofollow"
+                       title={"Click to find transport options"}>Transport options</a>
+                </div>;
+            } else {
+                html = <div className={"bm-line"}>
+                    <span className={"icon bus"}/>
+                    <b>
+                        <div>{this.transport}</div>
+                    </b>
+                </div>;
+            }
+        }
+
+        return html
     }
 
     createWorkingHours() {
         let workingHours = [];
         for (let i = 0; i < this.workingHours.length; i++) {
             let w = this.workingHours[i];
-            workingHours.push(<div key={Date.now() + Math.random() * 100000}>&nbsp;&nbsp;<b>{w.day}</b> : {w.time}<br/>
-            </div>);
+
+            if (w.url) {
+                workingHours.push(
+                    <div>
+                        <a href={w.url} target={"_blank"}
+                           rel="noopener noreferrer nofollow"
+                           title={"Link to working hours"}>Working hours</a>
+                    </div>)
+            } else {
+                workingHours.push(
+                    <div key={Date.now() + Math.random() * 100000}>
+                        &nbsp;&nbsp;<b>{w.day}</b> : {w.time}<br/>
+                    </div>);
+            }
         }
 
-        if(workingHours.length < 1) {
+        if (workingHours.length < 1) {
             return "";
         }
 
