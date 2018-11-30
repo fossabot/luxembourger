@@ -5,24 +5,28 @@ text
 The name for car shops and car service centers is one: Garage.
 
 title-small
-How to search
+Search Online
 
 text
 Usually when you are looking for a shop, dealer, etc. you just typ in google, e.g.: garage kia
 
 text
-If you are looking for a dealer to buy, the easiest way is to type in google things like:
+If you are looking for a dealer to buy, the easiest way is to type in google things like: kia lu, fiat lu, vw lu, etc.
 
-list
-kia lu
-fiat lu
-vw lu
+link
+LuxAuto
+https://luxauto.lu/
 
-info
-The reason for that is that sometimes the link can be different from an obvious one.
+text
+Considering the simplicity of car imports, you can look abroad. Most of the dealers close to the border
+are doing papers for you for a fee of ~300 euro
+
+link
+Mobile.de
+https://www.mobile.de/
 
 title-small
-Dealers
+Visit Dealers
 
 text
 Usually dealers have as well their own sites but they are less reliable in most cases,
@@ -46,11 +50,15 @@ https://losch.lu/fr/accueil
 text
 From other side, dealers are very keen to see you in their shop or hear you on the phone.
 
-info
-The experience can be tough from time to time, as there are sellers who consider women as second type people.
-The good part, it happens rarely.
+title-small
+The usual scenario
 
-text
-The usual scenario is: you are opening a site, see offers or configure a car then request a quote.
-In short time you'll receive offers via e-mail or phone.
-
+list
+You are opening a brand site
+Check offers
+ - Or configure a car
+Then request a quote
+ - Via the configuration page
+ - Or via Phone call or e-mail
+In short time you'll receive offers
+ - via e-mail or phone.
