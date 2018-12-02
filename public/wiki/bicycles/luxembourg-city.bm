@@ -1,53 +1,109 @@
 title-big
-Vel'OH! Luxelbourg City
+Vel'OH! Luxembourg City
 
 text 
-In spring 2008, the City of Luxembourg launched the bicycle system self-service operated by JCDecaux vel'oh!
+In spring 2008, the City of Luxembourg launched the bicycle system self-service operated by JCDecaux vel'OH!
+
+text
+November 30, 2018, electric bikes replaced the old ones.
+
+list
+The electric assist is activated as soon as a certain power torque (at low speed) is provided by the user and gives a slight sensation of acceleration to the cyclist.
+The power provided by the motor responds linearly to that provided by the user.
+The electric assist decreases as the cyclist approaches the maximum speed (25 km / h) and/or the maximum average power (250 W).
+A USB socket allows the user to charge his smartphone during his trip.
 
 link
-vel'oh!
-http://www.veloh.lu
+vel'OH!
+https://myveloh.lu/tutorial
 /wiki/logo/veloh.png
 
 title-small
 How it works
 
 text
-Vel'oh! provides two types of subscription: short-term and long-term.
+Vel'oh! provides three types of subscription: short-term, long-term, and business.
+To obtain the subscription you need to create an account on the website or download the application on your smartphone.
 
 title-small
-7-day ticket
+Release a bike
+
+list
+Via terminal
+Directly via a multifunction handlebar with the contactless card
+Using an application on your smartphone
+
+app
+The mobile app vel'OH! official
+Choose the vel'OH! of your choice
+https://play.google.com/store/apps/details?id=com.jcdecaux.vls.luxembourg
+https://itunes.apple.com/fr/app/id1414204999
+
+title-small
+1-day ticket
 
 text
-To obtain a 7-day ticket, go to one of the 25 vel’oh! stations with your bank card and follow the menu on the terminal’s screen. It will propose a short-term subscription and ask you to choose a secret code. You will receive a ticket with an identification number that you have to enter every time you rent out a bicycle.
+Once your ticket has been activated, you can use it for an unlimited number of journeys during a 24-hour period.
 
 info
-Price EUR 1
-Terminal accepts credit cards only.
-Your credit card needs to have chip+pin.
+Price EUR 2
 
+title-small
+3-day ticket
 
+text
+Once your ticket has been activated, you can use it for an unlimited number of journeys during a 72-hour period.
+
+info
+Price EUR 5
 
 title-small
 1-year subscription
 
 text
-For a long-term subscription, fill in the subscription form available on the "subscribe" link above *.
+Unlimited journeys for a period of one year. 
 
 info
-Price EUR 15
+Price EUR 18
+
+title-small
+Semi-business offer
+
+info
+The company pays for the annual subscription
+The usage fees and security deposit are paid for by the employee
+
+title-small
+Business offer
+
+info
+The company supports total costs
 
 link
-subscribe
-https://aboen-luxembourg.cyclocity.fr/subscribe/details
+Different types of subscriptions
+https://myveloh.lu/offers/groups
 /wiki/logo/veloh.png
-
-text
-Send the form along with a copy of an ID card (ID card or passport). Beware only the Luxemburg banks are accepted for the direct debit as well as for the deposit which amounts to 150€*.
 
 title-small
 Ride duration
 
+list
+The first half hour of each journey is free
+Each subsequent hour costs €1
+Maximum of €5 per 24 hours
+After 24 hours of continuous usage, the security deposit will be deducted from the user’s account
+
+title-small
+Contacts
+
 text
-The first half hour is free every time you take out a bicycle. 
-Extra hour EUR 1, maximum 24 hours for EUR 5
+Advisers are available at:
+
+info
+80061100
++35227888746 
+
+list
+Monday to Friday from 08:00 to 22:00
+Saturday from 9:00 to 22:00
+Sundays and public holidays from 9:00 to 19:00.
