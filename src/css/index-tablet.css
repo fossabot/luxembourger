@@ -4,6 +4,15 @@
         background: #B6DFF5!important;
     }
 
+    .be-menu-bottom {
+        position: fixed;
+        bottom: 0;
+        background-color: white;
+        color: black;
+        display: block!important;
+        box-shadow: 4px 0 15px grey;
+    }
+
     .be_Logo {
         position: unset!important;
 

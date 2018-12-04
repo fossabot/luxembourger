@@ -6,6 +6,7 @@ import Logo from "./app/components/Logo";
 import {Route} from "react-router-dom";
 import RouterHandler from "./app/RouterHandler";
 import Theme from "./app/components/theme/day/Theme";
+import MenuBottom from "./app/MenuBottom";
 
 class App extends React.Component {
 
@@ -20,6 +21,8 @@ class App extends React.Component {
 
                 <Route exact path='/:categoryId/:categoryItemId?' component={CategoryMenu} />
                 <Route exact path='/:categoryId/:categoryItemId' component={Post} />
+
+                <Route component={MenuBottom}/>
             </div>
         );
     }

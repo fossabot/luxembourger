@@ -169,3 +169,7 @@ body {
 
     border-radius: 20px!important;
 }
+
+.be-menu-bottom {
+    display: none!important;
+}

@@ -22,7 +22,7 @@ class CategoryMenu extends React.Component {
 
     scrollTop() {
         try {
-            window.scrollTo(0, 0);
+            // window.scrollTo(0, 0);
         } catch (e) {
             //    ignore error
             console.error(e);
