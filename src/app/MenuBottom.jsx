@@ -7,14 +7,14 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import Left from '@material-ui/icons/ChevronLeft';
 import Up from '@material-ui/icons/ArrowDropUp';
+import {navigationHelper} from "./helper/NavigationHelper";
 
 class MenuBottom extends React.Component<EmptyProps> {
 
     // noinspection JSMethodCanBeStatic
     onChange(e, value: any) {
-        console.log(value);
         if("back" === value) {
-            window.history.back();
+            navigationHelper.goBack(this);
         }
         else if("up" === value) {
             try {

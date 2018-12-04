@@ -11,6 +11,18 @@ class NavigationHelper {
     // FIXME find a good way to handle navigation in REACT
 
     // noinspection JSMethodCanBeStatic
+    goBack(component: React.Component<EmptyProps>) {
+        console.log(window.history.length);
+
+        if(window.history.length < 3) {
+            window.open('/', "_self");
+            return;
+        }
+
+        window.history.back();
+    }
+
+    // noinspection JSMethodCanBeStatic
     gotoRoot(component: React.Component<EmptyProps>) {
         if (component) {
             component.props.history.push('/');
