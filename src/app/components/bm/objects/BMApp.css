@@ -3,7 +3,8 @@
     display: flex;
     font-size: 22px;
     font-weight: bold;
-    margin-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 /*.bm_app:first-child {*/
@@ -23,7 +24,7 @@
 }
 
 .bm_app-subtitle {
-    margin-top: 8px;
+    padding-top: 0;
     line-height: 24px;
     margin-left: 5px;
 }
