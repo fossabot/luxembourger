@@ -64,8 +64,10 @@ class HttpHelper {
         return this._createDefaultRequest(url, "delete");
     }
 
-    getJson(request) {
+    getJson(...url: string[]) {
         return Observable.create((observer: Subscriber) => {
+            const request: Request = this._createGetRequest(url);
+
             fetch(request)
                 .then((response) => {
                     response.json().then((data) => {

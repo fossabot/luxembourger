@@ -45,13 +45,13 @@ async function sendToElastic({title, url, image, description, type, pathname}, c
         content = (await readFile('./public' + pathname, category));
 
         const options = {
-            host: '51.158.66.240',
+            host: 'localhost',
             port: 80,
             path: '/becoming/_doc/' + randomId++,
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': ''
+                'Authorization': 'Basic dXNlcjpwYXNzd29yZA=='
             }
         };
 
