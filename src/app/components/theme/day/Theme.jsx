@@ -36,8 +36,7 @@ export default class Theme extends React.Component<EmptyProps> {
                 <a className="be_plane" target='_blank' rel="noopener noreferrer nofollow"
                    href='https://www.luxair.lu/fr' title='Click to open LuxAir website'> </a>
 
-                <a className="be_univers" target='_blank' rel="noopener noreferrer nofollow"
-                   href='https://spaceresources.public.lu/en.html' title='Click to open Space Resources website'> </a>
+                <span className="be_univers"> </span>
 
                 <div className="be_star-small"/>
                 <div className="be_star-small-top-corner"/>

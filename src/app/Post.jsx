@@ -1,6 +1,5 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
-import ReactMarkdown from 'react-markdown';
 import {observer} from "mobx-react/index";
 import {categoryStore} from "./store/CategoryStore";
 import BasicMarkup from "./components/bm/BasicMarkup";
@@ -30,17 +29,9 @@ class Post extends React.Component {
             return <div/>
         }
 
-        let markupView;
-
-        if(categoryStore.categoryItem.markdownUrl.toLowerCase().endsWith(".md")) {
-            markupView = <ReactMarkdown source={categoryStore.currentArticle} />
-        } else {
-            markupView = <BasicMarkup source={categoryStore.currentArticle} />
-        }
-
         return <div className={'be_CategoryItemView'}>
             <Paper elevation={1} className={'be_CategoryItemView-paper'}>
-                {markupView}
+                <BasicMarkup source={categoryStore.currentArticle} />
             </Paper>
         </div>;
     }
