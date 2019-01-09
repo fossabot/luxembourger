@@ -5,8 +5,6 @@ rm -r ./build
 git reset --hard HEAD
 git pull
 
-git push github master
-
 yarn
 yarn build
 
