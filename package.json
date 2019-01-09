@@ -20,15 +20,15 @@
     "puppeteerArgs": ["--no-sandbox"]
   },
   "dependencies": {
-    "@material-ui/core": "3.7.0",
-    "@material-ui/icons": "3.0.1",
+    "@material-ui/core": "3.8.2",
+    "@material-ui/icons": "3.0.2",
     "mobx": "5.8.0",
     "mobx-react": "5.4.3",
     "prop-types": "15.6.2",
     "react": "16.7.0",
     "react-dom": "16.7.0",
     "react-router-dom": "4.3.1",
-    "react-scripts": "2.1.1",
+    "react-scripts": "2.1.3",
     "rxjs": "6.3.3"
   },
   "devDependencies": {
